@@ -6,6 +6,9 @@ img
 /data/
 /temp/caches/
 /temp/cachesmobile/
+/temp/query_caches/
+/temp/static_caches/
+/temp/backup/
 /install/
 .svn
 /nbproject/private/
