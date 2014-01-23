@@ -215,7 +215,7 @@ return offset;
     {$lang.goods_brief}{$goods.goods_brief}<br />
     <!-- {/if} --> 
     </div>
-     <a href="javascript:collect({$goods.goods_id});" class="bnt_blue">加入收藏</a>
+     <a href="javascript:collect({$goods.goods_id});" class="bnt_blue">加入收藏1</a>
     <a href="javascript:addToCart({$goods.goods_id})" class="bnt_blue">{if $goods.rooms!=''}立即预订{else}立即购买{/if}</a>
     </li>
     <li>
