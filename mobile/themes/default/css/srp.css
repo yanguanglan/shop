@@ -1,0 +1,67 @@
+#page{position:relative}
+.page-shadow{-webkit-box-shadow:4px 0 10px #999;box-shadow:4px 0 10px #999}
+.srp{display:table;width:100%;display:flex;flex-wrap:wrap;font-family:tahoma,arial,\9ED1\4F53;padding-bottom:10px;background-color:#eee}
+.srp:after{display:block;clear:both;height:0;content:' '}
+.srp em{font-style:normal}
+.srp .product{display:inline-block;float:none;display:flex;align-items:stretch;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;padding:10px;padding-bottom:0}
+.srp .pro-inner{position:relative;background-color:#fff;border-radius:5px;box-shadow:0 1px 3px rgba(0,0,0,.25);overflow:hidden;width:100%;height:100%}
+.srp .proImg-wrap{float:left}
+.srp .proImg-wrap img{border-radius:5px}
+.srp .proInfo-wrap{float:left;padding:5px;width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+.srp .proPrice{font-family:arial;height:20px;line-height:21px}
+.srp .proPrice em{color:#c00;font-size:16px;font-weight:700;margin-left:2px}
+.srp .proPrice del{color:#999;font-size:12px}
+.srp .proTitle{overflow:hidden}
+.srp .proTitle a{color:#333;font-size:14px;text-decoration:none;-webkit-transition:all .3s linear}
+.srp .proSales{float:left;color:#999;font-size:12px;font-family:arial}
+.srp .proSales em{color:#333}
+.srp .proService{color:#333;font-size:13px;height:20px;line-height:21px}
+.srp .proIcons{padding-left:10px;height:20px;overflow:hidden}
+.srp .proIcons>*{margin:0 3px 0 0}
+.srp .proIcons img{vertical-align:middle}
+.srp .proSales{line-height:16px;margin-top:3px}
+.srp.list{width:100%}
+.srp.list .product{width:100%;padding:15px 10px;border-bottom:1px solid #cacaca}
+.srp.list .pro-inner{width:100%;background-color:transparent;box-shadow:none}
+.srp.list .proImg-wrap{width:26.4%;margin-right:10px;-webkit-transition:all .6s linear}
+.srp.list .proImg-wrap img{width:100%}
+.srp.list .proInfo-wrap{float:none;padding:0;padding-left:90px}
+.srp.list .proTitle{line-height:17px;height:36px;margin-bottom:8px}
+.srp.list .proTitle a{font-size:13px}
+.srp.list .proPrice{float:left;margin-right:10px}
+.srp.list .proPrice del{display:none}
+.srp.album .product{width:49.9%}
+.srp.album .product:nth-child(2n+1){padding-right:5px}
+.srp.album .product:nth-child(2n){padding-left:5px}
+.srp.album .pro-inner{align-items:stretch;padding-bottom:70px;height:auto}
+.srp.album .proInfo-wrap{position:absolute;bottom:5px;width:100%;height:65px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+.srp.album .proImg-wrap{width:100%}
+.srp.album .proImg-wrap img{width:100%;border-radius:5px 5px 0 0}
+.srp.album .proTitle{height:19px;position:relative;top:19px;white-space:nowrap;text-overflow:ellipsis}
+.srp.album .proPrice{position:relative;top:-19px}
+.srp.album .proPrice del{display:none}
+.srp.album .proService{display:none}
+.srp.album .proSales{float:right;position:relative;top:-36px;right:2px;margin:0}
+.srp.album .proIcons{padding-left:0;width:100%;position:relative;top:-16px}
+.srp.grid .product{width:100%;-webkit-transition:all .5s linear}
+.srp.grid .proImg-wrap{width:100%}
+.srp.grid .proImg-wrap img{width:100%;border-radius:5px 5px 0 0}
+.srp.grid .proTitle{height:19px}
+.srp.grid .proPrice{float:left;margin-right:10px}
+.srp.grid .proPrice em{margin-right:10px}
+.srp.grid .proPrice del{display:none}
+.srp.grid .proService,.srp.grid .proIcons{float:none}
+.srp.grid .proSales{clear:left}
+@media screen and (max-device-height:568px) and (orientation:portrait){
+.srp{display:table;width:100%}
+.srp .product{display:inline-block;float:none}
+.srp.album .proImg-wrap{overflow:hidden;max-height:200px}
+}
+@media screen and (min-device-width:768px) and (orientation:portrait){
+.srp{display:table;width:100%}
+.srp .product{display:inline-block;float:none}
+.srp.album .proImg-wrap{overflow:hidden;max-height:380px}
+}
+@media screen and (max-device-width:480px) and (orientation:portrait){
+.srp.album .proImg-wrap{overflow:hidden;max-height:240px}
+}

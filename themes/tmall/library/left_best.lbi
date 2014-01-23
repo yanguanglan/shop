@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+<div id="topList" class="globalModule">
+<h3 class="h33"><span>推荐商品</span> </h3>       
+
+   <div class="box_2" style=" border-top:none">
+  <div class="boxCenterList clearfix"   >
+  <ul style=" text-align:left; border:none; padding:0;  ">
+    <!-- {foreach from=$best_goods item=goods} -->
+
+    <li style=" padding:3px 0;border-bottom:1px dotted #ccc; float:left">
+<a href="{$goods.url}"><img style=" width:50px; height:50px; margin-left:5px; float:left" class="samllimg"  src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a>
+
+
+
+        
+        <div style="float:left; text-align:left; width:110px; padding-left:18px;">
+         <p class="name" style="height:36px; overflow:hidden; line-height:18px;"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name} <span>{$goods.brief}</span></a></p>
+     
+      <p class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+       <span class="f1">{$goods.promote_price}</span>
+        <!-- {else}-->
+        <span class="f1">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+        
+      </div> 
+     
+    </li>
+ <div style="clear:both"></div>
+    <!-- {/foreach} -->
+
+  </ul>
+</div>
+
+</div>
+</div>
+<div class="blank"></div>

@@ -1,0 +1,29 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <div class="brandMain_min">
+  <!-- {if $brand_list} -->
+<div id="brandList" >
+    <!-- {foreach from=$brand_list item=brand name="brand_foreach"} -->
+	<div class="brandAd"   > 
+  <ul>
+  <div class="blank"></div>
+  <div class="blank"></div>
+   <div class="blank"></div>
+
+  <li>
+    <a href="{$brand.url}"><img class="brand_img" src="../data/brandlogo/{$brand.brand_logo}" alt="{$brand.brand_name|escape:html} ({$brand.goods_num})" /></a>
+ </li>
+   <div class="blank"></div>
+ <div class="blank"></div>
+  
+    <p style="padding-top:5px;"><a href="{$brand.url}">{$brand.brand_name|escape:html}</a>  </p>
+  
+	</ul>
+	 </div>	 
+    <!-- {/foreach} -->
+   </div> 
+ <!-- {/if} -->   
+
+  </div>
+	
+  
+

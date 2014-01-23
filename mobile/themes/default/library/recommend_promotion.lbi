@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<DIV class="region miao">
+  <DIV class=miao-title><SPAN>天天特惠</SPAN> <SPAN>每天都会有特价商品，记得来看看</SPAN> </DIV>
+  <DIV class=miao-item> 
+  	<!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}--> 
+    {if $smarty.foreach.promotion_foreach.index <= 2}
+    <A href="{$goods.url}"><IMG src="{$goods.thumb}" alt="{$goods.name|escape:html}" />
+    <P class=miao-item-title style="width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{$goods.short_name|escape:html}</P>
+    <P><SPAN class=miao-item-newprice>{$goods.promote_price}</SPAN>
+    <DEL class=miao-item-oldprice>598.0</DEL></P>
+    {/if} 
+    </A> 
+    <!--{/foreach}--> 
+    </DIV>
+</DIV>
+<!-- {/if} -->

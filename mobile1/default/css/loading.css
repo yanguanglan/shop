@@ -1,0 +1,15 @@
+.mobilelist-loading{width:30px;height:30px;margin:0 auto;background:#eee}
+.mobilelist-loading .floatingCircles{position:relative;width:30px;height:30px;-moz-transform:scale(0.6);-webkit-transform:scale(0.6);-ms-transform:scale(0.6);-o-transform:scale(0.6);transform:scale(0.6)}
+.mobilelist-loading .circle{position:absolute;background-color:#FFF;height:5px;width:5px;-moz-border-radius:3px;-moz-animation-name:loading_fade;-moz-animation-duration:.64s;-moz-animation-iteration-count:infinite;-moz-animation-direction:linear;-webkit-border-radius:3px;-webkit-animation-name:loading_fade;-webkit-animation-duration:.64s;-webkit-animation-iteration-count:infinite;-webkit-animation-direction:linear;-ms-border-radius:3px;-ms-animation-name:loading_fade;-ms-animation-duration:.64s;-ms-animation-iteration-count:infinite;-ms-animation-direction:linear;-o-border-radius:3px;-o-animation-name:loading_fade;-o-animation-duration:.64s;-o-animation-iteration-count:infinite;-o-animation-direction:linear;border-radius:3px;animation-name:loading_fade;animation-duration:.64s;animation-iteration-count:infinite;animation-direction:linear}
+.mobilelist-loading .frotate_01{left:0;top:12px;-moz-animation-delay:.24s;-webkit-animation-delay:.24s;-ms-animation-delay:.24s;-o-animation-delay:.24s;animation-delay:.24s}
+.mobilelist-loading .frotate_02{left:4px;top:4px;-moz-animation-delay:.32s;-webkit-animation-delay:.32s;-ms-animation-delay:.32s;-o-animation-delay:.32s;animation-delay:.32s}
+.mobilelist-loading .frotate_03{left:12px;top:0;-moz-animation-delay:.4s;-webkit-animation-delay:.4s;-ms-animation-delay:.4s;-o-animation-delay:.4s;animation-delay:.4s}.mobilelist-loading .frotate_04{right:4px;top:4px;-moz-animation-delay:.48s;-webkit-animation-delay:.48s;-ms-animation-delay:.48s;-o-animation-delay:.48s;animation-delay:.48s}
+.mobilelist-loading .frotate_05{right:0;top:12px;-moz-animation-delay:.56s;-webkit-animation-delay:.56s;-ms-animation-delay:.56s;-o-animation-delay:.56s;animation-delay:.56s}
+.mobilelist-loading .frotate_06{right:4px;bottom:4px;-moz-animation-delay:.64s;-webkit-animation-delay:.64s;-ms-animation-delay:.64s;-o-animation-delay:.64s;animation-delay:.64s}
+.mobilelist-loading .frotate_07{left:12px;bottom:0;-moz-animation-delay:.72s;-webkit-animation-delay:.72s;-ms-animation-delay:.72s;-o-animation-delay:.72s;animation-delay:.72s}
+.mobilelist-loading .frotate_08{left:4px;bottom:4px;-moz-animation-delay:.8s;-webkit-animation-delay:.8s;-ms-animation-delay:.8s;-o-animation-delay:.8s;animation-delay:.8s}
+@-moz-keyframes loading_fade{0%{background-color:#2E2E2E}100%{background-color:#FFF}}
+@-webkit-keyframes loading_fade{0%{background-color:#2E2E2E}100%{background-color:#FFF}}
+@-ms-keyframes loading_fade{0%{background-color:#2E2E2E}100%{background-color:#FFF}}
+@-o-keyframes loading_fade{0%{background-color:#2E2E2E}100%{background-color:#FFF}}
+@keyframes loading_fade{0%{background-color:#2E2E2E}100%{background-color:#FFF}}

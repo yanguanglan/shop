@@ -1,0 +1,10 @@
+.noresult{font-family:\9 ED1\4F53;font-size:14px;margin:0 10px;color:#333}
+.noresult .noresult-tip{background:url(../images/tmall.png) no-repeat center 55px;background-size:82px 61px;border-bottom:1px solid #e1e1e1;height:212px;padding-top:125px;box-sizing:border-box;word-break:break-all}
+.noresult .noresult-tip span{color:#999}
+.noresult .noresult-tip em{color:#b10000;font-weight:400}
+.noresult .noresult-rec{padding:10px 0;line-height:30px}
+.noresult .noresult-rec a{display:inline-block;width:50%;color:#044773;text-decoration:none}
+.noresult.correct-noquery{background-color:#fff;margin:0;padding:0 10px}
+.noresult.correct-noquery .noresult-tip{background-position:0 16px;background-size:32px 30px;border:0;display:table-cell;vertical-align:middle;height:72px;padding:0;padding-left:50px}
+.noresult.correct-noquery .noresult-rec{display:none}
+.noresult .tip-align{text-align:center}

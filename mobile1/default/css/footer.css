@@ -1,0 +1,18 @@
+.footer{background:#e2e2e2}
+.footer .user ul{height:35px;line-height:35px;border-top:1px solid #c9c9c9}
+.footer .user ul li{float:left}
+.footer .user a{color:#047}
+.footer .user a:hover{text-decoration:none}
+.footer .user .avatar,.footer .user .login{margin-left:10px}
+.footer .user .avatar img{width:20px;height:20px;vertical-align:middle;margin-top:-3px}
+.footer .user .name{margin:0 5px}
+.footer .user .register{margin:0 10px}
+.footer .user .logout{margin-left:15px}
+.footer .user .service{float:right;margin-right:15px
+}.footer .user ul:after{clear:both;height:0;display:block;content:" ";overflow:hidden}
+.footer .h-line{margin:0 12px 0 10px;border-top:1px solid #cfcfcf}
+.footer .footer-v{position:relative;line-height:30px;text-align:center;margin-top:5px}
+.footer .v-line{border-right:1px solid #333;margin:0 10px 0 5px}
+.footer .version a{color:#333}
+.backTop{position:absolute;top:10px;right:15px;display:block}
+.copyright{color:#666;padding-bottom:5px;line-height:20px}

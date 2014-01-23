@@ -1,0 +1,49 @@
+BODY{PADDING-BOTTOM:0px;MARGIN:0px;PADDING-LEFT:0px;PADDING-RIGHT:0px;BACKGROUND:#f4f4f4;PADDING-TOP:0px}
+A{TEXT-DECORATION:none}
+A:link{COLOR:#585858;TEXT-DECORATION:none}
+A:active{COLOR:#585858;TEXT-DECORATION:blink}
+A:hover{COLOR:#585858;TEXT-DECORATION:underline}
+A:visited{COLOR:#585858;TEXT-DECORATION:none}
+.ccontainer{MIN-WIDTH:320px;PADDING-BOTTOM:100px;WIDTH:100%;BACKGROUND:#f4f4f4;HEIGHT:100%}
+ 
+.cheader {
+width: 100%;
+height: 50px;
+border-bottom: 1px solid #b0b4bb;
+box-shadow: 0px 1px 1px #b0b4bb;
+-webkit-box-shadow: 0px 1px 1px #b0b4bb;
+background: #f7f7f7;
+background: -webkit-linear-gradient(top,#f7f7f7 0, #e8e8e8 100%);
+}
+
+
+.chome{MARGIN:10px auto 10px 14px;FLOAT:left;HEIGHT:28px}
+.chome_bg{BORDER-RIGHT-WIDTH:0px;WIDTH:72px;DISPLAY:inline-block;BACKGROUND:url(images/bg8.png) no-repeat 0px 0px;BORDER-TOP-WIDTH:0px;BORDER-BOTTOM-WIDTH:0px;HEIGHT:30px;FONT-SIZE:12px;OVERFLOW:hidden;BORDER-LEFT-WIDTH:0px;background-size:contain}
+.chome_bg nav{TEXT-ALIGN:center;LINE-HEIGHT:30px;PADDING-LEFT:10px;WIDTH:62px;DISPLAY:inline-block;HEIGHT:30px;COLOR:#666;TEXT-DECORATION:none}
+.clearfix:after{
+content:"."; display:block; height:0; clear:both;
+visibility:hidden;
+}
+*html .clearfix{
+ height:1%;
+}
+*+html .clearfix{
+ height:1%;
+}
+.ctitle{MIN-WIDTH:160px;LINE-HEIGHT:50px;MARGIN:0px auto;WIDTH:160px;FLOAT:left;HEIGHT:50px}
+.ctitle DIV{MARGIN:0px auto;WIDTH:90px;FONT-FAMILY:"华文细黑";COLOR:#1a1a1a;FONT-SIZE:20px;FONT-WEIGHT:bold;text-shadow:#fff 0 1px 1px}
+.clist{MIN-WIDTH:320px;WIDTH:100%;BACKGROUND:#f4f4f4;CLEAR:both}
+.clist UL{PADDING-BOTTOM:0px;LIST-STYLE-TYPE:none;MARGIN:0px;PADDING-LEFT:0px;WIDTH:100%;PADDING-RIGHT:0px;HEIGHT:100%;PADDING-TOP:0px}
+.clist_sub{DISPLAY:none; border-bottom:1px solid #d7d7d8}
+.crow{LINE-HEIGHT:68px;WIDTH:100%;BACKGROUND:#f4f4f4;CLEAR:both;heigth:68px}
+.crow_row{BORDER-BOTTOM:#d7d7d8 1px solid;LINE-HEIGHT:68px;WIDTH:99.7%;BORDER-TOP:#fafafa 1px solid;heigth:68px}
+.crow_icon{LINE-HEIGHT:108px;MARGIN:0px 10px;WIDTH:54px;FLOAT:left;HEIGHT:49px}
+.crow_icon IMG{WIDTH:54px;HEIGHT:49px}
+.crow_title{LINE-HEIGHT:68px;FLOAT:left;MARGIN-LEFT:4px}
+.crow_item{MIN-WIDTH:103px;TEXT-ALIGN:center;LINE-HEIGHT:30px;MARGIN:20px auto;WIDTH:32%;FONT-FAMILY:"华文细黑";BACKGROUND:#f4f4f4;FLOAT:left;HEIGHT:30px;COLOR:#585858;FONT-SIZE:14px;BORDER-LEFT:#d7d7d7 1px solid}
+.crow_item A{MARGIN:0px 4px;TEXT-OVERFLOW:clip;WHITE-SPACE:nowrap}
+.crow_item_clear{BORDER-LEFT-WIDTH:0px;box-shadow:0px 0 0px #fff;-webkit-box-shadow:0px 0 0px #fff}
+.crow_item_center{MIN-WIDTH:105px;WIDTH:33%}
+.crow_title SPAN{FONT-SIZE:16px;heigth:68px}
+.crow_sub_title{MARGIN-LEFT:10px;CLEAR:both}
+.crow_arrow{FLOAT:right;MARGIN-RIGHT:18px}

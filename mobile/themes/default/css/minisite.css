@@ -1,0 +1,9 @@
+.minisite{background-color:#fff;position:relative;height:70px;padding:10px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}
+.minisite>a{display:block;text-decoration:none;height:100%}
+.minisite>a:hover{text-decoration:none}
+.minisite .m-brand{float:left;height:50px;width:90px;border:1px solid #ddd;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
+.minisite .m-brand img{width:90px;height:45px;margin-left:-1px}
+.minisite .m-portal{padding-left:100px}
+.minisite .m-portal .mp-shop{font-size:15px;letter-spacing:.2em;color:#333}
+.minisite .m-portal .mp-acts{color:#999}
+.minisite i{position:absolute;right:12px;top:50%;margin-top:-5px;width:10px;height:10px;border:3px solid #666;border-left:0;border-top:0;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}

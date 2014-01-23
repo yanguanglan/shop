@@ -1,0 +1,300 @@
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+<!-- 订单搜索 -->
+<div class="form-div">
+  <form method="get">
+    <input type="hidden" name="act" value="list" />
+    <img src="images/icon_search.gif" width="26" height="22" border="0" alt="SEARCH" />
+    订单号<input name="pre_id" type="text" id="order_sn" size="15" value="{$smarty.get.pre_id}">
+    联系人<input name="name" type="text" id="consignee" size="15" value="{$smarty.get.name}">
+    手机号<input name="phone" type="text" id="consignee" size="15" value="{$smarty.get.phone}">
+    订单状态
+    <select name="status" id="status">
+      <option value="">订单状态</option>
+      <option value="1" {if $smarty.get.status==1}selcted{/if}>待付款</option>
+      <option value="2" {if $smarty.get.status==2}selcted{/if}>已付款</option>
+      <option value="0" {if $smarty.get.status==0}selcted{/if}>已关闭</option>
+    </select>
+    <input type="submit" value="{$lang.button_search}" class="button" />
+    <a href="pre.php?act=list&status=1">待付款</a>
+    <a href="pre.php?act=list&status=2">已付款</a>
+    <a href="pre.php?act=list&status=0">已关闭</a>
+  </form>
+</div>
+
+<!-- 订单列表 -->
+<form method="post" action="pre.php?act=operate" name="listForm" onsubmit="return check()">
+  <div class="list-div" id="listDiv">
+{/if}
+
+<table cellpadding="3" cellspacing="1">
+  <tr>
+    <th><input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" />订单号</th>
+    <th>注册用户ID</th>
+    <th>商品</th>
+    <th>下单时间</th>
+    <th>预定房间</th>
+    <th>入住时间</th>
+    <th>离店时间</th>
+    <th>人数</th>
+    <th>联系人</th>
+    <th>总金额</th>
+    <th>在线预订金额</th>
+    <th>到店应付金额</th>
+    <th>备注</th>
+    <th>状态</th>
+  <tr>
+  {foreach from=$pre_list item=pre key=okey}
+  <tr>
+    <td valign="top" nowrap="nowrap"><input type="checkbox" name="checkboxes[]" value="{$pre.pre_id}" />{$pre.pre_id}</td>
+    <td align="center" valign="top" nowrap="nowrap">{if $pre.user_id == 0}未注册{else}{$pre.user_id}{/if}</td>
+    <td align="left" valign="top">{$pre.goods_name}</td>
+    <td align="left" valign="top">{$pre.created}</td>
+    <td align="center" valign="top" nowrap="nowrap">{$pre.rooms}</td>
+    <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}</td>
+    <td align="left" valign="top" nowrap="nowrap">{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}</td>
+    <td align="center" valign="top" nowrap="nowrap">{$pre.num}</td>
+    <td align="left" valign="top">{$pre.name}({if $pre.sex==1}男{else}女{/if})<br />{$pre.phone}</td>
+    <td align="right" valign="top" nowrap="nowrap">￥{$pre.totalprice}</td>
+    <td align="right" valign="top" nowrap="nowrap">￥{$pre.onlineprice}</td>
+    <td align="right" valign="top" nowrap="nowrap">￥{$pre.shopprice}</td>
+    <td align="left" valign="top">{$pre.message}</td>
+    <td align="left" valign="top" nowrap="nowrap">{if $pre.onlinepay==1}{if $pre.status==1}待付款{elseif $pre.status==2}已付款{else}已关闭{/if}{else}成功{/if}</td>
+  </tr>
+  {/foreach}
+</table>
+
+<!-- 分页 -->
+<table id="page-table" cellspacing="0">
+  <tr>
+    <td align="right" nowrap="true">
+    {include file="page.htm"}
+    </td>
+  </tr>
+</table>
+
+{if $full_page}
+  </div>
+  <div>
+    <input name="cancel" type="submit" id="btnSubmit1" value="关闭订单" class="button" disabled="true" onclick="this.form.target = '_self'" />
+    <input name="delete" type="submit" id="btnSubmit2" value="删除订单" class="button" disabled="true" onclick="this.form.target = '_self'" />
+  </div>
+</form>
+<script language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+{literal}
+
+    onload = function()
+    {
+        // 开始检查订单
+        startCheckOrder();
+    }
+
+    /**
+     * 搜索订单
+     */
+    function searchOrder()
+    {
+        listTable.filter['order_sn'] = Utils.trim(document.forms['searchForm'].elements['order_sn'].value);
+        listTable.filter['consignee'] = Utils.trim(document.forms['searchForm'].elements['consignee'].value);
+        listTable.filter['composite_status'] = document.forms['searchForm'].elements['status'].value;
+        listTable.filter['page'] = 1;
+        listTable.loadList();
+    }
+
+    function check()
+    {
+      if(!confirm('确定关闭订单吗？')){
+        return false;
+      }
+      var snArray = new Array();
+      var eles = document.forms['listForm'].elements;
+      for (var i=0; i<eles.length; i++)
+      {
+        if (eles[i].tagName == 'INPUT' && eles[i].type == 'checkbox' && eles[i].checked && eles[i].value != 'on')
+        {
+          snArray.push(eles[i].value);
+        }
+      }
+      if (snArray.length == 0)
+      {
+        return false;
+      }
+      else
+      {
+        eles['order_id'].value = snArray.toString();
+        return true;
+      }
+    }
+    /**
+     * 显示订单商品及缩图
+     */
+    var show_goods_layer = 'order_goods_layer';
+    var goods_hash_table = new Object;
+    var timer = new Object;
+
+    /**
+     * 绑定订单号事件
+     *
+     * @return void
+     */
+    function bind_order_event()
+    {
+        var order_seq = 0;
+        while(true)
+        {
+            var order_sn = Utils.$('order_'+order_seq);
+            if (order_sn)
+            {
+                order_sn.onmouseover = function(e)
+                {
+                    try
+                    {
+                        window.clearTimeout(timer);
+                    }
+                    catch(e)
+                    {
+                    }
+                    var order_id = Utils.request(this.href, 'order_id');
+                    show_order_goods(e, order_id, show_goods_layer);
+                }
+                order_sn.onmouseout = function(e)
+                {
+                    hide_order_goods(show_goods_layer)
+                }
+                order_seq++;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+    listTable.listCallback = function(result, txt) 
+    {
+        if (result.error > 0) 
+        {
+            alert(result.message);
+        }
+        else 
+        {
+            try 
+            {
+                document.getElementById('listDiv').innerHTML = result.content;
+                bind_order_event();
+                if (typeof result.filter == "object") 
+                {
+                    listTable.filter = result.filter;
+                }
+                listTable.pageCount = result.page_count;
+            }
+            catch(e)
+            {
+                alert(e.message);
+            }
+        }
+    }
+    /**
+     * 浏览器兼容式绑定Onload事件
+     *
+     */
+    if (Browser.isIE)
+    {
+        window.attachEvent("onload", bind_order_event);
+    }
+    else
+    {
+        window.addEventListener("load", bind_order_event, false);
+    }
+
+    /**
+     * 建立订单商品显示层
+     *
+     * @return void
+     */
+    function create_goods_layer(id)
+    {
+        if (!Utils.$(id))
+        {
+            var n_div = document.createElement('DIV');
+            n_div.id = id;
+            n_div.className = 'order-goods';
+            document.body.appendChild(n_div);
+            Utils.$(id).onmouseover = function()
+            {
+                window.clearTimeout(window.timer);
+            }
+            Utils.$(id).onmouseout = function()
+            {
+                hide_order_goods(id);
+            }
+        }
+        else
+        {
+            Utils.$(id).style.display = '';
+        }
+    }
+
+    /**
+     * 显示订单商品数据
+     *
+     * @return void
+     */
+    function show_order_goods(e, order_id, layer_id)
+    {
+        create_goods_layer(layer_id);
+        $layer_id = Utils.$(layer_id);
+        $layer_id.style.top = (Utils.y(e) + 12) + 'px';
+        $layer_id.style.left = (Utils.x(e) + 12) + 'px';
+        if (typeof(goods_hash_table[order_id]) == 'object')
+        {
+            response_goods_info(goods_hash_table[order_id]);
+        }
+        else
+        {
+            $layer_id.innerHTML = loading;
+            Ajax.call('order.php?is_ajax=1&act=get_goods_info&order_id='+order_id, '', response_goods_info , 'POST', 'JSON');
+        }
+    }
+
+    /**
+     * 隐藏订单商品
+     *
+     * @return void
+     */
+    function hide_order_goods(layer_id)
+    {
+        $layer_id = Utils.$(layer_id);
+        window.timer = window.setTimeout('$layer_id.style.display = "none"', 500);
+    }
+
+    /**
+     * 处理订单商品的Callback
+     *
+     * @return void
+     */
+    function response_goods_info(result)
+    {
+        if (result.error > 0)
+        {
+            alert(result.message);
+            hide_order_goods(show_goods_layer);
+            return;
+        }
+        if (typeof(goods_hash_table[result.content[0].order_id]) == 'undefined')
+        {
+            goods_hash_table[result.content[0].order_id] = result;
+        }
+        Utils.$(show_goods_layer).innerHTML = result.content[0].str;
+    }
+</script>
+{/literal}
+
+{include file="pagefooter.htm"}
+{/if}

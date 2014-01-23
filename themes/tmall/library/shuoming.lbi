@@ -1,0 +1,88 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="shuoming clearfix"> 
+
+<ul onmouseover="this.className='ul_on'" onmouseout="this.className=''">
+
+
+<div class="a1">
+<div class="t">
+<img src="../images/sm1.gif">
+</div>
+<p>货到付款</p>
+</div>
+
+<div class="a2">
+<img src="../images/sm1b.gif">
+</div>
+
+
+
+
+
+<div class="shuoming_div">
+    <div class="tit">货到付款</div>
+    <div class="box">
+    京东商城在全国201个地区提供货到付款服务。
+    </div>
+    <div class="bottom">
+    <a href="#">了解详细信息 ></a>
+    </div>
+</div>
+
+</ul>
+
+<ul onmouseover="this.className='ul_on ul_on2'" onmouseout="this.className=''">
+
+<div class="a1">
+<div class="t" style=" height:39px;">
+<img src="../images/sm2.gif">
+</div>
+<p>39元免运费</p>
+</div>
+<div class="a2">
+<img src="../images/sm2b.gif">
+</div>
+
+<div class="shuoming_div">
+    <div class="tit">满39元免运费</div>
+    <div class="box">
+    金额不足39元的订单收取5元运费，钻石级别（一至五钻）会员享受全场免运费的特别优惠。
+    </div>
+    <div class="bottom">
+    <a href="#">了解详细信息 ></a>
+    </div>
+</div>
+
+
+</ul>
+
+<ul style=" border-right:none" onmouseover="this.className='ul_on ul_on2'" onmouseout="this.className=''">
+<div class="a1">
+<div class="t"  >
+<img src="../images/sm3.gif">
+</div>
+<p>售后上门</p>
+</div>
+ <div class="a2">
+<img src="../images/sm3b.gif">
+</div>
+<div class="shuoming_div">
+    <div class="tit">售后上门</div>
+    <div class="box">
+    若您自购买之日15天内（含15天）提交退换申请且审核通过，京东免费提供上门取件服务。
+    </div>
+    <div class="bottom">
+    <a href="#">了解详细信息 ></a>
+    </div>
+</div>
+ 
+
+</ul>
+
+
+
+
+
+</div>
+
+<div class="blank"></div>

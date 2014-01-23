@@ -1,0 +1,27 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<DIV id=slide_banner>
+<DIV id=JS_slide_container class=slide_stage>
+<TABLE style="WIDTH: 500% ;" id=JS_side_stage cellpadding="0" cellspacing="0" >
+  <TBODY>
+  <TR>
+    <TD>
+      <DIV style="BACKGROUND: none transparent scroll repeat 0% 0%" class=bg><A href="#" data-bg="themes/tmall/images/a1.jpg"></A></DIV></TD>
+    <TD>
+      <DIV style="BACKGROUND: none transparent scroll repeat 0% 0%" class=bg><A  href="#" data-bg="themes/tmall/images/a2.jpg"></A></DIV></TD>
+    <TD>
+      <DIV style="BACKGROUND: none transparent scroll repeat 0% 0%" class=bg><A  href="#" data-bg="themes/tmall/images/a3.jpg"></A></DIV></TD>
+    <TD>
+      <DIV style="BACKGROUND: none transparent scroll repeat 0% 0%" class=bg><A href="#"  data-bg="themes/tmall/images/a4.jpg"></A></DIV></TD>
+    <TD>
+      <DIV style="BACKGROUND: none transparent scroll repeat 0% 0%" class=bg><A  href="#" data-bg="themes/tmall/images/a5.jpg"></A></DIV></TD></TR></TBODY></TABLE></DIV>
+<DIV class=slide_handdler>
+<DIV id=JS_side_nav class=w>
+<A class=current href="javascript:;"> </A> 
+<A href="javascript:;"> </A>
+<A href="javascript:;"> </A>
+<A href="javascript:;"> </A> 
+<A href="javascript:;"> </A> 
+</DIV>
+</DIV>
+</DIV>
+<SCRIPT type=text/javascript>(function(){window._currentWidth=document.body.clientWidth;window.onresize=function(){window._currentWidth=document.body.clientWidth;index=0;autoRun();};})();var imgDom=M.$("a","#JS_side_stage");for(var i=0,ii=imgDom.length;i<ii;i++){imgDom[i].style.cssText="background:url("+imgDom[i].getAttribute("data-bg")+") center center no-repeat";imgDom[i].removeAttribute("data-bg");}var stage=M.$("#JS_side_stage"),imgList=M.$("a",stage),handler=M.$("a","#JS_side_nav"),len=handler.length,current=0,index=0;for(var k=0,kk=len;k<kk;k++){handler[k]._key=k;handler[k].onmouseover=function(){index=this._key;clearInterval(auto);autoRun();};handler[k].onmouseout=function(){auto=setInterval(function(){autoRun();},5000);};}var autoRun=function(){M.removeClass(handler[current],"current");M.addClass(handler[index],"current");M.Animate(stage,{marginLeft:(0-index)*window._currentWidth+"px"},200);current=index;index=(index>=len-1)?0:index+1;};var auto=setInterval(function(){autoRun();},5000);</SCRIPT>

@@ -1,0 +1,97 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+.my_left_category2{ position:relative;background:#fef8ef; display:block; z-index:999999999;     }
+-->
+</style>
+ 
+<div class="my_left_category my_left_category2">
+
+
+    <!--{foreach from=$categories item=cat}-->
+     <dl>
+     <dt onmouseover="this.className='category_over'" onmouseout="this.className=''">
+     <a class="a1" href="{$cat.url}" >{$cat.name|escape:html}</a>
+     
+     
+     <div class="category_over_box">
+     <ul class="clearfix">
+       <div style="float:left">
+     <!--{foreach from=$cat.cat_id item=child}-->
+     <li>
+     
+     <div style="clear:both"></div>
+     
+     
+     <div class="f_l">
+     <a class="over_2" href="{$child.url}">{$child.name|escape:html}</a>  
+     </div>
+     <div class="f_r">
+     <!--{foreach from=$child.cat_id item=childer}-->
+     <b>
+     | <a class="over_3" href="{$childer.url}">{$childer.name|escape:html}</a>
+     </b>  
+     <!--{/foreach}-->
+      </div>
+      
+       <div style="clear:both"></div>
+     </li>  
+     <!--{/foreach}-->
+      </div>  
+      
+      <DIV class="brand_r">
+<div class="tit">推荐品牌 </div>
+<div class="  clearfix1">
+<!--{foreach from=get_brands1($GLOBALS['smarty']->_var['cat']['id']) item=bchilder}-->
+<a href="{$bchilder.url}">{$bchilder.brand_name|escape:html}</a>
+<!--{/foreach}-->
+</div>
+<div class="tit">促销活动  </div>
+<div class="clearfix clearfix2">
+<!-- {foreach from=$promotion_info1 item=item1 key=key} -->
+ <div>
+<!-- {if $item1.type eq "snatch"} -->
+    <a href="snatch.php" title="{$lang.$item1.type}">{$lang.snatch_promotion}</a>
+    <!-- {elseif $item1.type eq "group_buy"} -->
+    <a href="group_buy.php" title="{$lang.$item1.type}">{$lang.group_promotion}</a>
+    <!-- {elseif $item1.type eq "auction"} -->
+    <a href="auction.php" title="{$lang.$item1.type}">{$lang.auction_promotion}</a>
+    <!-- {elseif $item1.type eq "favourable"} -->
+   <a href="activity.php" title="{$lang.$item1.type}">{$lang.favourable_promotion}</a>
+    <!-- {elseif $item1.type eq "package"} -->
+    <a href="package.php" title="{$lang.$item1.type}">{$lang.package_promotion}</a>
+    <!-- {/if} -->
+    <a href="{$item1.url}" title="{$lang.$item1.type} {$item1.act_name}{$item1.time}" >{$item1.act_name}</a> 
+    
+    </div>
+    <!-- {/foreach} -->  
+</div>
+  </DIV>
+      
+     
+     
+     </ul>
+     </div>
+     
+     
+     
+     
+     <div class="dang" ></div>
+     
+     
+     
+     </dt>
+     
+    </dl>
+    <!--{/foreach}--> 
+<dl>
+<dt style="background:none; background: #fdf1de; height:27px;line-height:27px; border-top:1px solid #fde6d2; ">
+<a href="catalog.php" style="color:#cc0000; padding-left:15px;">全部商品分类</a>
+</dt>
+</dl>
+
+</div>
+ 
+<div class="blank"></div>
+
+

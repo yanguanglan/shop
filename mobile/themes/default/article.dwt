@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html manifest="/manifest/tmallCateAppCache.manifest">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>{$page_title}触屏版</title>
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<LINK rel=apple-touch-icon-precomposed href="themes/default/images/touch-icon.png">
+<LINK rel="shortcut icon" type=image/x-icon href="themes/default/images/favicon2.ico">
+<script charset="utf-8" async="" src="themes/default/js/a_002.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/default/css/help-wap.css">
+<script src="themes/default/js/aplus_v2.js" exparams="category=&amp;userid=&amp;aplus" id="tb-beacon-aplus" async="" type="text/javascript"></script>
+<script src="themes/default/js/a.js" async="" type="text/javascript"></script>
+</head>
+<body>
+<script type="text/javascript">
+(function (d) {
+var t=d.createElement("script");t.type="text/javascript";t.async=true;t.id="tb-beacon-aplus";
+t.setAttribute("exparams","category=&userid=882918720&aplus");
+t.src=("https:"==d.location.protocol?"https://s":"http://a")+".tbcdn.cn/s/aplus_v2.js";
+d.getElementsByTagName("head")[0].appendChild(t);
+})(document);
+</script>
+<header> <a class="back" href="javascript:history.go(-1);">返回</a>
+  <h1>问题详情</h1>
+  <a class="right-btn" href="article_cat.php?id=1">文章分类</a> </header>
+<section class="detail-content">
+  <h2>{$article.title}</h2>
+  <div>
+    <p>
+    	{$article.content}
+    </p>
+  </div>
+</section>
+</body>
+</html>

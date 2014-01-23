@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div  class="crumb">
+<div class="block box">
+ <div id="ur_here">
+ {$ur_here} 
+</div>
+<div class="f_r crumbTitle">
+<span>
+共 <b>{$pager.record_count}</b> 相关商品
+</span>
+</div>
+</div>
+
+</div>
+<div class="blank"></div>
+ 

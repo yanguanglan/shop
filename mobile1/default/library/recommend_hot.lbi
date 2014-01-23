@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} --> 
+  <!-- {if $cat_rec_sign neq 1} -->
+  <DIV class="region focus"> 
+    <!--{foreach from=$hot_goods item=goods}--> 
+	{if $smarty.foreach.hot_goods.index <= 6}
+        <A class=tag11p href="{$goods.url}"> <IMG src="{$goods.thumb}"    height="52"> <SPAN class="focus-name">{$goods.short_style_name}</SPAN><BR>
+        <DEL class=miao-item-oldprice>{$goods.market_price}</DEL> <BR>
+        <!-- {if $goods.promote_price neq ""} --> 
+        <SPAN class=miao-item-newprice>{$goods.promote_price}</SPAN> 
+        <!-- {else}--> 
+        <SPAN class=miao-item-newprice>{$goods.shop_price}</SPAN> 
+        <!--{/if}--> 
+        </A> 
+	{/if}
+    <!--{/foreach}--> 
+  </DIV>
+  <!-- {/if} --> 
+  <!-- {/if} -->

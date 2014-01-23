@@ -1,0 +1,22 @@
+.filter{width:100%;text-align:center;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;height:37px;background:#fff;font-family:\9ED1\4F53}
+.filter ul{display:table;width:100%;margin:0;padding:0;border-collapse:collapse}
+.filter ul li{display:table-cell;border-bottom:3px solid transparent;padding:.65em 0}
+.filter ul li:first-child a{border-left:0}
+.filter ul li.filter-cur{border-bottom:3px solid #b10000}
+.filter ul li.filter-cur a{color:#b10000}
+.filter a{display:inline-block;width:100%;border-left:1px solid #dfdfdf;font-size:15px;color:#806f66;text-decoration:none}
+.filter a span{position:relative}
+.filter a:hover{text-decoration:none}
+.filter i{position:absolute;display:inline-block;overflow:hidden;top:6px;width:7px;height:10px;line-height:10px;margin-left:2px}
+.filter .f-ico-arrow-d{background:url(../images/bg13.png) no-repeat 0 0;background-size:9px 12px;position:static;width:9px;height:13px;vertical-align:middle}
+.filter li.filter-cur .f-ico-arrow-d{background-image:url(../images/bg13b.png)}
+.filter .f-ico-triangle-mt,.filter .f-ico-triangle-mb{border-width:5px;border-style:solid;border-color:transparent;height:0;width:0}
+.filter .f-ico-triangle-mt{border-bottom-color:#806f66;top:-3px}
+.filter .f-ico-triangle-mb{border-top-color:#806f66;top:9px}
+.filter .filter-cur .f-ico-triangle-mt.f-ico-triangle-slctd{border-bottom-color:#b10000}
+.filter .filter-cur .f-ico-triangle-mb.f-ico-triangle-slctd{border-top-color:#b10000}
+.filter .filter-navBtn{padding:0}
+.filter .filter-navBtn a{filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ffffffff, endcolorstr=#fff5f5f5, gradientType=0);background-image:-moz-linear-gradient(top,#fff,#f5f5f5);background-image:-webkit-gradient(linear,0 0,0 bottom,from(#fff),to(#f5f5f5));background-image:-o-linear-gradient(top,#fff,#f5f5f5);border:1px solid #ccc;border-radius:3px;width:80%;padding:2px 0;color:#333}
+.filter-fixed{position:fixed;z-index:9999;-webkit-box-shadow:1px 2px 5px rgba(0,0,0,.5);-moz-box-shadow:1px 2px 5px rgba(0,0,0,.5);-ms-box-shadow:1px 2px 5px rgba(0,0,0,.5);-o-box-shadow:1px 2px 5px rgba(0,0,0,.5);box-shadow:1px 2px 5px rgba(0,0,0,.5)}
+.filter-positive{top:0}
+.filter-negative{top:45px}

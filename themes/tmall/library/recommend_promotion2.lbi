@@ -1,0 +1,40 @@
+
+<!-- {if $promotion_goods} -->
+<div class="  index_l  qianggou">
+
+
+<div class="tit3" style="background:none"><span>限时抢购</span></div>
+
+ 
+<!--{foreach from=$promotion_goods item=goods name=no}-->
+  <!-- {if $smarty.foreach.no.iteration<6}-->
+  <div class="goodsItem">
+  
+    <div id="time{$goods.goods_id}" s="{$goods.s_time}" e="{$goods.e_time}" n="{$goods.t_now}" class="timeBox">
+         
+         
+         正在载入...
+         </div>
+     <div style="text-align:center; padding:10px 0; ">
+     
+     
+     <div class="zhe_bg">
+     {$goods.zhekou}  
+     </div>
+     
+     
+		 <a href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a> 
+	 </div>
+  
+      <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+
+        <div class="price">抢购价：<font class="f1">{$goods.promote_price} </font> 
+        
+        </div>
+</div>
+  <!-- {/if} -->
+<!--{/foreach}-->
+<script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/my_lefttime.js"></script>
+</div>
+<!-- {/if} -->
+

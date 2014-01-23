@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--底部导航 start-->
+<style type="text/css">
+.black_gradient li {
+	width:15%;
+	float:left;
+}
+</style>
+<footer class="region">
+    <SECTION class=user-panel>
+      <P class=guest> <A class=login href="user.php">登陆</A> <A class=register href="user.php?act=register">注册</A> </P>
+      <A class=fb-top href="javascript:scroll(0,0)"><!--回到顶部--> 
+      </A> </SECTION>
+    <p class="version"> <a href="#">标准版</a> 
+    <a id="btn_go_pc" href="#">电脑版</a> 
+      <script>
+    document.getElementById("btn_go_pc").href='http://www.tmall.com/go/act/is-desktop.php?r='+document.getElementById("btn_go_pc").href;
+    </script> 
+    </p>
+    <p class="copyright">Copyright ©2013 浙B2-20080224</p>
+</footer> 
+<!--底部导航 end--> 
+

@@ -1,0 +1,29 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+ 
+
+<UL id=hot_xiangshui class=porboxul>
+      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
+	  
+      <LI class="porboxul_li" onmouseover="this.className='porboxul_li porboxul_li_on'" onmouseout="this.className='porboxul_li'" >
+    <DL>
+    <DT><a href="{$goods.url}"><IMG  alt="{$goods.name|escape:html}"  src="{$goods.thumb}" class="goodsimg"></A> </DT>
+	<DD class=pf_price> 
+	
+	<SPAN class=" ll" ><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></SPAN> 
+	<SPAN  class=" rr" ><s>{$goods.market_price}</s></SPAN>
+    </DD>
+	<DD class=title><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DD>
+    
+	
+ 
+    </DL> 
+</LI>
+
+      <!--{/foreach}-->
+	 
+   
+     </ul>
+  
+  
+  
