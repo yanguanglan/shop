@@ -144,8 +144,8 @@ return offset;
     <!-- {/if} -->
      </div>
      <div>
-    <a href="javascript:collect({$goods.goods_id});" class="bnt_blue">加入收藏</a>
-    <a href="javascript:addToCart({$goods.goods_id})" class="bnt_blue">立即购买</a>
+    <a href="javascript:collect({$goods.goods_id});" class="bnt_blue">加入收藏111111111111</a>
+    <a href="javascript:addToCart({$goods.goods_id})" class="bnt_blue">{if $goods.rooms!=''}立即预订{else}立即购买{/if}</a>
     </div>
     </li>
 
@@ -216,7 +216,7 @@ return offset;
     <!-- {/if} --> 
     </div>
      <a href="javascript:collect({$goods.goods_id});" class="bnt_blue">加入收藏</a>
-    <a href="javascript:addToCart({$goods.goods_id})" class="bnt_blue">立即购买</a>
+    <a href="javascript:addToCart({$goods.goods_id})" class="bnt_blue">{if $goods.rooms!=''}立即预订{else}立即购买{/if}</a>
     </li>
     <li>
    
