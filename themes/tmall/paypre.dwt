@@ -38,8 +38,8 @@ window.pageConfig={
     <ul class="clearfix">
         <li class="step_ok"><em class="order_ico"></em><strong>1.选择商户</strong></li>
         <li class="step_ok"><em class="order_ico"></em><strong>2.填写订单</strong></li>
-        <li class="{if $pre.onlinepay==1}step_cur{else}step_default{/if}"><em class="order_ico"></em><strong>3.在线支付</strong></li>
-        <li class="{if $pre.onlinepay==1}step_default{else}step_cur{/if} last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
+         <li class="{if $pre.onlinepay==1}step_cur{else}step_default{/if}"><em class="order_ico"></em><strong>3.在线支付</strong></li>
+         <li class="{if $pre.onlinepay==1}step_default{else}step_cur{/if} last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
     </ul>
 </div>
 <!-- 步骤条END -->

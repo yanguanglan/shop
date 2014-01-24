@@ -230,7 +230,7 @@ if ($this->_foreach['categories_list']['total'] > 0):
            
 		   <div class="f_r">
                <a style="cursor: pointer"  onClick="window.external.AddFavorite(location.href,document.title);">收藏本站</a> | 
-               <a href="http://www.ecmoban.com">ecshop模板堂</a>   
+                  
 			   
            </div>
            <div class="buy_car_bg f_r " id="ECS_CARTINFO" > 
@@ -344,7 +344,7 @@ if ($this->_foreach['no']['total'] > 0):
 			</p>
 			            
                 			
-							<h4 class="subItem-title brandTitle">品牌：</h4>
+							<h4 class="subItem-title brandTitle">商家：</h4>
 				<p class="subItem-brand">
 					<?php $_from = get_brands1($GLOBALS[smarty]->_var[cat][id]); if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'bchilder');$this->_foreach['no1'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['no1']['total'] > 0):
@@ -363,7 +363,7 @@ if ($this->_foreach['no1']['total'] > 0):
 			
  <div class="blank"></div>               
 <div class="subItemAd">
-			  <a  href="<?php echo $this->_var['cat']['url']; ?>" ><?php echo htmlspecialchars($this->_var['cat']['name']); ?>馆</a>
+			  <a  href="<?php echo $this->_var['cat']['url']; ?>" ><?php echo htmlspecialchars($this->_var['cat']['name']); ?></a>
 		            </div>	
                                              			
 	</ul>
@@ -409,7 +409,7 @@ if(e.offsetParent != null) offset += getTop(e.offsetParent);
 return offset;
 }
 </script>
-<div style="float:left;">
+<div style="float:left;width:880px;height:30px;overflow:hidden;">
   <a class="aa" href="index.php"  <?php if ($this->_var['navigator_list']['config']['index'] == 1): ?> id="aa_on"   <?php endif; ?>><?php echo $this->_var['lang']['home']; ?> </a>
   
   

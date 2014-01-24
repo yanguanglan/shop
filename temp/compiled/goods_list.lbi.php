@@ -115,7 +115,7 @@ if ($this->_foreach['goods_list']['total'] > 0):
      </div>
      <div>
     <a href="javascript:collect(<?php echo $this->_var['goods']['goods_id']; ?>);" class="bnt_blue">加入收藏</a>
-    <a href="javascript:addToCart(<?php echo $this->_var['goods']['goods_id']; ?>)" class="bnt_blue">立即购买</a>
+    <?php if($this->_var['goods']['rooms']!=''){?><a href="pre.php?id=<?php echo $this->_var['goods']['goods_id']; ?>" class="bnt_blue">立即预订</a><?php }else{?><a href="javascript:addToCart(<?php echo $this->_var['goods']['goods_id']; ?>)" class="bnt_blue">立即购买</a><?php }?>
     </div>
     </li>
 

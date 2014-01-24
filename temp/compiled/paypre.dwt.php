@@ -40,15 +40,16 @@ window.pageConfig={
     <ul class="clearfix">
         <li class="step_ok"><em class="order_ico"></em><strong>1.选择商户</strong></li>
         <li class="step_ok"><em class="order_ico"></em><strong>2.填写订单</strong></li>
-        <li class="step_cur"><em class="order_ico"></em><strong>3.在线支付</strong></li>
-        <li class="step_default last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
+         <li class="<?php if ($this->_var['pre']['onlinepay'] == 1): ?>step_cur<?php else: ?>step_default<?php endif; ?>"><em class="order_ico"></em><strong>3.在线支付</strong></li>
+         <li class="<?php if ($this->_var['pre']['onlinepay'] == 1): ?>step_default<?php else: ?>step_cur<?php endif; ?> last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
     </ul>
 </div>
 
 
 <div class="block yuding-wrap">
   <div class="yuding-main">
-      <h1 class="order-title"><?php if ($this->_var['pre']['onlinepay'] == 1): ?>请核实订单<?php else: ?>您已成功预定<?php endif; ?></h1>
+      <?php if ($this->_var['pre']['onlinepay'] == 1): ?>
+      <h1 class="order-title">请核实订单</h1>
       <div class="order-info">
           <div class="order-hd red">
             <strong>订单信息</strong>
@@ -124,24 +125,29 @@ window.pageConfig={
 
             </div>
         </div>
-        <?php if ($this->_var['pre']['onlinepay'] == 1): ?>
         <div class="order-info">
             <div class="order-hd">
               <strong>请选择支付方式</strong>
             </div>
             <div class="order-bd clearfix">
-                这里是支付宝包。。。。。。。。。。。。。。。。。。。。。
+                选择银行，进行支付
             </div>
         </div>
         <div class="form-item" style="margin-left:20px;">
-            <button type="submit" class="btn btn-tmall">提交表单</button>
+            <button type="submit" class="btn btn-tmall">提交支付</button>
         </div>
-        <?php else: ?>
-        <div class="form-item" style="margin-left:20px;">
-            <button class="btn btn-tmall">返回</button>
-        </div>
-        <?php endif; ?>
+
       </form>
+      <?php else: ?>
+       <div class="order-yuding-success">
+         <h2>您已成功预订了该项服务</h2>
+         <div class="boxm center"><i class="iconfont">&#x34e7;</i>稍后请查收手机短信，客服也会将会联系你进行确认.</div>
+         <div class="box-tip boxm box-grey">
+           <strong>温馨提示您</strong> 
+           <p>提交订单后，我们通常会在20分钟内通过短信或电话告知预订结果；每晚19:00点后提交的订单会在次日上午尽快得到处理，请您耐心等候，不便处敬请谅解。</p>
+         </div>
+       </div>
+      <?php endif; ?>
   </div>
 </div>
  <div class="blank"></div>

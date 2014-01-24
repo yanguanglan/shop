@@ -44,19 +44,19 @@ function qq (id) {
   <div class="taozhuang_r"  >
   <table cellpadding="0" cellspacing="0">
   <tr>
-    <?php $_from = $this->_var['fittings']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_19479600_1390536609');if (count($_from)):
-    foreach ($_from AS $this->_var['goods_0_19479600_1390536609']):
+    <?php $_from = $this->_var['fittings']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_31632100_1390557842');if (count($_from)):
+    foreach ($_from AS $this->_var['goods_0_31632100_1390557842']):
 ?>
     <td>
     <div class="div_ul">
       <li class="goodsimg">
-      <a href="<?php echo $this->_var['goods_0_19479600_1390536609']['url']; ?>" target="_blank"><img src="<?php echo $this->_var['goods_0_19479600_1390536609']['goods_thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_19479600_1390536609']['name']); ?>" class="B_blue" /></a>
+      <a href="<?php echo $this->_var['goods_0_31632100_1390557842']['url']; ?>" target="_blank"><img src="<?php echo $this->_var['goods_0_31632100_1390557842']['goods_thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_31632100_1390557842']['name']); ?>" class="B_blue" /></a>
       </li>
       <li>
-      <a  href="<?php echo $this->_var['goods_0_19479600_1390536609']['url']; ?>" class="name" target="_blank" title="<?php echo htmlspecialchars($this->_var['goods_0_19479600_1390536609']['goods_name']); ?>"><?php echo htmlspecialchars($this->_var['goods_0_19479600_1390536609']['short_name']); ?></a> 
-     <font class="f1"><?php echo $this->_var['goods_0_19479600_1390536609']['fittings_price']; ?></font> <input name="box[]" type="checkbox" id="goods_ids" value="<?php echo $this->_var['goods_0_19479600_1390536609']['fittings_price_nformat']; ?>"  onClick="qq(<?php echo $this->_var['goods_0_19479600_1390536609']['goods_id']; ?>);"> 
+      <a  href="<?php echo $this->_var['goods_0_31632100_1390557842']['url']; ?>" class="name" target="_blank" title="<?php echo htmlspecialchars($this->_var['goods_0_31632100_1390557842']['goods_name']); ?>"><?php echo htmlspecialchars($this->_var['goods_0_31632100_1390557842']['short_name']); ?></a> 
+     <font class="f1"><?php echo $this->_var['goods_0_31632100_1390557842']['fittings_price']; ?></font> <input name="box[]" type="checkbox" id="goods_ids" value="<?php echo $this->_var['goods_0_31632100_1390557842']['fittings_price_nformat']; ?>"  onClick="qq(<?php echo $this->_var['goods_0_31632100_1390557842']['goods_id']; ?>);"> 
 	 
-	 <input name="goods_id[]" style="display:none;"  type="checkbox" id="goods_id_<?php echo $this->_var['goods_0_19479600_1390536609']['goods_id']; ?>" value="<?php echo $this->_var['goods_0_19479600_1390536609']['goods_id']; ?>" > 
+	 <input name="goods_id[]" style="display:none;"  type="checkbox" id="goods_id_<?php echo $this->_var['goods_0_31632100_1390557842']['goods_id']; ?>" value="<?php echo $this->_var['goods_0_31632100_1390557842']['goods_id']; ?>" > 
 	
 <input name="step"  value="all_addcart" type="hidden" />
       </li>
