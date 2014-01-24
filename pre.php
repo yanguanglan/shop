@@ -117,7 +117,7 @@ if (!empty($_REQUEST['startdate']))
         $db->query($sql);
         $pre_id=$db->insert_id();
         if(!$goods['onlinepay']){
-          //发送短信
+          $name.=$sex==1?"先生":"女士";
           sendsms($phone,"$name,恭喜您预订成功!");
         }
         header("location:paypre.php?id=$pre_id");
