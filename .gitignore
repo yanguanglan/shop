@@ -4,11 +4,7 @@ node_modules
 .dump
 img
 /data/
-/temp/caches/
-/temp/cachesmobile/
-/temp/query_caches/
-/temp/static_caches/
-/temp/backup/
+/temp/
 /install/
 .svn
 /nbproject/private/
