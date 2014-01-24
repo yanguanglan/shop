@@ -1,0 +1,19 @@
+<h2> <s style="text-decoration:none;">1F 民宿.度假</s>
+
+<div class="floorTop">
+		<ul class="floorTop-nav">
+	        
+	            	            <li><a href="#" target="_blank">小湖南</a></li>
+	            	            <li><a href="#" target="_blank">廿八都</a></li>
+	            	            <li><a href="#" target="_blank">钱江源</a></li>
+	            	            <li><a href="#" target="_blank">药王山</a></li>
+	            	            <li><a href="#" target="_blank">九龙湖</a></li>
+	            	            <!--<li><a href="#" target="_blank">bb霜</a></li>
+	            	            <li><a href="#" target="_blank">黄金</a></li>-->
+	            	            <li><a style="border-right:none" href="#" target="_blank">更多</a></li>
+	            	        
+		</ul>
+	</div>
+
+</h2>
+	
