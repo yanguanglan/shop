@@ -50,7 +50,7 @@ if ($this->_foreach['categories_list']['total'] > 0):
            
 		   <div class="f_r">
                <a style="cursor: pointer"  onClick="window.external.AddFavorite(location.href,document.title);">收藏本站</a> | 
-               <a href="http://www.ecmoban.com">ecshop模板堂</a>   
+                  
 			   
            </div>
            <div class="buy_car_bg f_r " id="ECS_CARTINFO" > 

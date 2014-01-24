@@ -1,4 +1,4 @@
-<h2> <s></s>
+<h2> <s style="text-decoration: none;">5F 名品特卖</s>
 	<div class="floorTop">
 		<ul class="floorTop-nav">
 			

@@ -204,7 +204,7 @@ del{ color:#555}
 .lei_main11 .lei_main1 .mcate-ctn li .mcate-item-hd a{color: white;}
 .lei_main11 .lei_main1 .mcate-ctn li .mcate-item-bd {line-height: 22px;height: 44px;overflow: hidden;padding-top: 1px;_padding-top: 3px;}
 .lei_main11 .lei_main1 .mcate-ctn li .mcate-item-bd  a {margin-right: 10px;color: #CCC;display: inline-block;}
-.buy_car_bg{ float:right; padding-left:30px; width:76px;  height:30px;line-height:30px; position:relative; z-index:999999999; background:url(images/buy_car_bg.gif) 12px  no-repeat; }
+.buy_car_bg{ float:right; padding-left:30px;   height:30px;line-height:30px; position:relative; z-index:999999999; background:url(images/buy_car_bg.gif) 12px  no-repeat; }
 .buy_car_bg .car_ul{ display:none }
 .buy_car_bg  b{color:#FFD0C0; font-weight:normal; padding:0 3px;}
 .buy_car_bg a{ text-decoration:none; color:#FFD0C0}
@@ -1545,7 +1545,7 @@ top:200px; padding-top:27px;
 
 /* 头部幻灯 start */
 .tm_silder_box{width:100%; height:420px; position:relative; overflow:hidden;}
-.tm_silder_con_box{position:absolute; width:100%;  left:0;text-align:center;  height:420px;}
+.tm_silder_con_box{position:absolute; width:100%;  left:0;  height:420px;}
 .root61 .tm_silder_switcher{position:absolute; bottom:12px; left:0; text-align:center; z-index:99;}
 .tm_silder_switcher{ margin:0 auto; text-align:center; width:100%;     z-index:99;}
 .tm_silder_switcher a{background:#fff; background:#B5B5B5; cursor:pointer; display:inline-block; font-family:arial; height:15px; width:15px; line-height:15px; border-radius: 50% 50% 50% 50%; margin-right:5px;}
@@ -1570,4 +1570,5 @@ top:200px; padding-top:27px;
 #brandList .brandArticle{border:1px dashed #d9d9d9; background:#e2e2e2; text-align:left;}
 .brandCategoryA a{ margin-right:15px;}
 
+#float_toolbar_r { _position: absolute; width: 60px; height: 60px;overflow: hidden;position: fixed;bottom:235px;right: 10px;opacity: 1;cursor: pointer;}
 

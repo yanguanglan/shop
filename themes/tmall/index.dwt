@@ -32,7 +32,7 @@ window.pageConfig={
 <div class="block clearfix">
   <div class="mallRight">
     <div class="brand" >
-      <h2>Hi，<span >你好</span>！你可能感兴趣的品牌：</h2>
+      <h2>Hi，<span >你好</span>！你可能感兴趣的商家：</h2>
       <div class="brandMain" > 
 	  <!-- TemplateBeginEditable name="品牌区域" -->
 <!-- #BeginLibraryItem "/library/brands.lbi" -->

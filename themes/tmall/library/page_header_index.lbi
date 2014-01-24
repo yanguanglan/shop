@@ -225,7 +225,7 @@ var process_request = "{$lang.process_request}";
            
 		   <div class="f_r">
                <a style="cursor: pointer"  onClick="window.external.AddFavorite(location.href,document.title);">收藏本站</a> | 
-               <a href="http://www.ecmoban.com">ecshop模板堂</a>   
+                  
 			   
            </div>
            <div class="buy_car_bg f_r " id="ECS_CARTINFO" > 
@@ -317,7 +317,7 @@ var process_request = "{$lang.process_request}";
 			</p>
 			            
                 			
-							<h4 class="subItem-title brandTitle">品牌：</h4>
+							<h4 class="subItem-title brandTitle">商家：</h4>
 				<p class="subItem-brand">
 					<!--{foreach from=get_brands1($GLOBALS['smarty']->_var['cat']['id']) item=bchilder name=no1}-->
 					<!-- {if $smarty.foreach.no1.iteration<7}-->
@@ -332,7 +332,7 @@ var process_request = "{$lang.process_request}";
 			
  <div class="blank"></div>               
 <div class="subItemAd">
-			  <a  href="{$cat.url}" >{$cat.name|escape:html}馆</a>
+			  <a  href="{$cat.url}" >{$cat.name|escape:html}</a>
 		            </div>	
                                              			
 	</ul>

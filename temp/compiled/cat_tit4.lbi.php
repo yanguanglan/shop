@@ -1,4 +1,4 @@
-<h2> <s></s>
+<h2> <s style="text-decoration: none;">4F 精致美食</s>
 	<div class="floorTop">
 		<ul class="floorTop-nav">
 			

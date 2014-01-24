@@ -33,7 +33,7 @@ window.pageConfig={
 <div class="block clearfix">
   <div class="mallRight">
     <div class="brand" >
-      <h2>Hi，<span >你好</span>！你可能感兴趣的品牌：</h2>
+      <h2>Hi，<span >你好</span>！你可能感兴趣的商家：</h2>
       <div class="brandMain" > 
 	  
 <?php echo $this->fetch('library/brands.lbi'); ?>
@@ -42,24 +42,24 @@ window.pageConfig={
           <div class="brand_ad_tit"></div>
 		  <div class="w">
           
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','22'); ?><?php $this->assign('ads_num','0'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 
 <div class="s">
           
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','86'); ?><?php $this->assign('ads_num','0'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 <div class="w">
 		   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','23'); ?><?php $this->assign('ads_num','0'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 
 <div class="s">
 		   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','87'); ?><?php $this->assign('ads_num','0'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 		    </div>
@@ -69,12 +69,12 @@ window.pageConfig={
     <div class="floorAd">
 	<div class="w">
 	 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','24'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 	  </div>
 	  <div class="s">
 	  	 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','83'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 	    </div>
 	  
@@ -88,27 +88,27 @@ window.pageConfig={
             <ul>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','25'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				  </li>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','26'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				 </li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','27'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				</li>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','28'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				  </li>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','29'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				  </li>
             </ul>
@@ -117,24 +117,24 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" > 
 			
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','43'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			    </DIV>
             <DIV  class=imgbox style="float:left">
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','44'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','48'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 			  </DIV>
           </DIV>
         </div>
         <DIV  class="cat_goods_in">
 		 
-<?php echo $this->fetch('library/cat_goods.lbi'); ?>
+<?php $this->assign('cat_goods',$this->_var['cat_goods_101']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_101']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
           <div class="blank"></div>
         </div>
@@ -149,27 +149,27 @@ window.pageConfig={
             <ul>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','30'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				 </li>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','31'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				  </li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','32'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				 </li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','33'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				</li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','34'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				 </li>
             </ul>
@@ -178,23 +178,23 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','49'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 			   </DIV>
             <DIV  class=imgbox style="float:left">
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','50'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','51'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			   </DIV>
           </DIV>
         </div>
         
-<?php echo $this->fetch('library/cat_goods.lbi'); ?>
+<?php $this->assign('cat_goods',$this->_var['cat_goods_16']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_16']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
 		  </div>
     </div>
@@ -207,27 +207,27 @@ window.pageConfig={
             <ul>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','35'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				 </li>
               <li> 
 			  
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','36'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				 </li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','37'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 				</li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','38'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				 </li>
               <li>
 			   
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','39'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 				 </li>
             </ul>
@@ -236,23 +236,23 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" > 
 			
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','55'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			   </DIV>
             <DIV  class=imgbox style="float:left">
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','56'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 			  </DIV>
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','57'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			    </DIV>
           </DIV>
         </div>
         
-<?php echo $this->fetch('library/cat_goods.lbi'); ?>
+<?php $this->assign('cat_goods',$this->_var['cat_goods_223']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_223']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
 		  </div>
     </div>
@@ -260,12 +260,12 @@ window.pageConfig={
     <div class="floorAd">
 	<div class="w">
 	 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','81'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 	  </div>
 	  <div class="s">
 	 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','84'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 	  </div>
 	   </div>
@@ -277,37 +277,37 @@ window.pageConfig={
           <div class="pinpai">
             <ul>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','58'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','59'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','60'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','61'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','62'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
             </ul>
           </div>
           <?php echo $this->fetch('library/cat_4.lbi'); ?>
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" > 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','66'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </DIV>
             <DIV  class=imgbox style="float:left"> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','67'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </DIV>
             <DIV  class=imgbox style="float:left" > 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','68'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </DIV>
           </DIV>
         </div>
         
-<?php echo $this->fetch('library/cat_goods.lbi'); ?>
+<?php $this->assign('cat_goods',$this->_var['cat_goods_216']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_216']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
 		 </div>
     </div>
@@ -319,19 +319,19 @@ window.pageConfig={
           <div class="pinpai">
             <ul>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','69'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','70'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','71'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','72'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
               <li> 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','73'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  </li>
             </ul>
           </div>
@@ -339,23 +339,23 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','78'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			    </DIV>
             <DIV  class=imgbox style="float:left">
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','79'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','80'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 			   </DIV>
           </DIV>
         </div>
         
-<?php echo $this->fetch('library/cat_goods.lbi'); ?>
+<?php $this->assign('cat_goods',$this->_var['cat_goods_265']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_265']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
 		 </div>
     </div>
@@ -363,12 +363,12 @@ window.pageConfig={
     <div class="floorAd"> 
 	<div class="w">
 	
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','82'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 	   </div>
 	   <div class="s">
 	
-<?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php $this->assign('ads_id','85'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
  
 	   </div>
 	   </div>
