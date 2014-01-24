@@ -90,6 +90,12 @@ if (!empty($_REQUEST['startdate']))
     }
     $user_id = $_SESSION['user_id'];
     $goods_id   = isset($_REQUEST['id']) ? intval($_REQUEST['id']) : 0;
+    
+    if($goods_id){
+      $sql="SELECT * FROM ".$ecs->table('goods')." WHERE goods_id='".$goods_id."'";
+      $goods=$GLOBALS['db']->getRow($sql);
+    }
+    
     $startdate    = date('Y-m-d',strtotime($_REQUEST['startdate']));
     $hour    = (isset($_REQUEST['hour'])) ? intval($_REQUEST['hour']) : 0;
     $minute    = (isset($_REQUEST['minute'])) ? intval($_REQUEST['minute']) : 0;
@@ -110,12 +116,34 @@ if (!empty($_REQUEST['startdate']))
         $sql = "INSERT INTO ".$ecs->table('pre_order')." (created,user_id,goods_id,startdate,hour,minute,enddate,num,rooms,totalprice,onlineprice,shopprice,phone,name,sex,message) VALUES ('".date('Y-m-d H:i:s')."','".$user_id."','".$goods_id."','".$startdate."','".$hour."','".$minute."','".$enddate."','".$num."','".$rooms."','".$totalprice."','".$onlineprice."','".$shopprice."','".$phone."','".$name."','".$sex."','".$message."')";
         $db->query($sql);
         $pre_id=$db->insert_id();
+        if(!$goods['onlinepay']){
+          //发送短信
+          sendsms($phone,"$name,恭喜您预订成功!");
+        }
         header("location:paypre.php?id=$pre_id");
     }
     show_message('预定失败', $_LANG['sign_up'], 'pre.php?id='.$goods_id, 'error');
     die($json->encode($res));
 }
 
+function sendsms($phone,$content){
+  $url="http://www.sms8810086.com/jk.aspx";
+  $data['zh']='yxqz';
+  $data['mm']='qw123456';
+  $data['hm']=$phone;
+  $data['nr']=$content."【易享衢州】";
+  $data['sms_type']=41;
+  $ch = curl_init(); 
+  curl_setopt($ch, CURLOPT_URL, $url); 
+  curl_setopt($ch, CURLOPT_HEADER, 0);
+  curl_setopt($ch,CURLOPT_POST,1);
+  curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+  $html = curl_exec($ch);
+  if(strstr($html,'0:')){
+    return true;
+  }
+  return false;
+}
 
 /*------------------------------------------------------ */
 //-- PROCESSOR

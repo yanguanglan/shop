@@ -409,7 +409,7 @@ if(e.offsetParent != null) offset += getTop(e.offsetParent);
 return offset;
 }
 </script>
-<div style="float:left;width:880px;height:30px;overflow:hidden;">
+<div style="float:left;">
   <a class="aa" href="index.php"  <?php if ($this->_var['navigator_list']['config']['index'] == 1): ?> id="aa_on"   <?php endif; ?>><?php echo $this->_var['lang']['home']; ?> </a>
   
   
