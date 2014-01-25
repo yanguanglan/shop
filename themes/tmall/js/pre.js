@@ -176,7 +176,7 @@
 
       $('#phone').on('blur', function() {
           var val = $(this).val();
-          var m = /^(1(([35][0-9])|(47)|[8][0126789]))\d{8}$/.test(val);
+          var m = /^(1(([35][0-9])|(47)|[8][01256789]))\d{8}$/.test(val);
           if (!!m) {
              $(this).parent().next().hide();
           } else{
