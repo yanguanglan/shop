@@ -14,10 +14,10 @@ a,a:visited{color:#8d8d8d;text-decoration:none}
 .top-banner1111 img.del1111{position:absolute;top:4px;right:4px;width:14px;height:14px}
 .focus a.tag11p{position:relative}
 .focus a.tag11p img.tag11{position:absolute;margin:0;padding:0;width:22px;height:22px;top:0;right:0}
-.slider{height:150px;overflow:hidden;position:relative}
-.slider ul{width:1600px;height:150px;position:absolute;left:0;top:0}
-.slider ul li{width:320px;height:150px;overflow:hidden;float:left}
-.slider ul li img{width:320px;height:150px}
+.slider{height:115px;overflow:hidden;position:relative}
+.slider ul{width:1600px;height:115px;position:absolute;left:0;top:0}
+.slider ul li{width:320px;height:115px;overflow:hidden;float:left}
+.slider ul li img{width:320px;height:115px}
 .slider .slider-status{position:absolute;width:100%;height:3px;bottom:0;background-color:rgba(51,51,51,0.5);-webkit-transform:translate3d(0,0,0);display:-webkit-box}
 .slider .slider-status span{display:block;-webkit-box-flex:1;height:100%;overflow:hidden}
 .slider .slider-status span.sel{background-color:#b20000}

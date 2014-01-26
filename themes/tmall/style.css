@@ -474,7 +474,7 @@ UL.pagination LI A:hover {BACKGROUND: #cc0000;}
 .root61 .cat_box{width: 950px;clear: both;overflow: hidden;background: white;}
 .cat_box{width: 750px;clear: both;overflow: hidden;background: white; float:left}
 .cat_box  h2 { height:36px; line-height:36px; border-bottom:2px solid #000; overflow:hidden; padding-left:10px;  position:relative;}
-.cat_box  h2 s {display: block; width: 120px; height: 36px; position: absolute; left:0px; top: 0;  background: url(images/cat_box_tit.gif) no-repeat; }
+.cat_box  h2 s {display: block; width: 120px; height: 36px; position: absolute; left:0px; top: 0; }
 .cat_goods_1 h2 s {background-position: 10px -4px;}
 .cat_goods_2 h2 s{background-position:10px -33px;}
 .cat_goods_3 h2 s{background-position:10px -62px;}
