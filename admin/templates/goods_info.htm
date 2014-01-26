@@ -566,7 +566,11 @@
                rooms[id] = ($(inputs[1]).val() || 0) + '|' + ($(inputs[2]).val() || 0);
              }
          });
-         $('#J_realRoom').val(JSON.stringify({catroom:rooms}));
+         if ( JSON.stringify(rooms) === "{}" ) {
+            $('#J_realRoom').val('');
+         } else {
+           $('#J_realRoom').val(JSON.stringify({catroom:rooms}));          
+         }
       }
       var validator = new Validator('theForm');
       var goods_sn  = document.forms['theForm'].elements['goods_sn'].value;
