@@ -13,6 +13,8 @@
 <LINK rel=stylesheet type=text/css href="themes/default/user.css">
 <LINK rel=stylesheet type=text/css href="themes/default/style.css">
 <link rel="stylesheet" type="text/css" href="themes/default/css/pagenav.css">
+<LINK rel=stylesheet type=text/css href="themes/default/cart.css">
+
 {* 包含脚本文件 *}
 {insert_scripts files='transport.js,common.js,user.js'}
 </head>
@@ -183,7 +185,7 @@
    <!--用户红包结束-->
       <!--#订单列表界面 start-->
        <!-- {if $action eq 'order_list'} -->
-	    <header id="header">
+<!-- 	    <header id="header">
 			<div class="c-inav">
 				<section>
 					<button class="back">
@@ -196,6 +198,19 @@
 				<section></section>
 			</div>
 		</header>
+ -->  
+ <header class="navbar">
+  <ul>
+    <li>{$lang.label_order}</li>
+    <li>
+      <a class="c-btn c-btn-aw" href="javascript:history.go(-1)"><span>返回</span></a>
+    </li>
+    <li>
+       <a class="c-btn on del" href="user.php?act=pre_list"><span>预订订单</span></a>
+    </li>
+  </ul>
+  </header>
+
         <div class="fullscreen">
  
   
@@ -257,6 +272,63 @@
 		</div>
        <!--{/if}-->
       <!--#订单列表界面 end-->
+<!--#酒店预定列表界面 start-->
+       <!-- {if $action eq 'pre_list'} -->
+  <header class="navbar">
+  <ul>
+    <li>我的预订订单</li>
+    <li>
+      <a class="c-btn c-btn-aw" href="javascript:history.go(-1)"><span>返回</span></a>
+    </li>
+    <li>
+       <a class="c-btn on del" href="user.php?act=order_list"><span>普通订单</span></a>
+    </li>
+  </ul>
+  </header>
+       <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+          <tr align="center">
+            <td bgcolor="#ffffff">订单号</td>
+            <td bgcolor="#ffffff">下单时间</td>
+            <td bgcolor="#ffffff">订单信息</td>
+            <td bgcolor="#ffffff">订单总金额</td>
+            <td bgcolor="#ffffff">订单状态</td>
+            <td bgcolor="#ffffff">操作</td>
+          </tr>
+          <!--{foreach from=$pres item=item}-->
+          <tr>
+            <td align="center" bgcolor="#ffffff">
+              <a href="paypre.php?id={$item.pre_id}" class="f6">{$item.pre_id}</a>
+            </td>
+            <td align="center" bgcolor="#ffffff">{$item.created}</td>
+            <td align="left" bgcolor="#ffffff">
+              <p>{$item.goods_name}</p>
+              {if $item.onlinepay==1}
+              <p>入住时间：<br />{$item.startdate}</p>
+              <p>离店时间：<br />{$item.enddate}</p>
+              {else}
+              <p>消费时间：{$item.startdate}</p>
+              {/if}
+              <p>房间:{$item.rooms}</p>
+            </td>
+            <td align="center" bgcolor="#ffffff">
+              {if $item.totalprice != 0}
+                 <p>总价:{$item.totalprice}元</p>
+                 <p>在线支付金额:{$item.onlineprice}元</p>
+                 <p>到店支付:{$item.shopprice}元</p>
+              {else}
+                 到店支付
+              {/if}
+            </td>
+            <td align="center" bgcolor="#ffffff">{if $item.onlinepay==1}{if $item.status==1}待付款{elseif $item.status==2}已付款{else}已取消{/if}{else}{if $item.status == 1}已预订{else}已取消{/if}{/if}</td>
+            <td align="center" bgcolor="#ffffff"><font class="f6">{if $item.status==1}{if $item.onlinepay==1}<a href="paypre.php?id={$item.pre_id}">我要支付</a>&nbsp;{/if}<a href="user.php?act=cancel_pre&pre_id={$item.pre_id}" onclick="if(!confirm('确定取消吗?')){return false;}">取消订单</a>{else}无{/if}</font></td>
+          </tr>
+          <!--{/foreach}-->
+          </table>
+        <div class="blank5"></div>
+       <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+       <!--{/if}-->
+      <!--#酒店预定列表界面 end-->
+
        <!--#包裹状态查询界面 start-->
       <!-- {if $action eq 'track_packages'} -->
 	  <header id="header">

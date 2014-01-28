@@ -401,7 +401,9 @@ class cls_template
         }
         else
         {
-            $tag_sel = array_shift(explode(' ', $tag));
+            // $tag_sel = array_shift(explode(' ', $tag));
+            $arr = explode(' ', $tag);
+            $tag_sel = array_shift($arr);
             switch ($tag_sel)
             {
                 case 'if':

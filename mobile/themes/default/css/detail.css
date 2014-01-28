@@ -160,7 +160,7 @@ background:url(../images/bg9.png) no-repeat 6px 6px;background-size:17px;positio
 .s-buy .quantity .purchase{vertical-align:middle;margin-left:1em}
 .s-buy .quantity .prompt{margin:0}
 .s-buy .option{padding:.8em 0;display:-webkit-box; text-align:center}
-.s-buy .option .btn{color:#fff;border:0;height:.32rem;-webkit-border-radius:.05rem;border-radius:.05rem;width:50%;-webkit-box-flex:1;display:block;-webkit-user-select:none}
+.s-buy .option .btn{color:#fff;border:0;height:.32rem;line-height:.32rem;-webkit-border-radius:.05rem;border-radius:.05rem;width:50%;-webkit-box-flex:1;display:block;-webkit-user-select:none}
 .s-buy .option .buy{background-color:#b57230}
 .s-buy .option .buy[disabled]{background-color:#929292}
 .s-buy .option .buy .countdown{padding-left:2em;margin-left:2em;border-left:2px solid #fff;vertical-align:middle}

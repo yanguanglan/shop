@@ -1329,7 +1329,7 @@ function get_tags($goods_id = 0, $user_id = 0)
 function get_dyna_libs($theme, $tmp)
 {
     $ar = explode('.', $tmp); 
-     $ext = end($ar); 
+    $ext = end($ar); 
     $tmp = basename($tmp,".$ext");
     $sql = 'SELECT region, library, sort_order, id, number, type' .
             ' FROM ' . $GLOBALS['ecs']->table('template') .
@@ -2046,8 +2046,7 @@ function license_info()
         }
         $url_domain=url_domain();
         $host = 'http://' . $host .$url_domain ;
-        $license = '<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&url=' . urlencode($host) . '" target="_blank"
->&nbsp;&nbsp;Licensed</a>';
+        $license = '';
         return $license;
     }
     else

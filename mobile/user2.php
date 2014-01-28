@@ -3,14 +3,14 @@
 /**
  * ECSHOP 会员中心
  * ============================================================================
- * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
+ * * 版权所有 2005-2012 上海商派网络科技有限公司，并保留所有权利。
  * 网站地址: http://www.ecshop.com；
  * ----------------------------------------------------------------------------
  * 这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和
  * 使用；不允许对程序代码以任何形式任何目的的再发布。
  * ============================================================================
- * $Author: liuhui $
- * $Id: user.php 17067 2010-03-26 03:59:37Z liuhui $
+ * $Author: liubo $
+ * $Id: user.php 17217 2011-01-19 06:29:08Z liubo $
 */
 
 define('IN_ECS', true);
@@ -25,13 +25,15 @@ $action  = isset($_REQUEST['act']) ? trim($_REQUEST['act']) : 'default';
 
 $affiliate = unserialize($GLOBALS['_CFG']['affiliate']);
 $smarty->assign('affiliate', $affiliate);
+$back_act='';
+
 
 // 不需要登录的操作或自己验证是否登录（如ajax处理）的act
 $not_login_arr =
 array('login','act_login','register','act_register','act_edit_password','get_password','send_pwd_email','password', 'signin', 'add_tag', 'collect', 'return_to_cart', 'logout', 'email_list', 'validate_email', 'send_hash_mail', 'order_query', 'is_registered', 'check_email','clear_history','qpassword_name', 'get_passwd_question', 'check_answer');
 
 /* 显示页面的action列表 */
-$ui_arr = array('register', 'login', 'profile', 'order_list','pre_list', 'order_detail', 'address_list', 'collection_list',
+$ui_arr = array('register', 'login', 'profile', 'order_list', 'order_detail', 'address_list', 'collection_list',
 'message_list', 'tag_list', 'get_password', 'reset_password', 'booking_list', 'add_booking', 'account_raply',
 'account_deposit', 'account_log', 'account_detail', 'act_account', 'pay', 'default', 'bonus', 'group_buy', 'group_buy_detail', 'affiliate', 'comment_list','validate_email','track_packages', 'transform_points','qpassword_name', 'get_passwd_question', 'check_answer');
 
@@ -54,7 +56,7 @@ if (empty($_SESSION['user_id']))
             {}*/
             if (!empty($_SERVER['QUERY_STRING']))
             {
-                $back_act = 'user.php?' . $_SERVER['QUERY_STRING'];
+                $back_act = 'user.php?' . strip_tags($_SERVER['QUERY_STRING']);
             }
             $action = 'login';
         }
@@ -73,7 +75,6 @@ if (in_array($action, $ui_arr))
     $position = assign_ur_here(0, $_LANG['user_center']);
     $smarty->assign('page_title', $position['title']); // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);
-	$smarty->assign('categories',       get_categories_tree()); // 分类树zhong改
     $sql = "SELECT value FROM " . $ecs->table('shop_config') . " WHERE id = 419";
     $row = $db->getRow($sql);
     $car_off = $row['value'];
@@ -110,7 +111,7 @@ if ($action == 'default')
 /* 显示会员注册界面 */
 if ($action == 'register')
 {
-    if (!isset($back_act) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    if ((!isset($back_act)||empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
     {
         $back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
     }
@@ -160,6 +161,7 @@ elseif ($action == 'act_register')
         $other['mobile_phone'] = isset($_POST['extend_field5']) ? $_POST['extend_field5'] : '';
         $sel_question = empty($_POST['sel_question']) ? '' : $_POST['sel_question'];
         $passwd_answer = isset($_POST['passwd_answer']) ? trim($_POST['passwd_answer']) : '';
+
 
         $back_act = isset($_POST['back_act']) ? trim($_POST['back_act']) : '';
 
@@ -230,7 +232,11 @@ elseif ($action == 'act_register')
                 $sql = 'UPDATE ' . $ecs->table('users') . " SET `passwd_question`='$sel_question', `passwd_answer`='$passwd_answer'  WHERE `user_id`='" . $_SESSION['user_id'] . "'";
                 $db->query($sql);
             }
-
+            /* 判断是否需要自动发送注册邮件 */
+            if ($GLOBALS['_CFG']['member_email_validate'] && $GLOBALS['_CFG']['send_verify_email'])
+            {
+                send_regiter_hash($_SESSION['user_id']);
+            }
             $ucdata = empty($user->ucdata)? "" : $user->ucdata;
             show_message(sprintf($_LANG['register_success'], $username . $ucdata), array($_LANG['back_up_page'], $_LANG['profile_lnk']), array($back_act, 'user.php'), 'info');
         }
@@ -423,7 +429,7 @@ elseif ($action == 'signin')
 /* 退出会员中心 */
 elseif ($action == 'logout')
 {
-    if (!isset($back_act) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
+    if ((!isset($back_act)|| empty($back_act)) && isset($GLOBALS['_SERVER']['HTTP_REFERER']))
     {
         $back_act = strpos($GLOBALS['_SERVER']['HTTP_REFERER'], 'user.php') ? './index.php' : $GLOBALS['_SERVER']['HTTP_REFERER'];
     }
@@ -502,8 +508,7 @@ elseif ($action == 'act_edit_profile')
         $extend_field_index = 'extend_field' . $val['id'];
         if(isset($_POST[$extend_field_index]))
         {
-            $temp_field_content = strlen($_POST[$extend_field_index]) > 100 ? mb_substr($_POST[$extend_field_index], 0, 99) : $_POST[$extend_field_index];
-
+            $temp_field_content = strlen($_POST[$extend_field_index]) > 100 ? mb_substr(htmlspecialchars($_POST[$extend_field_index]), 0, 99) : htmlspecialchars($_POST[$extend_field_index]);
             $sql = 'SELECT * FROM ' . $ecs->table('reg_extend_info') . "  WHERE reg_field_id = '$val[id]' AND user_id = '$user_id'";
             if ($db->getOne($sql))      //如果之前没有记录，则插入
             {
@@ -750,8 +755,11 @@ elseif ($action == 'act_edit_password')
 
     if (($user_info && (!empty($code) && md5($user_info['user_id'] . $_CFG['hash_code'] . $user_info['reg_time']) == $code)) || ($_SESSION['user_id']>0 && $_SESSION['user_id'] == $user_id && $user->check_user($_SESSION['user_name'], $old_password)))
     {
+		
         if ($user->edit_user(array('username'=> (empty($code) ? $_SESSION['user_name'] : $user_info['user_name']), 'old_password'=>$old_password, 'password'=>$new_password), empty($code) ? 0 : 1))
         {
+			$sql="UPDATE ".$ecs->table('users'). "SET `ec_salt`='0' WHERE user_id= '".$user_id."'";
+			$db->query($sql);
             $user->logout();
             show_message($_LANG['edit_password_success'], $_LANG['relogin_lnk'], 'user.php?act=login', 'info');
         }
@@ -787,8 +795,10 @@ elseif ($action == 'act_add_bonus')
 /* 查看订单列表 */
 elseif ($action == 'order_list')
 {
-    include_once(ROOT_PATH . 'includes/lib_transaction.php');
-
+    include_once(ROOT_PATH_MOBILE . 'includes/lib_transaction.php');
+    include_once(ROOT_PATH . 'includes/lib_payment.php');
+    include_once(ROOT_PATH . 'includes/lib_order.php');
+    include_once(ROOT_PATH . 'includes/lib_clips.php');
     $page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
 
     $record_count = $db->getOne("SELECT COUNT(*) FROM " .$ecs->table('order_info'). " WHERE user_id = '$user_id'");
@@ -797,28 +807,10 @@ elseif ($action == 'order_list')
 
     $orders = get_user_orders($user_id, $pager['size'], $pager['start']);
     $merge  = get_user_merge($user_id);
-
+    //print_r( $orders);
     $smarty->assign('merge',  $merge);
     $smarty->assign('pager',  $pager);
     $smarty->assign('orders', $orders);
-    $smarty->display('user_transaction.dwt');
-}
-elseif ($action == 'pre_list')
-{
-    include_once(ROOT_PATH . 'includes/lib_transaction.php');
-
-    $page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
-
-    $record_count = $db->getOne("SELECT COUNT(*) FROM " .$ecs->table('pre_order'). " WHERE user_id = '$user_id'");
-
-    $pager  = get_pager('user.php', array('act' => $action), $record_count, $page);
-
-    $orders = get_user_pres($user_id, $pager['size'], $pager['start']);
-    foreach($orders as &$order){
-      $order['rooms']=json_decode($order['rooms']);
-    }
-    $smarty->assign('pager',  $pager);
-    $smarty->assign('pres', $orders);
     $smarty->display('user_transaction.dwt');
 }
 
@@ -918,23 +910,7 @@ elseif ($action == 'cancel_order')
         $err->show($_LANG['order_list_lnk'], 'user.php?act=order_list');
     }
 }
-elseif ($action == 'cancel_pre')
-{
-    include_once(ROOT_PATH . 'includes/lib_transaction.php');
-    include_once(ROOT_PATH . 'includes/lib_order.php');
 
-    $pre_id = isset($_GET['pre_id']) ? intval($_GET['pre_id']) : 0;
-
-    if (cancel_pre($pre_id, $user_id))
-    {
-        ecs_header("Location: user.php?act=pre_list\n");
-        exit;
-    }
-    else
-    {
-        $err->show($_LANG['order_list_lnk'], 'user.php?act=pre_list');
-    }
-}
 /* 收货地址列表界面*/
 elseif ($action == 'address_list')
 {
@@ -1111,8 +1087,8 @@ elseif ($action == 'message_list')
     if ($order_id)
     {
         $sql = "SELECT COUNT(*) FROM " .$ecs->table('feedback').
-                " WHERE parent_id = 0 AND order_id = '$order_id'";
-        $order_info = $db->getRow("SELECT * FROM " . $ecs->table('order_info') . " WHERE order_id = '$order_id'");
+                " WHERE parent_id = 0 AND order_id = '$order_id' AND user_id = '$user_id'";
+        $order_info = $db->getRow("SELECT * FROM " . $ecs->table('order_info') . " WHERE order_id = '$order_id' AND user_id = '$user_id'");
         $order_info['url'] = 'user.php?act=order_detail&order_id=' . $order_id;
     }
     else
@@ -1734,6 +1710,7 @@ elseif ($action == 'collect')
                 $result['message'] = $GLOBALS['_LANG']['collect_success'];
                 die($json->encode($result));
             }
+            
         }
     }
 }
@@ -2427,7 +2404,6 @@ elseif ($action == 'send_hash_mail')
 
     if (send_regiter_hash($user_id))
     {
-        /* 用户没有登录 */
         $result['message'] = $_LANG['validate_mail_ok'];
         die($json->encode($result));
     }

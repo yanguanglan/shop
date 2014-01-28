@@ -164,7 +164,7 @@ if (!$smarty->is_cached('pre.dwt', $cache_id))
     $smarty->assign('promotion_info', get_promotion_info());
 
     $goods = get_goods_info($goods_id);
-
+    
     if ($goods === false)
     {
         /* 如果没有找到任何记录则跳回到首页 */

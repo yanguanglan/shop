@@ -40,7 +40,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['author']  = 'ECSHOP TEAM';
 
     /* 网址 */
-    $modules[$i]['website'] = 'http://www.ecshop.com';
+    $modules[$i]['website'] = 'http://shop.yxzq.cn';
 
     /* 版本号 */
     $modules[$i]['version'] = '1.0.0';
