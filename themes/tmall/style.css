@@ -1274,7 +1274,7 @@ padding-right: 30px;
 #pager a.next:hover{}
 .ui-page #pager .page_now{ display:block; float:left; height:26px;padding: 12px 10px 0; background:#EFEFEF;  border:1px solid #E5E5E5;margin-right:2px;}
 .ui-page{height: 60px;}
-.ui-page #pager {padding-top: 19px; background: url(images/page.gif) no-repeat right 0;color: #999;font-size: 14px;font-family: 宋体B8B\4F53,Helvetica,sans-serif;}
+.ui-page #pager {padding-top: 19px;color: #999;font-size: 14px;font-family: 宋体B8B\4F53,Helvetica,sans-serif;}
 .ui-page #pager a {color:#2953A6;padding: 12px 10px 0;border: 1px solid #e5e5e5; float:left; margin-right:2px; display:block; height:26px;  font-weight:normal; }
 .ui-page #pager a.no{ background-color: #EFEFEF; border: 1px solid #E5E5E5;padding: 12px 10px 0;height: 26px;width: auto; color:#999999}
 .ui-page #pager a.no:hover {height:26px;padding: 12px 10px 0; background:#EFEFEF; text-decoration:none;  border:1px solid #e5e5e5;font-weight:normal; color:#999999 }

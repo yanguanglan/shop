@@ -262,7 +262,7 @@ var process_request = "{$lang.process_request}";
          </div>
 		 
    
-<div style="position:absolute; left:0px;  top:35px;"><a href="index.php"><img src="../images/logo2.png" width="189" height="26" /></a></div>
+<div style="position:absolute; left:0px;  top:14px;"><a href="index.php"><img src="../images/logo2.png" width="301" height="75" /></a></div>
  
 <div id="search"  style="position:absolute; right:0px; bottom:17px;">
    

@@ -3,6 +3,7 @@
 node_modules
 .dump
 img
+/images/
 /data/
 /temp/
 /install/
