@@ -381,4 +381,5 @@ color: #909090;
   }
   .date-input{
   	width: 131px;
+  	ime-mode : disabled;
   }
