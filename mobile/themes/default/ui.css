@@ -534,7 +534,7 @@ background-position: -3px -12px !important;
 	background-image: url(http://www.lemonsay.com/css/themes/base/images/ui-icons_222222_256x240.png)/*{iconsHeader}*/;
 }
 .ui-state-default .ui-icon {
-	background-image: url(http://www.lemonsay.com/css/themes/base/images/ui-icons_888888_256x240.png)/*{iconsDefault}*/;
+	background-image: url(images/arrow.png)/*{iconsDefault}*/;
 }
 .ui-state-hover .ui-icon,
 .ui-state-focus .ui-icon {

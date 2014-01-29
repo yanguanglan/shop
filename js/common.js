@@ -138,8 +138,8 @@ function getSelectedAttributes(formBuy)
  */
 function addToCartResponse(result)
 {
-    alert( result.content) ;
-  //document.getElementById('Cart_total').innerHTML =result.content ; //by Leah
+    // alert( result.content) ;
+  document.getElementById('Cart_total').innerHTML =result.content ; //by Leah
   if (result.error > 0)
   {
     // 如果需要缺货登记，跳转

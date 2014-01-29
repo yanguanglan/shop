@@ -446,7 +446,7 @@ function addnum(id){
 {/if}
 <script language="javascript" type="text/javascript"> 
 function showDiv(){ 
-document.getElementById('popDiv').style.display='block'; 
+  document.getElementById('popDiv').style.display='block'; 
 } 
 function closeDiv(){ 
 document.getElementById('popDiv').style.display='none'; 

@@ -6,6 +6,6 @@
     <a class="help" href="article_cat.php?id=1">服务中心</a> </div>
   <div class="version"> <A  href="index.php?pid={$sid}">电脑版</a> </div>
   <div class="copyright">{$copyright}</div>
-  <a href="#app-detail" class="top">返回顶部</a> </footer>
+  <a href="javascript:scroll(0,0)" class="top">返回顶部</a> </footer>
 <!--底部导航 end--> 
 
