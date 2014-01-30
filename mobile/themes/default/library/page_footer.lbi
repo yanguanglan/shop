@@ -1,6 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--底部导航 start-->
 <footer class="footer c-footer ">
+
 <section class="footer-t c-footer-t">
 <p class="user-info c-user-info">
 <span><a id="J_footer_login" href="user.php">登录</a></span><span><a href="user.php?act=register">注册</a></span>
@@ -17,4 +18,5 @@
  
 </footer>
 <!--底部导航 end--> 
+
 

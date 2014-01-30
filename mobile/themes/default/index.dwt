@@ -14,6 +14,58 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 <LINK rel=stylesheet type=text/css href="themes/default/index.css">
 </HEAD>
 <BODY>
+<style>
+#footerdiy {width: 100%;margin: 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #E7E7DB;height: 50px;position: fixed;z-index: 1000;bottom: 0;}
+#footerdiy ul {list-style-type: none;}
+#footerdiy ul li {height:50px;padding-top:0px;width:20%;float:left;}
+#footerdiy ul li > a {
+color: #565654;
+line-height: 80px;
+font-size: 12px;
+width: 45px;
+height: 40px;
+margin: 0 auto;
+display: block;
+white-space: nowrap;
+text-align: center;
+text-decoration: none;
+}
+#footerdiy ul li.diy1 a {
+background: url(themes/default/images/nav-0.png) center 6px no-repeat;
+background-size: 24px 22px;
+}
+#footerdiy ul li.diy2 a {
+width: 45px;
+height: 50px;
+line-height: 80px;
+margin: 0 auto;
+background: url(themes/default/images/nav-1.png) center 7px no-repeat;
+text-align: center;
+text-indent: 0px;
+background-size: 20px 18px;
+}
+#footerdiy ul li.diy3 a {
+background: url(themes/default/images/nav-2.png) center 6px no-repeat;
+background-size: 24px 21px;
+}
+#footerdiy ul li.diy4 a {
+background: url(themes/default/images/nav-2.png) center 7px no-repeat;
+background-size: 24px 20px;
+}
+#footerdiy ul li.diy5 a {
+background: url(themes/default/images/nav-3.png) center 6px no-repeat;
+background-size: 24px 21px;
+}
+</style>
+    <div id="footerdiy">
+	<ul>
+	<li class="diy1"><a href="http://shop.yxqz.cn">首页</a></li>
+	<li class="diy2"><a href="../allcate.php">分类</a></li>
+	<li class="diy3"><a href="themes/default/tanchu.php">搜索</a></li>
+	<li class="diy4"><a href="../flow.php">购物车</a></li>
+	<li class="diy5"><a href="../user.php">会员中心</a></li>
+	</ul>
+    </div>
 <DIV id=content class=tmall-h5-v2> 
   <!--播放器广告-->
   <DIV class=region>
