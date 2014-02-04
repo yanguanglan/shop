@@ -61,7 +61,7 @@ background-size: 24px 21px;
 </style>
     <div id="footerdiy">
 	<ul>
-	<li class="diy1" id="diy1"><a href="http://shop.yxqz.cn"></a></li>
+	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
 	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
 	<li class="diy3"><a href="../allcate.php"></a></li>
 	<li class="diy4"><a href="themes/default/tanchu.dwt"></a></li>
