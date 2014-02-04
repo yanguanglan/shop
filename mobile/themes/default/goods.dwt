@@ -76,6 +76,58 @@ function closeSearch(){
     <div class="ui-suggest"></div>
   </div>
 </header>
+<style>
+#footerdiy {width: 100%;margin: 10px auto 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #eee;height: 50px;position: fixed;z-index: 1000;bottom: 0;}
+#footerdiy ul {list-style-type: none;}
+#footerdiy ul li {height:50px;padding-top:10px;width:25%;float:left;}
+#footerdiy ul li > a {
+color: #565654;
+line-height: 80px;
+font-size: 12px;
+width: 45px;
+height: 40px;
+margin: 0 auto;
+display: block;
+white-space: nowrap;
+text-align: center;
+text-decoration: none;
+}
+#footerdiy ul li.diy1 a {
+background: url(themes/default/images/xinde/nav-1.png) center 6px no-repeat;
+background-size: 24px 22px;
+}
+#footerdiy ul li.diy2 a {
+width: 45px;
+height: 50px;
+line-height: 80px;
+margin: 0 auto;
+background: url(themes/default/images/xinde/nav-2.png) center 7px no-repeat;
+text-align: center;
+text-indent: 0px;
+background-size: 20px 18px;
+}
+#footerdiy ul li.diy3 a {
+background: url(themes/default/images/xinde/nav-3.png) center 6px no-repeat;
+background-size: 24px 21px;
+}
+#footerdiy ul li.diy4 a {
+background: url(themes/default/images/xinde/nav-4.png) center 7px no-repeat;
+background-size: 20px 20px;
+}
+#footerdiy ul li.diy5 a {
+background: url(themes/default/images/xinde/nav-5.png) center 6px no-repeat;
+background-size: 24px 21px;
+}
+</style>
+    <div id="footerdiy">
+	<ul>
+	<li class="diy1" id="diy1"><a href="http://shop.yxqz.cn"></a></li>
+	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
+	<li class="diy3"><a href="../allcate.php"></a></li>
+	<li class="diy4"><a href="themes/default/tanchu.dwt"></a></li>
+	<li class="diy5"><a href="../flow.php"></a></li>
+	</ul>
+    </div>
 <!--商品图 begin---> 
 <script src="themes/default/js/TouchSlide.1.1.js"></script> 
 <!-- 若想了解更详细使用方法，请访问 http://www.superslide2.com/touchSlide/ -->
@@ -211,12 +263,12 @@ function closeSearch(){
 <section class="s-buy ui-section-box">
   <input id="s-buy-open" type="checkbox">
   <label class="info ui-more" for="s-buy-open">
-  <div class="notice"> 请选择<span class="property">尺码/颜色分类</span> </div>
+  <div class="notice"> 请选择<span class="property"></span> </div>
   <ul class="selected" style="display: none;">
   </ul>
   </label>
   <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
-    <div class="fields">
+    <div class="fields" style="height:auto">
       <div style="height: 37px;" class="summary">
         <ul style="position: static;" class="summary-c">
           <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->

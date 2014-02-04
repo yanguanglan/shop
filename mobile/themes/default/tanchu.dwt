@@ -15,7 +15,7 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
 </HEAD>
 <BODY>
 <DIV id=content class=tmall-h5-v2> 
-    <HEADER class=region>
+   <HEADER class=region>
      <!--搜索区域-->
       <DIV id=fake-search>
         <DIV class=fakeInput>
@@ -41,6 +41,14 @@ content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable
       <P class="clear-history hidden"><A href="#">清除历史记录</A></P>
     </DIV>
   </DIV>
+      <SCRIPT>
+        var str = document.getElementById("btn_go_pc").href;
+        document.getElementById("btn_go_pc").href='http://www.tmall.com/go/act/is-desktop.php?r='+str.replace('mobile\/' , '');
+        </SCRIPT> 
+    </P>
+    <P class=copyright>{$copyright}{$icp_number}</P>
+  </FOOTER>
+</DIV>
 <SCRIPT src="themes/default/js/sea.js"></SCRIPT> 
 <SCRIPT>
     seajs.use("http://a.tbcdn.cn/apps/tmm/s/hi/tmall/h5v2/js/index.js?v=2516761719_465");

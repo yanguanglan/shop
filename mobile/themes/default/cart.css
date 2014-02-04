@@ -1237,6 +1237,7 @@ text-shadow: 0 -1px 1px #ca3511;
 	height:40px
 }
 .toolbar .totalprice {
+	margin-bottom: 50px;
 	border-top:1px solid #e3e3e3;
 	background:#fdfbfb;
 	position:fixed;

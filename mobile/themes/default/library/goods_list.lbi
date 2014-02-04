@@ -61,7 +61,7 @@ function getTop(e){
 <!-- {if $category > 0} -->
   <form name="compareForm" action="compare.php" method="post" onSubmit="return compareGoods(this);">
     <!-- {/if} -->
-    <div class="srp j_autoResponsive_container m-ks-autoResponsive-container m-animation album" id="J_ItemList" style="opacity: 1; "> 
+    <div class="srp j_autoResponsive_container m-ks-autoResponsive-container m-animation list" id="J_ItemList" style="opacity: 1; "> 
       
       <!--{foreach name=goods_list from=$goods_list item=goods}--> 
       <!-- {if $goods.goods_id} -->
@@ -81,7 +81,7 @@ function getTop(e){
               <del>{$goods.market_price}</del> 
               <!-- {/if} --> 
             </div>
-            <div class="proService"><span>运费10.00</span></div>
+            <div class="proService"><span></span></div>
             <div class="proSales">月销:<em>{$goods.sales_count}</em></div>
             <div class="proIcons"> 
 			 <!-- {if $goods.watermark_img} --> 

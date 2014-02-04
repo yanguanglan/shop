@@ -32,7 +32,7 @@ window.pageConfig={
 <div class="block clearfix">
   <div class="mallRight">
     <div class="brand" >
-      <h2>Hi，<span >你好</span>！你可能感兴趣的商家：</h2>
+      <h2>Hi，<span >你好</span>！你可能感兴趣的品牌：</h2>
       <div class="brandMain" > 
 	  <!-- TemplateBeginEditable name="品牌区域" -->
 <!-- #BeginLibraryItem "/library/brands.lbi" -->
@@ -72,48 +72,20 @@ window.pageConfig={
           <div class="brand_ad_tit"></div>
 		  <div class="w">
           <!-- TemplateBeginEditable name="品牌区域右侧广告一宽" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 
 <div class="s">
           <!-- TemplateBeginEditable name="品牌区域右侧广告一窄" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 <div class="w">
 		   <!-- TemplateBeginEditable name="品牌区域右侧广告二宽" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 
 <div class="s">
 		   <!-- TemplateBeginEditable name="品牌区域右侧广告二窄" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 		    </div>
@@ -123,24 +95,10 @@ window.pageConfig={
     <div class="floorAd">
 	<div class="w">
 	 <!-- TemplateBeginEditable name="品牌区域底部广告宽" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 	  </div>
 	  <div class="s">
 	  	 <!-- TemplateBeginEditable name="品牌区域底部广告窄" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 	    </div>
 	  
@@ -154,57 +112,22 @@ window.pageConfig={
             <ul>
               <li>
 			   <!-- TemplateBeginEditable name="1F品牌广告1" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				  </li>
               <li> 
 			  <!-- TemplateBeginEditable name="1F品牌广告2" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				 </li>
               <li>
 			   <!-- TemplateBeginEditable name="1F品牌广告3" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				</li>
               <li> 
 			  <!-- TemplateBeginEditable name="1F品牌广告4" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				  </li>
               <li> 
 			  <!-- TemplateBeginEditable name="1F品牌广告5" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				  </li>
             </ul>
@@ -224,24 +147,10 @@ window.pageConfig={
 			    </DIV>
             <DIV  class=imgbox style="float:left">
 			 <!-- TemplateBeginEditable name="1F广告大二" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="1F广告大三" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 			  </DIV>
           </DIV>
@@ -293,57 +202,22 @@ window.pageConfig={
             <ul>
               <li> 
 			  <!-- TemplateBeginEditable name="2F品牌广告1" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				 </li>
               <li> 
 			  <!-- TemplateBeginEditable name="2F品牌广告2" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				  </li>
               <li>
 			   <!-- TemplateBeginEditable name="2F品牌广告3" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				 </li>
               <li>
 			   <!-- TemplateBeginEditable name="2F品牌广告4" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				</li>
               <li>
 			   <!-- TemplateBeginEditable name="2F品牌广告5" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				 </li>
             </ul>
@@ -352,71 +226,19 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="2F广告大一" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 			   </DIV>
             <DIV  class=imgbox style="float:left">
 			 <!-- TemplateBeginEditable name="2F广告大二" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="2F广告大三" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			   </DIV>
           </DIV>
         </div>
         <!-- TemplateBeginEditable name="商品区域二" -->
-<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
-
- 
- 
-
-<UL id=hot_xiangshui class=porboxul>
-      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
-	  
-      <LI class="porboxul_li" onmouseover="this.className='porboxul_li porboxul_li_on'" onmouseout="this.className='porboxul_li'" >
-    <DL>
-    <DT><a href="{$goods.url}"><IMG  alt="{$goods.name|escape:html}"  src="{$goods.thumb}" class="goodsimg"></A> </DT>
-	<DD class=pf_price> 
-	
-	<SPAN class=" ll" ><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></SPAN> 
-	<SPAN  class=" rr" ><s>{$goods.market_price}</s></SPAN>
-    </DD>
-	<DD class=title><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DD>
-    
-	
- 
-    </DL> 
-</LI>
-
-      <!--{/foreach}-->
-	 
-   
-     </ul>
-  
-  
-  
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 		  </div>
     </div>
@@ -429,57 +251,22 @@ window.pageConfig={
             <ul>
               <li> 
 			  <!-- TemplateBeginEditable name="3F品牌广告1" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				 </li>
               <li> 
 			  <!-- TemplateBeginEditable name="3F品牌广告2" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				 </li>
               <li>
 			   <!-- TemplateBeginEditable name="3F品牌广告3" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 				</li>
               <li>
 			   <!-- TemplateBeginEditable name="3F品牌广告4" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				 </li>
               <li>
 			   <!-- TemplateBeginEditable name="3F品牌广告5" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 				 </li>
             </ul>
@@ -488,71 +275,19 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" > 
 			<!-- TemplateBeginEditable name="3F广告大一" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			   </DIV>
             <DIV  class=imgbox style="float:left">
 			 <!-- TemplateBeginEditable name="3F广告大二" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 			  </DIV>
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="3F广告大三" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			    </DIV>
           </DIV>
         </div>
         <!-- TemplateBeginEditable name="商品区域三" -->
-<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
-
- 
- 
-
-<UL id=hot_xiangshui class=porboxul>
-      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
-	  
-      <LI class="porboxul_li" onmouseover="this.className='porboxul_li porboxul_li_on'" onmouseout="this.className='porboxul_li'" >
-    <DL>
-    <DT><a href="{$goods.url}"><IMG  alt="{$goods.name|escape:html}"  src="{$goods.thumb}" class="goodsimg"></A> </DT>
-	<DD class=pf_price> 
-	
-	<SPAN class=" ll" ><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></SPAN> 
-	<SPAN  class=" rr" ><s>{$goods.market_price}</s></SPAN>
-    </DD>
-	<DD class=title><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DD>
-    
-	
- 
-    </DL> 
-</LI>
-
-      <!--{/foreach}-->
-	 
-   
-     </ul>
-  
-  
-  
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 		  </div>
     </div>
@@ -560,24 +295,10 @@ window.pageConfig={
     <div class="floorAd">
 	<div class="w">
 	 <!-- TemplateBeginEditable name="3F区域底部广告宽" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 	  </div>
 	  <div class="s">
 	 <!-- TemplateBeginEditable name="3F区域底部广告窄" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 	  </div>
 	   </div>
@@ -589,115 +310,28 @@ window.pageConfig={
           <div class="pinpai">
             <ul>
               <li> <!-- TemplateBeginEditable name="4F品牌广告1" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="4F品牌广告2" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="4F品牌广告3" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="4F品牌广告4" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="4F品牌广告5" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
             </ul>
           </div>
           <!-- #BeginLibraryItem "/library/cat_4.lbi" --><!-- #EndLibraryItem -->
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" > <!-- TemplateBeginEditable name="4F广告大一" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </DIV>
             <DIV  class=imgbox style="float:left"> <!-- TemplateBeginEditable name="4F广告大二" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </DIV>
             <DIV  class=imgbox style="float:left" > <!-- TemplateBeginEditable name="4F广告大三" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </DIV>
           </DIV>
         </div>
         <!-- TemplateBeginEditable name="商品区域四" -->
-<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
-
- 
- 
-
-<UL id=hot_xiangshui class=porboxul>
-      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
-	  
-      <LI class="porboxul_li" onmouseover="this.className='porboxul_li porboxul_li_on'" onmouseout="this.className='porboxul_li'" >
-    <DL>
-    <DT><a href="{$goods.url}"><IMG  alt="{$goods.name|escape:html}"  src="{$goods.thumb}" class="goodsimg"></A> </DT>
-	<DD class=pf_price> 
-	
-	<SPAN class=" ll" ><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></SPAN> 
-	<SPAN  class=" rr" ><s>{$goods.market_price}</s></SPAN>
-    </DD>
-	<DD class=title><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DD>
-    
-	
- 
-    </DL> 
-</LI>
-
-      <!--{/foreach}-->
-	 
-   
-     </ul>
-  
-  
-  
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 		 </div>
     </div>
@@ -709,49 +343,14 @@ window.pageConfig={
           <div class="pinpai">
             <ul>
               <li> <!-- TemplateBeginEditable name="5F品牌广告1" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="5F品牌广告2" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="5F品牌广告3" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="5F品牌广告4" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
               <li> <!-- TemplateBeginEditable name="5F品牌广告5" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> </li>
             </ul>
           </div>
@@ -759,71 +358,19 @@ window.pageConfig={
           <DIV class=probox_img_box  >
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="5F广告大一" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			    </DIV>
             <DIV  class=imgbox style="float:left">
 			 <!-- TemplateBeginEditable name="5F广告大二" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 			   </DIV>
             <DIV  class=imgbox style="float:left" >
 			 <!-- TemplateBeginEditable name="5F广告大三" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 			   </DIV>
           </DIV>
         </div>
         <!-- TemplateBeginEditable name="商品区域五" -->
-<!-- #BeginLibraryItem "/library/cat_goods.lbi" -->
-
- 
- 
-
-<UL id=hot_xiangshui class=porboxul>
-      <!--{foreach from=$cat_goods item=goods name=cat_goods}-->
-	  
-      <LI class="porboxul_li" onmouseover="this.className='porboxul_li porboxul_li_on'" onmouseout="this.className='porboxul_li'" >
-    <DL>
-    <DT><a href="{$goods.url}"><IMG  alt="{$goods.name|escape:html}"  src="{$goods.thumb}" class="goodsimg"></A> </DT>
-	<DD class=pf_price> 
-	
-	<SPAN class=" ll" ><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></SPAN> 
-	<SPAN  class=" rr" ><s>{$goods.market_price}</s></SPAN>
-    </DD>
-	<DD class=title><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></DD>
-    
-	
- 
-    </DL> 
-</LI>
-
-      <!--{/foreach}-->
-	 
-   
-     </ul>
-  
-  
-  
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 		 </div>
     </div>
@@ -831,24 +378,10 @@ window.pageConfig={
     <div class="floorAd"> 
 	<div class="w">
 	<!-- TemplateBeginEditable name="5F区域底部广告宽" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 	   </div>
 	   <div class="s">
 	<!-- TemplateBeginEditable name="5F区域底部广告窄" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
- 
-{insert name='ads' id=$ads_id num=$ads_num}
-<div class="blank"></div>
-
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable --> 
 	   </div>
 	   </div>

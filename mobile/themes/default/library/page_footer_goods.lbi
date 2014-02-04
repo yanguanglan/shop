@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--底部导航 start-->
-<footer class="s-footer">
+<footer class="s-footer" style="min-height:150px">
   <div class="userbox">
     <div class="login-info"> <a href="user.php">登录</a> <a href="user.php?act=register">注册</a> </div>
     <a class="help" href="article_cat.php?id=1">服务中心</a> </div>
