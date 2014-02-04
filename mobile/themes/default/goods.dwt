@@ -275,12 +275,12 @@ background-size: 24px 21px;
           <li class="price"><span class="key">{$lang.promote_price}：</span><b class="price-v">{$goods.promote_price}</b></li>
           <!--{/if}--> 
           
-          <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存--> 
+          <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 数量--> 
           <!-- {if $goods.goods_number eq 0} -->
           
           <li class="stock"> <span class="key">{$lang.goods_number}</span><span class="stock-v">{$lang.stock_up}</span> </li>
           <!-- {else} -->
-          <li class="stock"> <span class="key">{$lang.goods_number}</span><span class="stock-v"> {$goods.goods_number} {$goods.measure_unit}</span> 件</li>
+          <li class="stock"> <span class="key">数量：</span><span class="stock-v"> {$goods.goods_number} {$goods.measure_unit}</span> </li>
           <!-- {/if} --> 
           <!-- {/if} -->
         </ul>
