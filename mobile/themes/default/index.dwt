@@ -91,10 +91,10 @@ html,body{height:100%;}
     }
     document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
 </script>
-<script src="js/xinde/m.ctrip.com.core.min.js"></script>
+<!-- <script src="js/xinde/m.ctrip.com.core.min.js"></script> -->
 <script src="js/xinde/m.ctrip.com.slide.min.js"></script>
-<script src="js/xinde/c.ui.ad.js"></script>
-<script src="js/xinde/m.ctrip.com.index.min.js"></script>
+<!-- <script src="js/xinde/c.ui.ad.js"></script> -->
+<!-- <script src="js/xinde/m.ctrip.com.index.min.js"></script> -->
 <script>
     var imgBox, slide, list = [];
     list.push({ link: 'http://shop.yxqz.cn', src: "themes/default/images/xinde/1.jpg", title: "手机预订更优惠", url: "http://shop.yxqz.cn" }),
