@@ -85,16 +85,16 @@ html,body{height:100%;}
 <input type="hidden" id="page_id" value="212051"/>
 <script src="js/xinde/require.min.js"></script>
 <script type="text/javascript">
-    var libs = 'libs_r_3.js';
-    if (!('__proto__' in {})) {
-        libs = 'libs_jq_r_1.1.js';
-    }
-    document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
+    // var libs = 'libs_r_3.js';
+    // if (!('__proto__' in {})) {
+        // libs = 'libs_jq_r_1.1.js';
+    // }
+    // document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
 </script>
-<script src="js/xinde/m.ctrip.com.core.min.js"></script>
-<script src="js/xinde/m.ctrip.com.slide.min.js"></script>
-<script src="js/xinde/c.ui.ad.js"></script>
-<script src="js/xinde/m.ctrip.com.index.min.js"></script>
+<!-- <script src="js/xinde/m.ctrip.com.core.min.js"></script> -->
+<!-- <script src="js/xinde/m.ctrip.com.slide.min.js"></script> -->
+<!-- <script src="js/xinde/c.ui.ad.js"></script> -->
+<!-- <script src="js/xinde/m.ctrip.com.index.min.js"></script> -->
 <script src="js/xinde/common.js"></script>
 <style>
 #footerdiy {width: 100%;margin: 10px auto 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #eee;height: 50px;position: fixed;z-index: 1000;bottom: 0;}

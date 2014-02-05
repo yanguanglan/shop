@@ -399,4 +399,3 @@ return offset;
 </div>
 </div> 
 <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/HeadAnimation.js"></script>
-

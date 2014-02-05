@@ -34,13 +34,13 @@ LIST.data={srpUrl:'search_data.htm?cat=51260020',user:{ unLogin:true,loginUrl:' 
         <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" >
           <div class="s-combobox s-combobox-shown" style="" aria-disabled="false" aria-pressed="false">
             <div class="s-combobox-invalid-el">
-              <div class="s-combobox-invalid-inner"> </div>
+              <div class="s-combobox-invalid-inner"></div>
             </div>
             <div class="s-combobox-input-wrap">
               <input name="keywords" type="text" id="keyword" value="{if $search_keywords}{$search_keywords|escape}{else}{$cat_name}{/if}" class="s-combobox-input"/>
             </div>
           </div>
-          <input type="submit" id="J_SubmitBtn" >
+          <input type="submit" id="J_SubmitBtn">
           <input type="reset" id="J_ResetBtn" >
         </form>
       </div>
