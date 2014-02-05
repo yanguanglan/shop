@@ -85,16 +85,28 @@ html,body{height:100%;}
 <input type="hidden" id="page_id" value="212051"/>
 <script src="js/xinde/require.min.js"></script>
 <script type="text/javascript">
-    // var libs = 'libs_r_3.js';
-    // if (!('__proto__' in {})) {
-        // libs = 'libs_jq_r_1.1.js';
-    // }
-    // document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
+    var libs = 'libs_r_3.js';
+    if (!('__proto__' in {})) {
+        libs = 'libs_jq_r_1.1.js';
+    }
+    document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
 </script>
-<!-- <script src="js/xinde/m.ctrip.com.core.min.js"></script> -->
-<!-- <script src="js/xinde/m.ctrip.com.slide.min.js"></script> -->
-<!-- <script src="js/xinde/c.ui.ad.js"></script> -->
-<!-- <script src="js/xinde/m.ctrip.com.index.min.js"></script> -->
+<script src="js/xinde/m.ctrip.com.core.min.js"></script>
+<script src="js/xinde/m.ctrip.com.slide.min.js"></script>
+<script src="js/xinde/c.ui.ad.js"></script>
+<script src="js/xinde/m.ctrip.com.index.min.js"></script>
+<script>
+    var imgBox, slide, list = [];
+    list.push({ link: 'http://shop.yxqz.cn', src: "themes/default/images/xinde/1.jpg", title: "手机预订更优惠", url: "http://shop.yxqz.cn" }),
+    list.push({ link: 'http://shop.yxqz.cn', src: "themes/default/images/xinde/2.jpg", title: "手机预订更优惠", url: "http://shop.yxqz.cn" }),
+    list.push({ link: 'http://shop.yxqz.cn', src: "themes/default/images/xinde/3.jpg", title: "手机预订更优惠", url: "http://shop.yxqz.cn" }),   
+    imgBox = $(".img_wrap"), slide = new CUISlide({ container: imgBox, autoplay: !0, images: list, preventDefault: false }), slide.play(3), slide.resetSize(), slide.windowResize();
+    //ubt
+    !function () { var c, d, e, f, g, i, a = document.getElementsByTagName("script") || [], b = /_bfa\.min\.js/i; for (c = 0; c < a.length; c++) if (b.test(a[c].src)) return; if (!(window.$_bf || window.$LAB || window.CtripJsLoader)) { d = new Date, e = "?v=" + d.getFullYear() + d.getMonth() + "_" + d.getDate() + ".js", f = document.createElement("script"), f.type = "text/javascript", f.charset = "utf-8", f.async = !0; try { g = "https:" == document.location.protocol } catch (h) { g = "https:" == document.URL.match(/[^:]+/) + ":" } f.src = g ? "https://s.c-ctrip.com/_bfa.min.js" + e : "http://webresource.c-ctrip.com/code/ubt/_bfa.min.js" + e, i = document.getElementsByTagName("script")[0], i.parentNode.insertBefore(f, i) } } ();
+    //ga
+    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-3748357-1']); _gaq.push(['_setDomainName', '.ctrip.com']); _gaq.push(['_setAllowHash', false]); _gaq.push(['_addOrganic', 'soso', 'w']); _gaq.push(['_addOrganic', 'sogou', 'query']); _gaq.push(['_addOrganic', 'youdao', 'q']); _gaq.push(['_addOrganic', 'so.360.cn', 'q']); _gaq.push(['_addOrganic', 'so.com', 'q']); _gaq.push(['_addOrganic', 'm.baidu.com', 'word']); _gaq.push(['_addOrganic', 'wap.baidu.com', 'word']); _gaq.push(['_addOrganic', 'wap.soso.com', 'key']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+</script>
+<script type="text/javascript">window.log = function (msg) {return false;$('body').before('<div class="log">' + msg + '</div>');};</script>
 <script src="js/xinde/common.js"></script>
 <style>
 #footerdiy {width: 100%;margin: 10px auto 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #eee;height: 50px;position: fixed;z-index: 1000;bottom: 0;}
