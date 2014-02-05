@@ -64,7 +64,7 @@ background-size: 24px 21px;
 	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
 	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
 	<li class="diy3"><a href="../allcate.php"></a></li>
-	<li class="diy4"><a href="themes/default/tanchu.dwt"></a></li>
+	<li class="diy4"><a href="../search.php"></a></li>
 	<li class="diy5"><a href="../flow.php"></a></li>
 	</ul>
     </div>
