@@ -11,7 +11,7 @@
       <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" style="border:1px solid #ccc;">
         <option value="393" selected>衢州</option>
       </select>
-      <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none;border:1px solid #ccc"{/if} >
+      <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="border:1px solid #ccc"{/if} >
       <option value="0">
         请选择区
       </option>
