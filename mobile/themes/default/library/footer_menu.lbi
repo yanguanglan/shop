@@ -84,6 +84,7 @@ background-size: 24px 21px;
 	<li class="diy5"><a href="../flow.php"></a></li>
 	</ul>
 </div>
+<script src="js/xinde/require.min.js"></script>
 <script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/libs_r_3.js"></script>
 <script>
 	$('#J_search_btn').on('click', function() {
