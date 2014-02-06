@@ -415,7 +415,6 @@ elseif ($_REQUEST['step'] == 'consignee')
     //-- 收货人信息
     /*------------------------------------------------------ */
     include_once('includes/lib_transaction.php');
-
     if ($_SERVER['REQUEST_METHOD'] == 'GET')
     {
         /* 取得购物类型 */
@@ -488,8 +487,11 @@ elseif ($_REQUEST['step'] == 'consignee')
         $consignee = array(
             'address_id'    => empty($_POST['address_id']) ? 0  : intval($_POST['address_id']),
             'consignee'     => empty($_POST['consignee'])  ? '' : trim($_POST['consignee']),
+            // 'country'       => empty($_POST['country'])    ? '' : $_POST['country'],
+            // 'province'      => empty($_POST['province'])   ? '' : $_POST['province'],
             'city'          => empty($_POST['city'])       ? '' : $_POST['city'],
             'district'      => empty($_POST['district'])   ? '' : $_POST['district'],
+            // 'email'         => empty($_POST['email'])      ? '' : $_POST['email'],
             'address'       => empty($_POST['address'])    ? '' : $_POST['address'],
             'zipcode'       => empty($_POST['zipcode'])    ? '' : make_semiangle(trim($_POST['zipcode'])),
             'tel'           => empty($_POST['tel'])        ? '' : make_semiangle(trim($_POST['tel'])),
@@ -497,7 +499,6 @@ elseif ($_REQUEST['step'] == 'consignee')
             'sign_building' => empty($_POST['sign_building']) ? '' : $_POST['sign_building'],
             'best_time'     => empty($_POST['best_time'])  ? '' : $_POST['best_time'],
         );
-
         if ($_SESSION['user_id'] > 0)
         {
             include_once(ROOT_PATH . 'includes/lib_transaction.php');
@@ -582,10 +583,12 @@ elseif ($_REQUEST['step'] == 'checkout')
     }
 
     $consignee = get_consignee($_SESSION['user_id']);
+
     /* 检查收货人信息是否完整 */
-    if (!check_consignee_info($consignee, $flow_type))
+    if (false)
     {
         /* 如果不完整则转向到收货人信息填写界面 */
+        $res = !empty($consignee['consignee']) && !empty($consignee['tel']);
         ecs_header("Location: flow.php?step=consignee\n");
         exit;
     }
@@ -1466,6 +1469,7 @@ elseif ($_REQUEST['step'] == 'done')
     }
 
     $consignee = get_consignee($_SESSION['user_id']);
+
     /* 检查收货人信息是否完整 */
     if (!check_consignee_info($consignee, $flow_type))
     {
@@ -1502,7 +1506,7 @@ elseif ($_REQUEST['step'] == 'done')
         'order_status'    => OS_UNCONFIRMED,
         'shipping_status' => SS_UNSHIPPED,
         'pay_status'      => PS_UNPAYED,
-        'agency_id'       => get_agency_by_regions(array($consignee['country'], $consignee['province'], $consignee['city'], $consignee['district']))
+        'agency_id'       => get_agency_by_regions(array($consignee['city'], $consignee['district']))
         );
 
     /* 扩展信息 */
@@ -1604,14 +1608,14 @@ elseif ($_REQUEST['step'] == 'done')
             $is_real_good=1;
         }
     }
-    // if(isset($is_real_good))
-    // {
-    //     $sql="SELECT shipping_id FROM " . $ecs->table('shipping') . " WHERE shipping_id=".$order['shipping_id'] ." AND enabled =1"; 
-    //     if(!$db->getOne($sql))
-    //     {
-    //        show_message($_LANG['flow_no_shipping']);
-    //     }
-    // }
+    if(isset($is_real_good))
+    {
+        $sql="SELECT shipping_id FROM " . $ecs->table('shipping') . " WHERE shipping_id=".$order['shipping_id'] ." AND enabled =1"; 
+        if(!$db->getOne($sql))
+        {
+           show_message($_LANG['flow_no_shipping']);
+        }
+    }
     /* 订单中的总额 */
     $total = order_fee($order, $cart_goods, $consignee);
     $order['bonus']        = $total['bonus'];

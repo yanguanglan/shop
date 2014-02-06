@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html manifest="/manifest/tmallCateAppCache.manifest">
+<html>
 <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">          
 <meta charset="utf-8">     
 <title>{$page_title}触屏版</title>          
@@ -451,8 +451,8 @@ background-size: 24px 21px;
             <tr>
               <td style="padding-left:10px;" bgcolor="">{$lang.consignee_name}:</td>
               <td bgcolor="">{$consignee.consignee|escape}</td>
-              <td bgcolor="">Email邮件:</td>
-              <td bgcolor="">{$consignee.email|escape}</td>
+              <!-- <td bgcolor="">Email邮件:</td> -->
+              <!-- <td bgcolor="">{$consignee.email|escape}</td> -->
             </tr>
             <!-- {if $total.real_goods_count gt 0} -->
             <tr>

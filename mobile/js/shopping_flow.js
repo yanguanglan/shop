@@ -474,10 +474,10 @@ function checkOrderForm(frm)
   // 检查是否选择了支付配送方式
   for (i = 0; i < frm.elements.length; i ++ )
   {
-    if (frm.elements[i].name == 'shipping' && frm.elements[i].checked)
-    {
-      shippingSelected = true;
-    }
+    // if (frm.elements[i].name == 'shipping' && frm.elements[i].checked)
+    // {
+    //   shippingSelected = true;
+    // }
 
     if (frm.elements[i].name == 'payment' && frm.elements[i].checked)
     {
@@ -485,11 +485,11 @@ function checkOrderForm(frm)
     }
   }
 
-  if ( ! shippingSelected)
-  {
-    alert(flow_no_shipping);
-    return false;
-  }
+  // if ( ! shippingSelected)
+  // {
+  //   alert(flow_no_shipping);
+  //   return false;
+  // }
 
   if ( ! paymentSelected)
   {
@@ -546,17 +546,17 @@ function checkConsignee(frm)
   var msg = new Array();
   var err = false;
 
-  if (frm.elements['country'] && frm.elements['country'].value == 0)
-  {
-    msg.push(country_not_null);
-    err = true;
-  }
+  // if (frm.elements['country'] && frm.elements['country'].value == 0)
+  // {
+  //   msg.push(country_not_null);
+  //   err = true;
+  // }
 
-  if (frm.elements['province'] && frm.elements['province'].value == 0 && frm.elements['province'].length > 1)
-  {
-    err = true;
-    msg.push(province_not_null);
-  }
+  // if (frm.elements['province'] && frm.elements['province'].value == 0 && frm.elements['province'].length > 1)
+  // {
+  //   err = true;
+  //   msg.push(province_not_null);
+  // }
 
   if (frm.elements['city'] && frm.elements['city'].value == 0 && frm.elements['city'].length > 1)
   {
@@ -579,11 +579,11 @@ function checkConsignee(frm)
     msg.push(consignee_not_null);
   }
 
-  if ( ! Utils.isEmail(frm.elements['email'].value))
-  {
-    err = true;
-    msg.push(invalid_email);
-  }
+  // if ( ! Utils.isEmail(frm.elements['email'].value))
+  // {
+  //   err = true;
+  //   msg.push(invalid_email);
+  // }
 
   if (frm.elements['address'] && Utils.isEmpty(frm.elements['address'].value))
   {
