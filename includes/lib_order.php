@@ -1730,15 +1730,6 @@ function check_consignee_info($consignee, $flow_type)
         /* 如果存在实体商品 */
         $res = !empty($consignee['consignee']) &&!empty($consignee['tel']);
 
-        if ($res)
-        {
-            if (empty($consignee['district']))
-            {
-                $dist = get_regions(3, $consignee['city']);
-                $res = empty($dist);
-            }
-        }
-
         return $res;
     }
     else

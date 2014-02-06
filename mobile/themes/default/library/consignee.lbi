@@ -2,42 +2,6 @@
  
 {insert_scripts files='utils.js,transport.js'}
 <table width="100%" border="0" cellpadding="3">
-
-  <!-- {if $real_goods_count gt 0} -->
-  <!-- 购物车中存在实体商品显示国家和地区 -->
-  <tr>
-   
-    <td>
-      <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" style="border:1px solid #ccc;">
-        <option value="393" selected>衢州</option>
-      </select>
-      <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="border:1px solid #ccc"{/if} >
-      <option value="0">
-        请选择区
-      </option>
-      <option value="3320">
-        衢州市
-      </option>
-      <option value="3321">
-        江山市
-      </option>
-      <option value="3322">
-        常山县
-      </option>
-      <option value="3323">
-        开化县
-      </option>
-      <option value="3324">
-        龙游县
-      </option>
-      </select>
-    {$lang.require_field} </td>
-  </tr>
-  <!-- {/if} -->
-
-
- 
-
 <tr>
 <td>
 <input placeholder="{$lang.consignee_name}"  name="consignee" type="text" class="inputBg" id="consignee_{$sn}" value="{$consignee.consignee|escape}" />

@@ -13,7 +13,7 @@
 		border: 0 none;
 		outline: none;
 		height: 30px;
-		font-size: 100%;
+		font-size: 125%;
 	}
 	#search-pop button{
 		border: 1px solid #f1f2f4;

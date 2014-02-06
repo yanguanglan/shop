@@ -488,8 +488,6 @@ elseif ($_REQUEST['step'] == 'consignee')
         $consignee = array(
             'address_id'    => empty($_POST['address_id']) ? 0  : intval($_POST['address_id']),
             'consignee'     => empty($_POST['consignee'])  ? '' : trim($_POST['consignee']),
-            'city'          => empty($_POST['city'])       ? '' : $_POST['city'],
-            'district'      => empty($_POST['district'])   ? '' : $_POST['district'],
             'address'       => empty($_POST['address'])    ? '' : $_POST['address'],
             'zipcode'       => empty($_POST['zipcode'])    ? '' : make_semiangle(trim($_POST['zipcode'])),
             'tel'           => empty($_POST['tel'])        ? '' : make_semiangle(trim($_POST['tel'])),
