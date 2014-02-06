@@ -57,15 +57,6 @@ background: url(themes/default/images/xinde/nav-5.png) center 6px no-repeat;
 background-size: 24px 21px;
 }
 </style>
-    <div id="footerdiy">
-	<ul>
-	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
-	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
-	<li class="diy3"><a href="../allcate.php"></a></li>
-	<li class="diy4"><a href="../search.php"></a></li>
-	<li class="diy5"><a href="../flow.php"></a></li>
-	</ul>
-    </div>
 <SCRIPT src="themes/default/js/jquery.js"></script>
 <SCRIPT src="themes/default/js/placeholder.js"></script>
 <SCRIPT src="themes/default/js/bootstrap.min.js"></script>
@@ -274,5 +265,7 @@ var btn_buy = "{$lang.btn_buy}";
 var is_cancel = "{$lang.is_cancel}";
 var select_spe = "{$lang.select_spe}";
 </script>
+  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
+
 </body>
 </html>

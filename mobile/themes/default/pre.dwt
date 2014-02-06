@@ -215,8 +215,6 @@
                 <textarea name="message" id="" class="liuyan"></textarea>
             </div>
         </div>
-        验证码：<input id="order-code" style="width:70px;text-align:left;" type="text" size="8" name="captcha" class="inputBg">
-        <img src="captcha.php" alt="captcha" style="vertical-align: middle;cursor: pointer;" onclick="this.src='captcha.php?'+Math.random()">
         <div class="form-item" style="margin-left:20px;">
             <button type="submit" class="btn btn-tmall">提交表单</button>
         </div>

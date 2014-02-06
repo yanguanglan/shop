@@ -119,15 +119,6 @@ background: url(themes/default/images/xinde/nav-5.png) center 6px no-repeat;
 background-size: 24px 21px;
 }
 </style>
-    <div id="footerdiy">
-	<ul>
-	<li class="diy1" id="diy1"><a href="http://shop.yxqz.cn"></a></li>
-	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
-	<li class="diy3"><a href="../allcate.php"></a></li>
-	<li class="diy4"><a href="../search.php"></a></li>
-	<li class="diy5"><a href="../flow.php"></a></li>
-	</ul>
-    </div>
 <!--商品图 begin---> 
 <script src="themes/default/js/TouchSlide.1.1.js"></script> 
 <!-- 若想了解更详细使用方法，请访问 http://www.superslide2.com/touchSlide/ -->
@@ -498,6 +489,7 @@ function getTop(e){
 <!--购物车区域 S--> 
 
 <!--购物车区域 E-->
+  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
 var goods_id = {$goods_id};

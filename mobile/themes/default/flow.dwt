@@ -59,15 +59,6 @@ background: url(themes/default/images/xinde/nav-5.png) center 6px no-repeat;
 background-size: 24px 21px;
 }
 </style>
-    <div id="footerdiy">
-	<ul>
-	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
-	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
-	<li class="diy3"><a href="../allcate.php"></a></li>
-	<li class="diy4"><a href="../search.php"></a></li>
-	<li class="diy5"><a href="../flow.php"></a></li>
-	</ul>
-    </div>
 <div style="margin-bottom:50px" class="viewport enableNavbar enableToolbar enableTransition enableNavbar enableToolbar enableTransition"> 
  
  
@@ -872,6 +863,7 @@ text-shadow: 0 -1px 1px #ca3511;
  
  <div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
 
+  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 
  </body>
 <script type="text/javascript">

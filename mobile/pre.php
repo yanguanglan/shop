@@ -82,12 +82,12 @@ if (!empty($_REQUEST['startdate']))
 
     $json   = new JSON;
     $res    = array('err_msg' => '', 'result' => '');
-    include_once('includes/cls_captcha.php');
-    $validator = new captcha();
-    if (!$validator->check_word($_POST['captcha']))
-    {
-        die("<script>alert('验证码错误');history.back();</script>");
-    }
+    // include_once('includes/cls_captcha.php');
+    // $validator = new captcha();
+    // if (!$validator->check_word($_POST['captcha']))
+    // {
+    //     die("<script>alert('验证码错误');history.back();</script>");
+    // }
     $user_id = $_SESSION['user_id'];
     $goods_id   = isset($_REQUEST['id']) ? intval($_REQUEST['id']) : 0;
     

@@ -1,0 +1,49 @@
+<div id="footerdiy">
+<style>
+	#search-pop{
+		position: absolute;
+		top: -40px;
+		height: 40px;
+		width: 100%;
+		line-height: 40px;
+		background: #eee;
+	}
+	#search-pop input{
+		width: 67%;
+		border: 0 none;
+		outline: none;
+		height: 30px;
+	}
+	#search-pop button{
+		border: 1px solid #f1f2f4;
+		height: 30px;
+		width: 60px;
+		text-align: center;
+		color: #b10000;
+		background: #d2d2d2;
+	}
+	.hidden{
+		display: none;
+	}
+</style>
+<div id="search-pop" class="hidden">
+    <form name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()">
+	      <input name="keywords" type="text" id="keyword" value="" placeholder="搜索..." class="s-combobox-input">
+	      <button type="submit">确定</button>
+	</form>
+</div>
+	<ul>
+	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
+	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
+	<li class="diy3"><a href="../allcate.php"></a></li>
+	<li class="diy4"><a id="J_search_btn" href="../search.php"></a></li>
+	<li class="diy5"><a href="../flow.php"></a></li>
+	</ul>
+</div>
+<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/libs_r_3.js"></script>
+<script>
+	$('#J_search_btn').on('click', function() {
+		$('#search-pop').toggleClass('hidden');
+		return false;
+	});
+</script>

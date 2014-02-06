@@ -54,10 +54,27 @@ html,body{height:100%;}
 .bigimgclose:before{ -webkit-transform:rotate(-45deg); -moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);}
 .bigimgclose:after{ -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);}
 .bigimglink{position:absolute; z-index:99; top:64.5%;  left:18.4%; width:62.5%; height:8%; }
-
+.box li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+#searchbox-m.searchbox{
+    -webkit-box-shadow: 0 0 0 #fff !important;
+    box-shadow: 0 0 0 #fff !important;
+    background-color: #ff6f69;
+}
+#searchbox-m.searchbox input{
+    outline: none;
+    /*width: 98%;*/
+}
+#searchbox-m .s-combobox-input-wrap input{
+    width: 94%;
+}
 </style>
+<LINK rel=stylesheet type=text/css href="themes/default/css/searchbox.css">
  <script type="application/x-javascript">addEventListener('DOMContentLoaded',function(){setTimeout(function(){scrollTo(0,1);},0);},false);</script>
-<!--[if IE]><style>.cui-slide-nav-item{float:left; width:50%;}.cui-slide-nav-item:last-child{width:50%;}</style><![endif]-->
 </head>
 <body id="ctripPage">
         <header  class="jsmodule">
@@ -68,29 +85,45 @@ html,body{height:100%;}
         </div>
     </header>
     <nav id="nav" style="min-height:400px;">
-         <ul class="box">
-             <a href="../category.php?id=19"><li class="f"><h2>民宿.农家乐</h2><h3></h3><figure class="f_icon"></figure></li></a>
-             <a href="../category.php?id=18"><li class="t"><h2>五星商家</h2><figure class="t_icon"></figure></li></a>
-             <a href="../category.php?id=48"><li class="c"><h2>购买抵金券</h2><figure class="c_icon"></figure></li></a>
-             <a href="../category.php?id=22"><li class="h"><h2>美食预定</h2><h3></h3><figure class="h_icon"></figure></li></a>
-             <a href="../user.php"><li class="m"><h2>我的帐户</h2><figure class="m_icon"></figure></li></a>
-	     <a href="../category.php?id=23"><li class="m1"><h2>名品特卖</h2><figure class="m_icon1"></figure></li></a>
-             <a href="../category.php?id=20"><li class="trip"><h2>同城欢乐送</h2><figure class="trip_icon"></figure></li></a>
-             <a href="../category.php?id=49"><li class="p"><h2>生活服务</h2><figure class="p_icon"></figure></li></a>
-             <a href="http://yxqz.cn/wap.php?m=cat&a=new"><li class="r"><h2>优惠券</h2><figure class="r_icon"></figure></li></a>
+        <!-- 搜索START -->
+<div id="searchbox-m" class="searchbox">
+    <div class="sb-header"> 
+      <div class="sb-search">
+        <form id="searchForm" name="searchForm" method="get" action="search.php" onsubmit="return checkSearchForm()">
+          <div class="s-combobox s-combobox-shown" style="" aria-disabled="false" aria-pressed="false">
+            <div class="s-combobox-invalid-el">
+              <div class="s-combobox-invalid-inner"> </div>
+            </div>
+            <div class="s-combobox-input-wrap">
+              <input name="keywords" type="text" id="keyword" value="" placeholder="搜索..." class="s-combobox-input">
+            </div>
+          </div>
+          <input type="submit" id="J_SubmitBtn">
+          <input type="reset" id="J_ResetBtn">
+        </form>
+      </div>
+      <div class="sb-cancelBtn-wrap"><a id="J_CancelBtn" class="sb-cancelBtn">取消</a></div>
+    </div>
+    <div class="sb-category"></div>
+  </div>
+  <!-- 搜索END -->
+           <ul class="box">
+             <li class="f"><a href="../category.php?id=19"><h2>民宿.农家乐</h2><h3></h3><figure class="f_icon"></figure></a></li>
+             <li class="t"><a href="../category.php?id=18"><h2>五星商家</h2><figure class="t_icon"></figure></a></li>
+             <li class="c"><a href="../category.php?id=48"><h2>购买抵金券</h2><figure class="c_icon"></figure></a></li>
+             <li class="h"><a href="../category.php?id=22"><h2>美食预定</h2><h3></h3><figure class="h_icon"></figure></a></li>
+             <li class="m"><a href="../user.php"><h2>我的帐户</h2><figure class="m_icon"></figure></a></li>
+	         <li class="m1"><a href="../category.php?id=23"><h2>名品特卖</h2><figure class="m_icon1"></figure></a></li>
+             <li class="trip"><a href="../category.php?id=20"><h2>同城欢乐送</h2><figure class="trip_icon"></figure></a></li>
+             <li class="p"><a href="../category.php?id=49"><h2>生活服务</h2><figure class="p_icon"></figure></a></li>
+             <li class="r"><a href="http://yxqz.cn/wap.php?m=cat&a=new"><h2>优惠券</h2><figure class="r_icon"></figure></a></li>
          </ul>
     </nav>
         <div id="footer"></div>
     <section id="ydwxcsF"></section>
 <input type="hidden" id="page_id" value="212051"/>
 <script src="js/xinde/require.min.js"></script>
-<script type="text/javascript">
-    var libs = 'libs_r_3.js';
-    if (!('__proto__' in {})) {
-        libs = 'libs_jq_r_1.1.js';
-    }
-    document.write('<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/' + libs + '"></' + 'script>');
-</script>
+<script type="text/javascript" src="http://res.m.ctrip.com/html5/scripts/libs_r_3.js"></script>
 <!-- <script src="js/xinde/m.ctrip.com.core.min.js"></script> -->
 <script src="js/xinde/m.ctrip.com.slide.min.js"></script>
 <!-- <script src="js/xinde/c.ui.ad.js"></script> -->
@@ -153,14 +186,6 @@ background: url(themes/default/images/xinde/nav-5.png) center 6px no-repeat;
 background-size: 24px 21px;
 }
 </style>
-    <div id="footerdiy">
-	<ul>
-	<li class="diy1" id="diy1"><a href="../index.php"></a></li>
-	<!--<li class="diy2"><a href="../allcate.php"></a></li>-->
-	<li class="diy3"><a href="../allcate.php"></a></li>
-	<li class="diy4"><a href="../search.php"></a></li>
-	<li class="diy5"><a href="../flow.php"></a></li>
-	</ul>
-    </div>
+  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>
