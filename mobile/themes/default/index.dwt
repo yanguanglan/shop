@@ -69,15 +69,15 @@ html,body{height:100%;}
     </header>
     <nav id="nav" style="min-height:400px;">
          <ul class="box">
-             <li class="f" onclick="javascript: window.location.href='../category.php?id=19';"><h2><a title="民宿.农家乐" href="/html5/flight/" data-href="/webapp/flight/">民宿.农家乐</a></h2><h3><a title="" href="/html5/Flight/Schedule/" data-href="/webapp/flight/"></a></h3><figure class="f_icon"></figure></li>
-             <li class="t" onclick="javascript: window.location.href='../category.php?id=18';"><h2><a title="五星商家" href="/html5/Trains/" data-href="/html5/Trains/">五星商家</a></h2><figure class="t_icon"></figure></li>
-             <li class="c" onclick="javascript: window.location.href='../category.php?id=48';"><h2><a title="购买抵金券" href="/webapp/car/" data-href="/webapp/car/">购买抵金券</a></h2><figure class="c_icon"></figure></li>
-             <li class="h" onclick="javascript: window.location.href='../category.php?id=22';"><h2><a title="美食预定" href="/html5/Hotel/" data-href="/html5/Hotel/">美食预定</a></h2><h3><a title="" href="/html5/Hotel/" data-href="/html5/Hotel/"></a>·<a title="" href="/html5/tuan/" data-href="/html5/Hotel/"></a></h3><figure class="h_icon"></figure></li>
-             <li class="m"><a title="我的帐户" href="../user.php"><h2>我的帐户</h2><figure class="m_icon"></figure></a></li>
-			 <li class="m1"><a title="名品特卖" href="../category.php?id=23"><h2>名品特卖</h2><figure class="m_icon1"></figure></a></li>
-             <li class="trip" onclick="javascript: window.location.href='../category.php?id=20';"><h2><a title="同城欢乐送">同城欢乐送</a></h2><figure class="trip_icon"></figure></li>
-             <li class="p" onclick="javascript: window.location.href='../category.php?id=49';"><h2><a title="生活服务" href="/html5/tickets/">生活服务</a></h2><figure class="p_icon"></figure></li>
-             <li class="r" onclick="javascript: window.location.href='http://yxqz.cn/wap.php?m=cat&a=new';"><h2><a title="优惠券">优惠券</a></h2><figure class="r_icon"></figure></li>
+             <a href="../category.php?id=19"><li class="f"><h2>民宿.农家乐</h2><h3></h3><figure class="f_icon"></figure></li></a>
+             <a href="../category.php?id=18"><li class="t"><h2>五星商家</h2><figure class="t_icon"></figure></li></a>
+             <a href="../category.php?id=48"><li class="c"><h2>购买抵金券</h2><figure class="c_icon"></figure></li></a>
+             <a href="../category.php?id=22"><li class="h"><h2>美食预定</h2><h3></h3><figure class="h_icon"></figure></li></a>
+             <a href="../user.php"><li class="m"><h2>我的帐户</h2><figure class="m_icon"></figure></li></a>
+	     <a href="../category.php?id=23"><li class="m1"><h2>名品特卖</h2><figure class="m_icon1"></figure></li></a>
+             <a href="../category.php?id=20"><li class="trip"><h2>同城欢乐送</h2><figure class="trip_icon"></figure></li></a>
+             <a href="../category.php?id=49"><li class="p"><h2>生活服务</h2><figure class="p_icon"></figure></li></a>
+             <a href="http://yxqz.cn/wap.php?m=cat&a=new"><li class="r"><h2>优惠券</h2><figure class="r_icon"></figure></li></a>
          </ul>
     </nav>
         <div id="footer"></div>
