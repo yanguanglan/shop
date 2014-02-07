@@ -62,10 +62,6 @@ function get_categories_tree($cat_id = 0)
                 'FROM ' . $GLOBALS['ecs']->table('category') .
                 "WHERE parent_id = '$parent_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
         $res = $GLOBALS['db']->getAll($sql);
-        
-        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 GROUP BY cat_id';
-        $res2 = $GLOBALS['db']->getAll($sql);
-
         foreach ($res AS $row)
         {
             if ($row['is_show'])
@@ -74,11 +70,13 @@ function get_categories_tree($cat_id = 0)
                 $cat_arr[$row['cat_id']]['name'] = $row['cat_name'];
                 $cat_arr[$row['cat_id']]['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
 
-                foreach($res2 as $row2){
-              if($row['cat_id']==$row2['cat_id']){
-                $cat_arr[$row['cat_id']]['goods_count']   = $row2['count'];
-              }
-            }
+               $ids=get_child_cat_id($row['cat_id']);
+               $row11=array('count'=>0);
+               if($ids){
+                $sql11 = 'SELECT COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 AND cat_id IN ('.implode(',',$ids).')';
+                $row11 = $GLOBALS['db']->getRow($sql11);
+               }
+                $cat_arr[$row['cat_id']]['goods_count']   = $row11['count'];
             
                 if (isset($row['cat_id']) != NULL)
                 {
@@ -110,6 +108,19 @@ function get_areas_tree($cat_id=0){
         return $result;
 }
 
+function get_child_cat_id($id,$ids=array()){
+  is_array($id) || $id=array($id);
+  $sql = 'SELECT cat_id FROM' . $GLOBALS['ecs']->table('category') . ' WHERE parent_id IN ('.implode(',',$id).')';
+  $res = $GLOBALS['db']->getAll($sql);
+  if($res){
+    $ids=array_merge($ids,$id);
+    foreach($res AS $row){
+      $ids[]=$tmp[]=$row['cat_id'];
+    }
+    return get_child_cat_id($tmp,$ids);
+  }
+  return array_merge($ids,$id);
+}
 function get_child_tree($tree_id = 0)
 {
     $three_arr = array();
@@ -120,11 +131,7 @@ function get_child_tree($tree_id = 0)
                 'FROM ' . $GLOBALS['ecs']->table('category') .
                 "WHERE parent_id = '$tree_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
         $res = $GLOBALS['db']->getAll($child_sql);
-        
-        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 GROUP BY cat_id';
-        $res2 = $GLOBALS['db']->getAll($sql);
-        
-        
+
         foreach ($res AS $row)
         {
             if ($row['is_show'])
@@ -133,12 +140,15 @@ function get_child_tree($tree_id = 0)
                $three_arr[$row['cat_id']]['name'] = $row['cat_name'];
                $three_arr[$row['cat_id']]['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
 
-               foreach($res2 as $row2){
-              if($row['cat_id']==$row2['cat_id']){
-                $three_arr[$row['cat_id']]['goods_count']   = $row2['count'];
-              }
-            }
-            
+               $ids=get_child_cat_id($row['cat_id']);
+
+               $row11=array('count'=>0);
+               if($ids){
+                $sql11 = 'SELECT COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 AND cat_id IN ('.implode(',',$ids).')';
+                $row11 = $GLOBALS['db']->getRow($sql11);
+               }
+                $three_arr[$row['cat_id']]['goods_count']   = $row11['count'];
+
                if (isset($row['cat_id']) != NULL)
                    {
                        $three_arr[$row['cat_id']]['cat_id'] = get_child_tree($row['cat_id']);

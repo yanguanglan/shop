@@ -318,6 +318,7 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $position = assign_ur_here($cat_id, $brand_name);
     $smarty->assign('page_title',       $position['title']);    // 页面标题
     $smarty->assign('ur_here',          $position['ur_here']);  // 当前位置
+   
     $smarty->assign('categories',       get_categories_tree(null)); // 分类树
     $smarty->assign('areas',get_areas_tree($cat_id));
     // print_r( get_categories_tree(null) );
