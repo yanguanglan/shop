@@ -94,8 +94,12 @@ function get_categories_tree($cat_id = 0)
     }
 }
 
-function get_areas_tree(){
-  $sql = 'SELECT area as name,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') . ' WHERE area!="" AND is_delete=0 GROUP BY area';
+function get_areas_tree($cat_id=0){
+  $sql = 'SELECT area as name,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') . ' WHERE area!=""';
+  if($cat_id){
+    $sql .= ' AND cat_id="'.$cat_id.'"';
+  }
+  $sql .= ' AND is_delete=0 GROUP BY area';
   $res = $GLOBALS['db']->getAll($sql);
   return $res;
   foreach ($res AS $row)

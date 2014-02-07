@@ -56,7 +56,11 @@
    <div class="top-menu-bd hidden" id="all-city-bd">
      <ul class="top-parent-nav" style="width:100%;">
         <!--{foreach from=$areas item=area}-->
+        {if $smarty.get.id}
+        <li><a href="category.php?id={$smarty.get.id}&area={$area.name}"><b>{$area.name}</b><label>{$area.count}</label></a></li>
+        {else}
         <li><a href="category.php?area={$area.name}"><b>{$area.name}</b><label>{$area.count}</label></a></li>
+        {/if}
         <!--{/foreach}-->
      </ul>
    </div>
