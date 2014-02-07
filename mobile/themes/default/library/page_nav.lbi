@@ -56,7 +56,6 @@
    <div class="top-menu-bd hidden" id="all-city-bd">
      <ul class="top-parent-nav" style="width:100%;">
         <li><a href="javascript:;">柯城区</a></li>
-        <li><a href="javascript:;">衢州区</a></li>
         <li><a href="javascript:;">衢江区</a></li>
         <li><a href="javascript:;">江山市</a></li>
         <li><a href="javascript:;">常山县</a></li>
