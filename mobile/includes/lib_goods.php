@@ -63,7 +63,7 @@ function get_categories_tree($cat_id = 0)
                 "WHERE parent_id = '$parent_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
         $res = $GLOBALS['db']->getAll($sql);
         
-        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE 1 GROUP BY cat_id';
+        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 GROUP BY cat_id';
         $res2 = $GLOBALS['db']->getAll($sql);
 
         foreach ($res AS $row)
@@ -105,7 +105,7 @@ function get_child_tree($tree_id = 0)
                 "WHERE parent_id = '$tree_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
         $res = $GLOBALS['db']->getAll($child_sql);
         
-        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE 1 GROUP BY cat_id';
+        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE is_delete=0 GROUP BY cat_id';
         $res2 = $GLOBALS['db']->getAll($sql);
         
         
