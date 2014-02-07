@@ -164,6 +164,7 @@ visibility:hidden;
 	margin-bottom: -1px;
 }
 .toggle .arrow{
+	border-style: dashed dashed solid dashed;
 	border-color: transparent transparent #b10000 transparent;
 	margin-bottom: 3px;
 }
