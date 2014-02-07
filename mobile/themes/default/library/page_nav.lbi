@@ -17,13 +17,13 @@
 	<div class="top-menu-hd">
 		<ul>
 			<li>
-				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{elseif $cat_name}{$cat_name}{else}全部分类{/if}</a>
+				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{elseif $cat_name}{$cat_name}{else}全部分类{/if}<i class="arrow"></i></a>
 			</li>
 			<li>
-				<a href="javascript:;" id="all-city">全城</a>
+				<a href="javascript:;" id="all-city">全城<i class="arrow"></i></a>
 			</li>
 			<li class="last">
-				<a href="javascript:;" id="default-btn">{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}综合{elseif $pager.sort =='click_count' && $pager.order == 'DESC'}人气{elseif $pager.sort =='last_update' && $pager.order == 'DESC'}销量{elseif $pager.sort == 'shop_price'}价格{else}默认排序{/if}</a>
+				<a href="javascript:;" id="default-btn">{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}综合{elseif $pager.sort =='click_count' && $pager.order == 'DESC'}人气{elseif $pager.sort =='last_update' && $pager.order == 'DESC'}销量{elseif $pager.sort == 'shop_price'}价格{else}默认排序{/if}<i class="arrow"></i></a>
 			</li>
 		</ul>
 	</div>
@@ -92,6 +92,8 @@
   $(function() {
   	 //全部分类
   	 $('#all-cate').on('click', function() {
+      $(this).toggleClass('toggle');
+      $(this).parent().siblings().children('a').removeClass('toggle');
   	 	$('#all-cate-bd').toggleClass('hidden');
       $('#all-city-bd').addClass('hidden');
       $('#default-bd').addClass('hidden');
@@ -99,6 +101,8 @@
   	 });
      //全部城市
      $('#all-city').on('click', function() {
+        $(this).toggleClass('toggle');
+        $(this).parent().siblings().children('a').removeClass('toggle');
         $('#all-city-bd').toggleClass('hidden');
         $('#all-cate-bd').addClass('hidden');
         $('#default-bd').addClass('hidden');
@@ -138,6 +142,8 @@
      });
      //默认排序
      $('#default-btn').on('click', function() {
+        $(this).toggleClass('toggle');
+        $(this).parent().siblings().children('a').removeClass('toggle');
         $('#default-bd').toggleClass('hidden');
         $('#all-cate-bd').addClass('hidden');
         $('#all-city-bd').addClass('hidden');
