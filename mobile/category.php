@@ -34,7 +34,7 @@ elseif (isset($_REQUEST['category']))
 {
     $cat_id = intval($_REQUEST['category']);
 }
-elseif (isset($_REQUEST['area']))
+if(isset($_REQUEST['area']))
 {
     $area = $_REQUEST['area'];
 }
@@ -445,6 +445,7 @@ function category_get_goods($children,$area='', $brand, $min, $max, $ext, $size,
             'LEFT JOIN ' . $GLOBALS['ecs']->table('member_price') . ' AS mp ' .
                 "ON mp.goods_id = g.goods_id AND mp.user_rank = '$_SESSION[user_rank]' " .
             "WHERE $where $ext ORDER BY $sort $order";
+
     $res = $GLOBALS['db']->selectLimit($sql, $size, ($page - 1) * $size);
     $arr = array();
     while ($row = $GLOBALS['db']->fetchRow($res))

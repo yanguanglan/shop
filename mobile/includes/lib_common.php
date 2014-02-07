@@ -1510,12 +1510,12 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
     switch ($app)
     {
         case 'category':
-            if (empty($cid))
-            {
-                return false;
-            }
-            else
-            {
+//            if (empty($cid))
+//            {
+//                return false;
+//            }
+//            else
+//            {
                 if ($rewrite)
                 {
                     $uri = 'category-' . $cid;
@@ -1581,7 +1581,7 @@ function build_uri($app, $params, $append = '', $page = 0, $keywords = '', $size
                         $uri .= '&amp;order=' . $order;
                     }
                 }
-            }
+//            }
 
             break;
         case 'goods':
