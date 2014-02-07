@@ -90,6 +90,15 @@
 </div> 
 <script>
   $(function() {
+     var bodyClass = function () {
+       var $body = $('body');
+       var len = $('.top-menu-bd.hidden').length;
+       if ($body.hasClass('over-hidden') && len == 3) {
+         $body.removeClass('over-hidden');
+       } else {
+         $body.addClass('over-hidden');
+       }
+     }
   	 //全部分类
   	 $('#all-cate').on('click', function() {
       $(this).toggleClass('toggle');
@@ -97,7 +106,7 @@
   	 	$('#all-cate-bd').toggleClass('hidden');
       $('#all-city-bd').addClass('hidden');
       $('#default-bd').addClass('hidden');
-      $('body').toggleClass('over-hidden');
+      bodyClass();
   	 });
      //全部城市
      $('#all-city').on('click', function() {
@@ -106,6 +115,7 @@
         $('#all-city-bd').toggleClass('hidden');
         $('#all-cate-bd').addClass('hidden');
         $('#default-bd').addClass('hidden');
+        bodyClass();
      });
      var formateArea = function (url, text) {
         var params = url.split('?');
@@ -147,6 +157,7 @@
         $('#default-bd').toggleClass('hidden');
         $('#all-cate-bd').addClass('hidden');
         $('#all-city-bd').addClass('hidden');
+        bodyClass();
      });
   	 //导航的点击
   	 var $childs = $('.top-childs .top-child-item');
