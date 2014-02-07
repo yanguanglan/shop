@@ -28,9 +28,9 @@
 	}
 </style>
 <style>
-#footerdiy {width: 100%;margin: 10px auto 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #eee;height: 50px;position: fixed;z-index: 1000;bottom: 0;}
+#footerdiy {width: 100%;margin: 10px auto 0 auto;border-top: 1px solid #DDD;text-align: center;color: #AAA;line-height: 20px;background: #eee;height: 40px;position: fixed;z-index: 1000;bottom: 0;}
 #footerdiy ul {list-style-type: none;}
-#footerdiy ul li {height:50px;padding-top:10px;width:25%;float:left;}
+#footerdiy ul li {height:40px;padding-top:5px;width:25%;float:left;}
 #footerdiy ul li > a {
 color: #565654;
 line-height: 80px;

@@ -86,7 +86,7 @@ html,body{height:100%;}
             </div>
         </div>
     </header>
-    <nav id="nav" style="min-height:400px;">
+    <nav id="nav" style="min-height:450px;">
         <!-- 搜索START -->
 <div id="searchbox-m" class="searchbox">
     <div class="sb-header"> 
