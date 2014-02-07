@@ -20,7 +20,7 @@
 				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{elseif $cat_name}{$cat_name}{else}全部分类{/if}<i class="arrow"></i></a>
 			</li>
 			<li>
-				<a href="javascript:;" id="all-city">全城<i class="arrow"></i></a>
+				<a href="javascript:;" id="all-city">{if $smarty.get.area !=''}{$smarty.get.area}{else}全城{/if}<i class="arrow"></i></a>
 			</li>
 			<li class="last">
 				<a href="javascript:;" id="default-btn">{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}综合{elseif $pager.sort =='click_count' && $pager.order == 'DESC'}人气{elseif $pager.sort =='last_update' && $pager.order == 'DESC'}销量{elseif $pager.sort == 'shop_price'}价格{else}默认排序{/if}<i class="arrow"></i></a>
@@ -55,6 +55,7 @@
 	 </div>
    <div class="top-menu-bd hidden" id="all-city-bd">
      <ul class="top-parent-nav" style="width:100%;">
+        <li><a href="javascript:;">全城</a></li>
         <li><a href="javascript:;">柯城区</a></li>
         <li><a href="javascript:;">衢江区</a></li>
         <li><a href="javascript:;">江山市</a></li>
@@ -126,6 +127,9 @@
            all[_all[0]] = (_all[1] || "");
         }
         all.area = text;
+        if (text == '全城') {
+           delete all.area;
+        }
         var last = params[0] + '?';
         for (var key in all) {
            if (key != 'order') {
@@ -146,6 +150,10 @@
         if (url.indexOf('?') > -1) {
            rediret = formateArea(url, area);
         } else {
+           if (area == '全城') {
+             $('#all-city-bd').addClass('hidden');
+             return;
+           }
            rediret = url + '?area=' + area; 
         }
         window.location.href = rediret;
