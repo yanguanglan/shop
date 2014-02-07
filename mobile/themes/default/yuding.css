@@ -204,7 +204,7 @@ color: #909090;
 }
 .order-bd .pics img{
 	width: 258px;
-	height: 145px;
+	/*height: 145px;*/
 }
 .order-bd .content{
 	overflow: hidden;
