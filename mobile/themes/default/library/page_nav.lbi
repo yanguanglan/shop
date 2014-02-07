@@ -32,7 +32,7 @@
       <li class="cur"><a href="#">全部分类</a></li>
       <!--{foreach from=$categories item=cat name=no }-->
       {if $cat.cat_id}
-        <li><a href="javascript:;" data-url="{$cat.url}">{$cat.name|escape:html}({$cat.goods_count})</a></li>
+        <li><a href="javascript:;" data-url="{$cat.url}">{$cat.name|escape:html}({$cat.goods_count|default:0})</a></li>
       {else}
         <li><a href="{$cat.url}">{$cat.name|escape:html}</a></li>         
       {/if} 
@@ -45,7 +45,7 @@
         		<ul>
               <li><a href="{$cat.url}">全部</a></li>
               <!--{foreach from=$cat.cat_id item=child name=no1 }-->
-        			<li><a href="{$child.url}">{$child.name|escape:html}({$child.goods_count})</a></li>
+        			<li><a href="{$child.url}">{$child.name|escape:html}({$child.goods_count|default:0})</a></li>
               <!--{/foreach}-->
         		</ul>
             {/if}
