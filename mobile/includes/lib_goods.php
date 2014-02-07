@@ -61,8 +61,10 @@ function get_categories_tree($cat_id = 0)
         $sql = 'SELECT cat_id,cat_name ,parent_id,is_show ' .
                 'FROM ' . $GLOBALS['ecs']->table('category') .
                 "WHERE parent_id = '$parent_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
-
         $res = $GLOBALS['db']->getAll($sql);
+        
+        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE 1 GROUP BY cat_id';
+        $res2 = $GLOBALS['db']->getAll($sql);
 
         foreach ($res AS $row)
         {
@@ -72,11 +74,18 @@ function get_categories_tree($cat_id = 0)
                 $cat_arr[$row['cat_id']]['name'] = $row['cat_name'];
                 $cat_arr[$row['cat_id']]['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
 
+                foreach($res2 as $row2){
+              if($row['cat_id']==$row2['cat_id']){
+                $cat_arr[$row['cat_id']]['goods_count']   = $row2['count'];
+              }
+            }
+            
                 if (isset($row['cat_id']) != NULL)
                 {
                     $cat_arr[$row['cat_id']]['cat_id'] = get_child_tree($row['cat_id']);
                 }
             }
+            
         }
     }
     if(isset($cat_arr))
@@ -95,6 +104,11 @@ function get_child_tree($tree_id = 0)
                 'FROM ' . $GLOBALS['ecs']->table('category') .
                 "WHERE parent_id = '$tree_id' AND is_show = 1 ORDER BY sort_order ASC, cat_id ASC";
         $res = $GLOBALS['db']->getAll($child_sql);
+        
+        $sql = 'SELECT cat_id,COUNT(*) as count FROM ' . $GLOBALS['ecs']->table('goods') .' WHERE 1 GROUP BY cat_id';
+        $res2 = $GLOBALS['db']->getAll($sql);
+        
+        
         foreach ($res AS $row)
         {
             if ($row['is_show'])
@@ -103,6 +117,12 @@ function get_child_tree($tree_id = 0)
                $three_arr[$row['cat_id']]['name'] = $row['cat_name'];
                $three_arr[$row['cat_id']]['url']  = build_uri('category', array('cid' => $row['cat_id']), $row['cat_name']);
 
+               foreach($res2 as $row2){
+              if($row['cat_id']==$row2['cat_id']){
+                $three_arr[$row['cat_id']]['goods_count']   = $row2['count'];
+              }
+            }
+            
                if (isset($row['cat_id']) != NULL)
                    {
                        $three_arr[$row['cat_id']]['cat_id'] = get_child_tree($row['cat_id']);
