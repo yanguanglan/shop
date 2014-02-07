@@ -149,6 +149,7 @@
 </div>
 <!-- #BeginLibraryItem "/library/page_footer_goods.lbi" --><!-- #EndLibraryItem --> 
 <!--end 主体-->
+<!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 </body>
 </html>
 
