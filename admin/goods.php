@@ -819,6 +819,7 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
     $goods_name_style = $_POST['goods_name_color'] . '+' . $_POST['goods_name_style'];
 
     $catgory_id = empty($_POST['cat_id']) ? '' : intval($_POST['cat_id']);
+    $area = empty($_POST['area'])?'':$_POST['area'];
     $brand_id = empty($_POST['brand_id']) ? '' : intval($_POST['brand_id']);
 
     $goods_thumb = (empty($goods_thumb) && !empty($_POST['goods_thumb_url']) && goods_parse_url($_POST['goods_thumb_url'])) ? htmlspecialchars(trim($_POST['goods_thumb_url'])) : $goods_thumb;
@@ -882,6 +883,7 @@ elseif ($_REQUEST['act'] == 'insert' || $_REQUEST['act'] == 'update')
                 "goods_name_style = '$goods_name_style', " .
                 "goods_sn = '$goods_sn', " .
                 "cat_id = '$catgory_id', " .
+                "area = '$area', " .
                 "brand_id = '$brand_id', " .
                 "shop_price = '$shop_price', " .
                 "market_price = '$market_price', " .

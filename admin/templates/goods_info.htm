@@ -48,6 +48,20 @@
             <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeGoodsSN">{$lang.notice_goods_sn}</span></td>
           </tr>
           <tr>
+            <td class="label">地区</td>
+            <td>
+                <select name="area">
+                <option value="">请选择地区</option>
+                <option value="常山县" {if $goods.area=="常山县"}selected{/if}>常山县</option>
+                <option value="开化县" {if $goods.area=="开化县"}selected{/if}>开化县</option>
+                <option value="柯城区" {if $goods.area=="柯城区"}selected{/if}>柯城区</option>
+                <option value="江山市" {if $goods.area=="江山市"}selected{/if}>江山市</option>
+                <option value="衢江区" {if $goods.area=="衢江区"}selected{/if}>衢江区</option>
+                <option value="龙游县" {if $goods.area=="龙游县"}selected{/if}>龙游县</option>
+                </select>
+            </td>
+          </tr>
+          <tr>
             <td class="label">{$lang.lab_goods_cat}</td>
             <td><select name="cat_id" onchange="hideCatDiv()" ><option value="0">{$lang.select_please}</option>{$cat_list}</select>
               {if $is_add}
