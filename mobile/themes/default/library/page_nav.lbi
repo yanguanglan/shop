@@ -9,7 +9,7 @@
 				<a href="javascript:;" id="all-city">{if $smarty.get.area !=''}{$smarty.get.area}{else}全城{/if}<i class="arrow"></i></a>
 			</li>
 			<li class="last">
-				<a href="javascript:;" id="default-btn">{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}综合{elseif $pager.sort =='click_count' && $pager.order == 'DESC'}人气{elseif $pager.sort =='last_update' && $pager.order == 'DESC'}销量{elseif $pager.sort == 'shop_price'}价格{else}默认排序{/if}<i class="arrow"></i></a>
+				<a href="javascript:;" id="default-btn">{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}默认排序{elseif $pager.sort =='click_count' && $pager.order == 'DESC'}人气{elseif $pager.sort =='last_update' && $pager.order == 'DESC'}销量{elseif $pager.sort == 'shop_price'}价格{else}默认排序{/if}<i class="arrow"></i></a>
 			</li>
 		</ul>
 	</div>
@@ -54,7 +54,7 @@
    <div class="top-menu-bd hidden" id="default-bd">
     <ul class="top-parent-nav" style="width:100%;">
       <li class="{if $pager.sort == 'goods_id' && $pager.order == 'DESC'}cur{/if}">
-        <a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=DESC#goods_list">综合
+        <a href="{$script_name}.php?category={$category}&display={$pager.display}&brand={$brand_id}&price_min={$price_min}&price_max={$price_max}&filter_attr={$filter_attr}&page={$pager.page}&sort=goods_id&order=DESC#goods_list">默认排序
         </a> 
       </li>
       <li class="{if $pager.sort =='click_count' && $pager.order == 'DESC'}cur{/if}">
