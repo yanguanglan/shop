@@ -17,7 +17,7 @@
 	<div class="top-menu-hd">
 		<ul>
 			<li>
-				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{else}{$cat_name}{/if}</a>
+				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{elseif $cat_name}{$cat_name}{else}全部分类{/if}</a>
 			</li>
 			<li>
 				<a href="javascript:;" id="all-city">全城</a>
@@ -29,7 +29,7 @@
 	</div>
 	<div class="top-menu-bd hidden" id="all-cate-bd">
 		<ul class="top-parent-nav">
-      <li class="cur"><a href="search.php"><b>全部分类</b></a></li>
+      <li class="cur"><a href="category.php"><b>全部分类</b></a></li>
       <!--{foreach from=$categories item=cat name=no }-->
       {if $cat.cat_id}
         <li><a href="javascript:;" data-url="{$cat.url}"><b>{$cat.name|escape:html}</b><label>{$cat.goods_count|default:0}</label></a></li>
@@ -55,13 +55,13 @@
 	 </div>
    <div class="top-menu-bd hidden" id="all-city-bd">
      <ul class="top-parent-nav" style="width:100%;">
-       <li><a href="#"><b>全城</b><label>100</label></a></li>
-       <li><a href="#"><b>柯城区</b><label>100</label></a></li>
-       <li><a href="#"><b>衢江区</b><label>100</label></a></li>
-       <li><a href="#"><b>江山市</b><label>100</label></a></li>
-       <li><a href="#"><b>常山县</b><label>100</label></a></li>
-       <li><a href="#"><b>开化县</b><label>100</label></a></li>
-       <li><a href="#"><b>龙游县</b><label>100</label></a></li>
+        <li><a href="javascript:;">柯城区</a></li>
+        <li><a href="javascript:;">衢州区</a></li>
+        <li><a href="javascript:;">衢江区</a></li>
+        <li><a href="javascript:;">江山市</a></li>
+        <li><a href="javascript:;">常山县</a></li>
+        <li><a href="javascript:;">开化县</a></li>
+        <li><a href="javascript:;">龙游县</a></li>
      </ul>
    </div>
    <!-- 默认排序 -->
@@ -103,6 +103,39 @@
         $('#all-city-bd').toggleClass('hidden');
         $('#all-cate-bd').addClass('hidden');
         $('#default-bd').addClass('hidden');
+     });
+     var formateArea = function (url, text) {
+        var params = url.split('?');
+        var _pas = params[1].split('&');
+        var all = {};
+        for (var i = 0; i < _pas.length; i ++) {
+           var _all = _pas[i].split('=');
+           all[_all[0]] = (_all[1] || "");
+        }
+        all.area = text;
+        var last = params[0] + '?';
+        for (var key in all) {
+           if (key != 'order') {
+             last += key + '=' + all[key] + '&';            
+           }
+        }
+        if (all.order) {
+          last += 'order=' + all.order;
+        } else {
+          last = last.substring(0, last.length - 1);          
+        }
+        return last;
+     }
+     $('#all-city-bd li').on('click', function () {
+        var url = window.location.href;
+        var area = $(this).text();
+        var rediret;
+        if (url.indexOf('?') > -1) {
+           rediret = formateArea(url, area);
+        } else {
+           rediret = url + '?area=' + area; 
+        }
+        window.location.href = rediret;
      });
      //默认排序
      $('#default-btn').on('click', function() {

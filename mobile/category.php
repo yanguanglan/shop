@@ -34,12 +34,11 @@ elseif (isset($_REQUEST['category']))
 {
     $cat_id = intval($_REQUEST['category']);
 }
-else
+elseif (isset($_REQUEST['area']))
 {
-    /* 如果分类ID为0，则返回首页 */
-    ecs_header("Location: ./\n");
-    exit;
+    $area = $_REQUEST['area'];
 }
+
 /* 初始化分页信息 */
 $page = isset($_REQUEST['page'])   && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
 $size = isset($_CFG['page_size'])  && intval($_CFG['page_size']) > 0 ? intval($_CFG['page_size']) : 10;
@@ -84,12 +83,6 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
         $smarty->assign('description', htmlspecialchars($cat['cat_desc']));
         $smarty->assign('cat_style',   htmlspecialchars($cat['style']));
         $smarty->assign('cat_name',    htmlspecialchars($cat['cat_name']));//by Leah
-    }
-    else
-    {
-        /* 如果分类不存在则返回首页 */
-        ecs_header("Location: ./\n");
-        exit;
     }
 
     /* 赋值固定内容 */
@@ -326,6 +319,7 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('page_title',       $position['title']);    // 页面标题
     $smarty->assign('ur_here',          $position['ur_here']);  // 当前位置
     $smarty->assign('categories',       get_categories_tree(null)); // 分类树
+    $smarty->assign('areas',get_areas_tree($cat_id));
     // print_r( get_categories_tree(null) );
     $smarty->assign('helps',            get_shop_help());              // 网店帮助
     $smarty->assign('top_goods',        get_top10());                  // 销售排行
@@ -370,13 +364,13 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
     $smarty->assign('promotion_goods', get_category_recommend_goods('promote', $children, $brand, $price_min, $price_max, $ext));
     $smarty->assign('hot_goods',       get_category_recommend_goods('hot', $children, $brand, $price_min, $price_max, $ext));
 
-    $count = get_cagtegory_goods_count($children, $brand, $price_min, $price_max, $ext);
+    $count = get_cagtegory_goods_count($children,$area, $brand, $price_min, $price_max, $ext);
     $max_page = ($count> 0) ? ceil($count / $size) : 1;
     if ($page > $max_page)
     {
         $page = $max_page;
     }
-    $goodslist = category_get_goods($children, $brand, $price_min, $price_max, $ext, $size, $page, $sort, $order);
+    $goodslist = category_get_goods($children,$area, $brand, $price_min, $price_max, $ext, $size, $page, $sort, $order);
     if($display == 'grid')
     {
         if(count($goodslist) % 2 != 0)
@@ -418,12 +412,16 @@ function get_cat_info($cat_id)
  * @param   string  $children
  * @return  array
  */
-function category_get_goods($children, $brand, $min, $max, $ext, $size, $page, $sort, $order)
+function category_get_goods($children,$area='', $brand, $min, $max, $ext, $size, $page, $sort, $order)
 {
     $display = $GLOBALS['display'];
     $where = "g.is_on_sale = 1 AND g.is_alone_sale = 1 AND ".
             "g.is_delete = 0 AND ($children OR " . get_extension_goods($children) . ')';
 
+    if ($area)
+    {
+        $where .=  " AND g.area LIKE '%$area%' ";
+    }
     if ($brand > 0)
     {
         $where .=  "AND g.brand_id=$brand ";
@@ -561,10 +559,13 @@ function get_goods_sales_count($goods_id)
  * @param   string     $cat_id
  * @return  integer
  */
-function get_cagtegory_goods_count($children, $brand = 0, $min = 0, $max = 0, $ext='')
+function get_cagtegory_goods_count($children,$area='', $brand = 0, $min = 0, $max = 0, $ext='')
 {
     $where  = "g.is_on_sale = 1 AND g.is_alone_sale = 1 AND g.is_delete = 0 AND ($children OR " . get_extension_goods($children) . ')';
-
+    if ($area)
+    {
+        $where .=  " AND g.area LIKE '%$area%' ";
+    }
     if ($brand > 0)
     {
         $where .=  " AND g.brand_id = $brand ";
