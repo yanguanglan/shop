@@ -17,7 +17,7 @@
 	<div class="top-menu-hd">
 		<ul>
 			<li>
-				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{else}{$cat_name}{/if}</a>
+				<a href="javascript:;" id="all-cate">{if $search_keywords}{$search_keywords|escape}{elseif $cat_name}{$cat_name}{else}全部分类{/if}</a>
 			</li>
 			<li>
 				<a href="javascript:;" id="all-city">全城</a>
@@ -55,13 +55,9 @@
 	 </div>
    <div class="top-menu-bd hidden" id="all-city-bd">
      <ul class="top-parent-nav" style="width:100%;">
-       <li><a href="#"><b>全城</b><label>100</label></a></li>
-       <li><a href="#"><b>柯城区</b><label>100</label></a></li>
-       <li><a href="#"><b>衢江区</b><label>100</label></a></li>
-       <li><a href="#"><b>江山市</b><label>100</label></a></li>
-       <li><a href="#"><b>常山县</b><label>100</label></a></li>
-       <li><a href="#"><b>开化县</b><label>100</label></a></li>
-       <li><a href="#"><b>龙游县</b><label>100</label></a></li>
+        <!--{foreach from=$areas item=area}-->
+        <li><a href="category.php?area={$area.name}"><b>{$area.name}</b><label>{$area.count}</label></a></li>
+        <!--{/foreach}-->
      </ul>
    </div>
    <!-- 默认排序 -->
