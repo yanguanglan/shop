@@ -194,6 +194,7 @@ if (!$smarty->is_cached('goods.dwt', $cache_id))
         * by Leah
         */
         //print_r( $goods );
+        $goods['goods_desc']=  preg_replace("/<img([^<]*)>/","",$goods['goods_desc']);
         $smarty->assign('goods',              $goods);
         $smarty->assign('goods_id',           $goods['goods_id']);
         $smarty->assign('promote_end_time',   $goods['gmt_end_time']);
