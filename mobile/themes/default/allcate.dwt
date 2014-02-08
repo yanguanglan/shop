@@ -111,5 +111,4 @@ background-size: 24px 21px;
 </div> 
 <SCRIPT src="themes/default/js/zepto.min.js"></script>
 <SCRIPT src="themes/default/js/cate.js"></script>
-  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 </body></html>

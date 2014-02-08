@@ -492,7 +492,6 @@ function getTop(e){
 <!--购物车区域 S--> 
 
 <!--购物车区域 E-->
-  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
 var goods_id = {$goods_id};

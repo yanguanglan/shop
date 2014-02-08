@@ -863,8 +863,6 @@ text-shadow: 0 -1px 1px #ca3511;
  
  <div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
 
-  <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
-
  </body>
 <script type="text/javascript">
 var process_request = "{$lang.process_request}";
