@@ -253,13 +253,16 @@ background-size: 24px 21px;
 <!--商品参数 begin-->
 <section class="s-buy ui-section-box">
   <input id="s-buy-open" type="checkbox">
+  {if !$goods.rooms}
   <label class="info ui-more" for="s-buy-open">
   <div class="notice"> 请选择<span class="property"></span> </div>
   <ul class="selected" style="display: none;">
   </ul>
   </label>
+  {/if}
   <form action="javascript:addToCart({$goods.goods_id})" method="post" name="ECS_FORMBUY" id="ECS_FORMBUY" >
-    <div class="fields">
+    {if !$goods.rooms}
+    <div class="fields" style="height:auto;">
       <div style="height: 37px;" class="summary">
         <ul style="position: static;" class="summary-c">
           <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
@@ -314,7 +317,6 @@ background-size: 24px 21px;
       <div class="quantity">
         <h2>数量：</h2>
         <div class="items"> <span class="ui-number"> 
-          
           <!-- {if $goods.goods_id gt 0 && $goods.is_gift eq 0 && $goods.parent_id eq 0} 普通商品可修改数量 -->
           <button type="button" class="decrease" onclick="changenum( - 1)">-</button>
           <input class="num" name="number" id="goods_number" autocomplete="off" value="1" min="1" max="{$goods.goods_number}" type="number">
@@ -325,7 +327,8 @@ background-size: 24px 21px;
           </span> <span class="purchase" style="display:none;">限购<span class="purchase-v"></span>件</span> </div>
       </div>
     </div>
-    <div class="option" > 
+    {/if}
+    <div class="option"> 
       <script language="javascript" type="text/javascript">
             function showDiv(){
                 document.getElementById('popDiv').style.display = 'block';

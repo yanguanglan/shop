@@ -313,6 +313,7 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
       </li>
       <!-- {/if} -->
       <!-- {* 开始循环所有可选属性 *} -->
+{if !$goods.rooms}
       <!-- {foreach from=$specification item=spec key=spec_key} -->
      <li class="" style="  padding-top:5px; height:auto">
       <dd>
@@ -384,7 +385,6 @@ function addnum(id){
 	$(id).value = num; 
 }
 </SCRIPT>
-
 <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存-->
    
      
@@ -416,7 +416,8 @@ function addnum(id){
       <div class="blank"></div>
            <li class="clearfix" style="height:auto">
         <div class="blank"></div> 
-        <!-- ecmoban修改部分 -->	
+        <!-- ecmoban修改部分 -->
+        {/if}
 	<div style=" position:relative; padding-left:72px;">  
   {if $goods.rooms}
   <a href="pre.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
