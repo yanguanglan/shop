@@ -225,6 +225,7 @@ background-size: 24px 21px;
     <h1> {$goods.goods_style_name} <b></b> </h1>
   </div>
   <div class="summary">
+    <!-- {if $goods.promote_price neq "￥0元"} -->
     <ul class="m-prices">
       <!--{if $goods.is_promote and $goods.gmt_end_time } 促销-->
       <li class="deposit item"> <span class="deposit item">{$lang.promote_price}<b>{$goods.promote_price}</b> </span> </li>
@@ -236,6 +237,7 @@ background-size: 24px 21px;
       </li>
       <!-- {/if} -->
     </ul>
+    <!-- {/if} -->
     <!--{if $goods.is_promote and $goods.gmt_end_time } 促销--> 
     {insert_scripts files='lefttime.js'}
     <div class="m-presell">
