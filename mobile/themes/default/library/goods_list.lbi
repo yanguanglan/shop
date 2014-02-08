@@ -47,7 +47,7 @@ function getTop(e){
           <div class="proInfo-wrap">
             <div class="proTitle"> <a href="{$goods.url}" >{$goods.name}</a> </div>
             <div class="proSKU"></div>
-            <!-- {if $goods.shop_price neq 0}-->
+            <!-- {if $goods.shop_price neq "￥0元"}-->
             <div class="proPrice"> 
               <!--{if $goods.promote_price neq "" } --> 
               <em>{$goods.promote_price}</em> 
