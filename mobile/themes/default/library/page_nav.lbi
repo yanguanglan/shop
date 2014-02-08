@@ -119,7 +119,8 @@
          $(document).on('tap', function(e){
             var $target = $(e.target);
             var m = $target.parents('.top-menu-hd').length;
-            if (m) {
+            var len = $('.top-menu-bd.hidden').length;
+            if (m || len == 3) {
               return;
             }
             if(!$target.parents('.top-menu-bd').length) {
