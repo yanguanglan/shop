@@ -62,7 +62,7 @@ background-size: 24px 21px;
 <SCRIPT src="themes/default/js/bootstrap.min.js"></script>
 
 <SCRIPT src="themes/default/js/category.js"></script> 
-<div id="page" class="page-shadow" style="margin-left: 0px; margin-right: 0px;">
+<!-- <div id="page" class="page-shadow" style="margin-left: 0px; margin-right: 0px;"> -->
   <div class="searchbox">
     <div class="sb-header"> <a id="J_BackBtn" class="sb-back" href="javascript:history.go(-1);" >返回</a>
       <div class="sb-search">
@@ -98,7 +98,7 @@ background-size: 24px 21px;
       <div class="circle frotate_07"></div>
       <div class="circle frotate_08"></div>
     </div>
-  </div>
+  <!-- </div> -->
   
   <section class="list-pagination">
     <div class="pagenav-wrapper" id="J_PageNavWrap" style="">
