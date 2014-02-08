@@ -1,5 +1,5 @@
 <LINK rel=stylesheet type=text/css href="themes/default/allcate.css">
-<div id="top-bg" class="top-bg hidden"></div>
+<div id="top-bg" class="top-bgs hidden"></div>
 <div class="top-menu">
 	<div class="top-menu-hd">
 		<ul>
@@ -86,10 +86,7 @@
          $('#top-bg').hide();
        } else {
          $body.addClass('over-hidden');
-         $('#top-bg').css({
-            width: $('body').width(),
-            height: $('body').height()
-         });
+         $('#top-bg').css('height', $(document).height());
          $('#top-bg').show();
        }
      }
