@@ -121,6 +121,13 @@
           $('#top-bg').hide();
         }
      });
+     $('#top-bg').on('click', function() {
+          $('.top-menu-bd').addClass('hidden');
+          $('.top-menu-hd a').removeClass('toggle');
+          bodyClass();
+          $('#top-bg').hide();   
+     });
+
      var formateArea = function (url, text) {
         var params = url.split('?');
         var _pas = params[1].split('&');
