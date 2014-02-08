@@ -121,7 +121,7 @@
           $('#top-bg').hide();
         }
      });
-     $('#top-bg').on('click', function() {
+     $('#top-bg').on('tap', function() {
           $('.top-menu-bd').addClass('hidden');
           $('.top-menu-hd a').removeClass('toggle');
           bodyClass();
