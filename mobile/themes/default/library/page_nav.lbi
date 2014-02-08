@@ -90,43 +90,93 @@
          $('#top-bg').show();
        }
      }
-  	 //全部分类
-  	 $('#all-cate').on('click', function() {
-      $(this).toggleClass('toggle');
-      $(this).parent().siblings().children('a').removeClass('toggle');
-  	 	$('#all-cate-bd').toggleClass('hidden');
-      $('#all-city-bd').addClass('hidden');
-      $('#default-bd').addClass('hidden');
-      bodyClass();
-  	 });
-     //全部城市
-     $('#all-city').on('click', function() {
-        $(this).toggleClass('toggle');
-        $(this).parent().siblings().children('a').removeClass('toggle');
-        $('#all-city-bd').toggleClass('hidden');
-        $('#all-cate-bd').addClass('hidden');
-        $('#default-bd').addClass('hidden');
-        bodyClass();
-     });
-     $(document).on('click', function(e){
-        var $target = $(e.target);
-        var m = $target.parents('.top-menu-hd').length;
-        if (m) {
-          return;
-        }
-        if(!$target.parents('.top-menu-bd').length) {
-          $('.top-menu-bd').addClass('hidden');
-          $('.top-menu-hd a').removeClass('toggle');
+     //判断手机与否
+     var isMobile = !!navigator.userAgent.match(/mobile/i);
+     if (isMobile) {
+        //全部分类
+         $('#all-cate').on('tap', function() {
+          $(this).toggleClass('toggle');
+          $(this).parent().siblings().children('a').removeClass('toggle');
+          $('#all-cate-bd').slideToggle();
+          $('#all-cate-bd').toggleClass('hidden');
+          $('#all-city-bd,#default-bd').slideUp();
+          $('#all-city-bd,#default-bd').addClass('hidden');
           bodyClass();
-          $('#top-bg').hide();
-        }
-     });
-     $('#top-bg').on('tap', function() {
-          $('.top-menu-bd').addClass('hidden');
-          $('.top-menu-hd a').removeClass('toggle');
+         });
+         //全部城市
+         $('#all-city').on('tap', function() {
+            $(this).toggleClass('toggle');
+            $(this).parent().siblings().children('a').removeClass('toggle');
+            $('#all-city-bd').slideToggle();
+            $('#all-city-bd').toggleClass('hidden');
+            $('#all-cate-bd, #default-bd').slideUp();
+            $('#all-cate-bd, #default-bd').addClass('hidden');
+            bodyClass();
+         });
+         $(document).on('tap', function(e){
+            var $target = $(e.target);
+            var m = $target.parents('.top-menu-hd').length;
+            if (m) {
+              return;
+            }
+            if(!$target.parents('.top-menu-bd').length) {
+              $('.top-menu-bd').addClass('hidden');
+              $('.top-menu-bd').slideUp();
+              $('.top-menu-hd a').removeClass('toggle');
+              bodyClass();
+              $('#top-bg').hide();
+            }
+         });
+         $('#top-bg').on('tap', function() {
+              $('.top-menu-bd').addClass('hidden');
+              $('.top-menu-bd').slideUp();
+              $('.top-menu-hd a').removeClass('toggle');
+              bodyClass();
+              $('#top-bg').hide();   
+         });
+     } else {
+        //全部分类
+         $('#all-cate').on('click', function() {
+          $(this).toggleClass('toggle');
+          $(this).parent().siblings().children('a').removeClass('toggle');
+          $('#all-cate-bd').slideToggle();
+          $('#all-cate-bd').toggleClass('hidden');
+          $('#all-city-bd,#default-bd').slideUp();
+          $('#all-city-bd,#default-bd').addClass('hidden');
           bodyClass();
-          $('#top-bg').hide();   
-     });
+         });
+         //全部城市
+         $('#all-city').on('click', function() {
+            $(this).toggleClass('toggle');
+            $(this).parent().siblings().children('a').removeClass('toggle');
+            $('#all-city-bd').slideToggle();
+            $('#all-city-bd').toggleClass('hidden');
+            $('#all-cate-bd, #default-bd').slideUp();
+            $('#all-cate-bd, #default-bd').addClass('hidden');
+            bodyClass();
+         });
+         $(document).on('click', function(e){
+            var $target = $(e.target);
+            var m = $target.parents('.top-menu-hd').length;
+            if (m) {
+              return;
+            }
+            if(!$target.parents('.top-menu-bd').length) {
+              $('.top-menu-bd').addClass('hidden');
+              $('.top-menu-bd').slideUp();
+              $('.top-menu-hd a').removeClass('toggle');
+              bodyClass();
+              $('#top-bg').hide();
+            }
+         });
+         $('#top-bg').on('click', function() {
+              $('.top-menu-bd').addClass('hidden');
+              $('.top-menu-bd').slideUp();
+              $('.top-menu-hd a').removeClass('toggle');
+              bodyClass();
+              $('#top-bg').hide();   
+         });
+     }
 
      var formateArea = function (url, text) {
         var params = url.split('?');
@@ -153,42 +203,84 @@
         }
         return last;
      }
-     $('#all-city-bd li').on('click', function () {
-        var url = window.location.href;
-        var area = $(this).text();
-        var rediret;
-        if (url.indexOf('?') > -1) {
-           rediret = formateArea(url, area);
-        } else {
-           if (area == '全城') {
-             $('#all-city-bd').addClass('hidden');
-             return;
-           }
-           rediret = url + '?area=' + area; 
+     if (isMobile) {
+        $('#all-city-bd li').on('tap', function () {
+          var url = window.location.href;
+          var area = $(this).text();
+          var rediret;
+          if (url.indexOf('?') > -1) {
+             rediret = formateArea(url, area);
+          } else {
+             if (area == '全城') {
+               $('#all-city-bd').addClass('hidden');
+               return;
+             }
+             rediret = url + '?area=' + area; 
+          }
+          window.location.href = rediret;
+       });
+       //默认排序
+       $('#default-btn').on('tap', function() {
+          $(this).toggleClass('toggle');
+          $(this).parent().siblings().children('a').removeClass('toggle');
+          $('#default-bd').slideToggle();
+          $('#default-bd').toggleClass('hidden');
+          $('#all-cate-bd,#all-city-bd').addClass('hidden');
+          $('#all-cate-bd,#all-city-bd').slideUp();
+          bodyClass();
+       });
+       //导航的点击
+       var $childs = $('.top-childs .top-child-item');
+       $('.top-parent-nav li').on('tap', function() {
+        var index = $(this).index() - 1;
+        $(this).addClass('cur');
+        $(this).siblings().removeClass('cur');
+        $childs.hide();
+        if (index < 0) {
+          return;
         }
-        window.location.href = rediret;
-     });
-     //默认排序
-     $('#default-btn').on('click', function() {
-        $(this).toggleClass('toggle');
-        $(this).parent().siblings().children('a').removeClass('toggle');
-        $('#default-bd').toggleClass('hidden');
-        $('#all-cate-bd').addClass('hidden');
-        $('#all-city-bd').addClass('hidden');
-        bodyClass();
-     });
-  	 //导航的点击
-  	 var $childs = $('.top-childs .top-child-item');
-  	 $('.top-parent-nav li').on('click', function() {
-  	 	var index = $(this).index() - 1;
-  	 	$(this).addClass('cur');
-  	 	$(this).siblings().removeClass('cur');
-  	 	$childs.hide();
-      if (index < 0) {
-        return;
-      }
-      $childs.eq(index).show();
-  	 });
+        $childs.eq(index).show();
+       });     
+     } else {
+         $('#all-city-bd li').on('click', function () {
+          var url = window.location.href;
+          var area = $(this).text();
+          var rediret;
+          if (url.indexOf('?') > -1) {
+             rediret = formateArea(url, area);
+          } else {
+             if (area == '全城') {
+               $('#all-city-bd').addClass('hidden');
+               return;
+             }
+             rediret = url + '?area=' + area; 
+          }
+          window.location.href = rediret;
+       });
+       //默认排序
+       $('#default-btn').on('click', function() {
+          $(this).toggleClass('toggle');
+          $(this).parent().siblings().children('a').removeClass('toggle');
+          $('#default-bd').slideToggle();
+          $('#default-bd').toggleClass('hidden');
+          $('#all-cate-bd,#all-city-bd').addClass('hidden');
+          $('#all-cate-bd,#all-city-bd').slideUp();
+          bodyClass();
+       });
+       //导航的点击
+       var $childs = $('.top-childs .top-child-item');
+       $('.top-parent-nav li').on('click', function() {
+        var index = $(this).index() - 1;
+        $(this).addClass('cur');
+        $(this).siblings().removeClass('cur');
+        $childs.hide();
+        if (index < 0) {
+          return;
+        }
+        $childs.eq(index).show();
+       });
+     }
+
   })
 </script>
 <!-- <div class="ccontainer" id="content">   

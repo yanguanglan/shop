@@ -47,6 +47,7 @@ function getTop(e){
           <div class="proInfo-wrap">
             <div class="proTitle"> <a href="{$goods.url}" >{$goods.name}</a> </div>
             <div class="proSKU"></div>
+            <!-- {if $goods.shop_price neq 0}-->
             <div class="proPrice"> 
               <!--{if $goods.promote_price neq "" } --> 
               <em>{$goods.promote_price}</em> 
@@ -57,6 +58,7 @@ function getTop(e){
               <del>{$goods.market_price}</del> 
               <!-- {/if} --> 
             </div>
+            <!-- {/if} -->
             <div class="proService"><span></span></div>
             <div class="proSales">月销:<em>{$goods.sales_count}</em></div>
             <div class="proIcons"> 
