@@ -315,17 +315,7 @@ var process_request = "{$lang.process_request}";
 				<a  href="{$childer.url}">{$childer.name|escape:html}</a>
 				<!--{/foreach}-->	
 			</p>
-			            
-                			
-							<h4 class="subItem-title brandTitle">商家：</h4>
-				<p class="subItem-brand">
-					<!--{foreach from=get_brands1($GLOBALS['smarty']->_var['cat']['id']) item=bchilder name=no1}-->
-					<!-- {if $smarty.foreach.no1.iteration<7}-->
-	
-<a href="{$bchilder.url}">{$bchilder.brand_name|escape:html}</a>
-<!-- {/if} -->
-<!--{/foreach}-->
-				</p>
+
 					</li>
 					
 					 <!--{/foreach}-->

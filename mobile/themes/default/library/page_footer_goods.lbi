@@ -1,11 +1,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+#ft-nav {border-top: 1px #D5D5D5 solid; background: -webkit-gradient(linear,0 0,0 100%,from(#F0F0F0),to(#FFF));}
+#ft-nav > ul {font-size:0;text-align:center;height:35px;overflow:hidden;border-top:1px #fff solid;padding-left:0;list-style-type:none;}
+#ft-nav li {float:left;width:25%;font-size:12px;line-height:36px;position:relative;}
+#ft-nav a {padding:0;display:block;color:#00a3ce;-webkit-tap-highlight-color: rgba(0,0,0,0);outline:0;text-decoration:none;}
+</style>
 <!--底部导航 start-->
-<footer class="s-footer" style="min-height:150px">
+<footer class="s-footer">
   <div class="userbox">
-    <div class="login-info"> <a href="user.php">登录</a> <a href="user.php?act=register">注册</a> </div>
-    <a class="help" href="article_cat.php?id=1">服务中心</a> </div>
-  <div class="version"> <A  href="index.php?pid={$sid}">电脑版</a> </div>
-  <div class="copyright">{$copyright}</div>
+    <div class="login-info"> <a style="float:right;" href="user.php?act=register">注册</a> <a style="float:right;" href="user.php">登录</a>  <A  href="index.php">首页</a> <A  href="flow.php">我的预定</a> <A  href="user.php">个人中心</a></div>
+    <!--<a class="help" href="article_cat.php?id=1">服务中心</a>--> </div>
+ <!-- 
+  <div id="ft-nav">
+  <ul id="clearfix">
+  <li><A  href="index.php">首页</a></li>
+  <li><A  href="flow.php">我的预定</a></li>
+  <li><A  href="user.php">个人中心</a></li>
+  <li><A  href="index.php?pid={$sid}">电脑版</a></li>
+  
+  </ul>
+  </div>
+  -->
+  <div style="margin-top:20px;min-height:50px;" class="copyright">{$copyright}</div>
   <a href="javascript:scroll(0,0)" class="top">返回顶部</a> </footer>
 <!--底部导航 end--> 
 

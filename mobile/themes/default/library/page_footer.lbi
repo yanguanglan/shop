@@ -9,7 +9,7 @@
 <p class="gotop c-gotop">
 <a id="J_GoTop" href="javascript:scroll(0,0)">top<b> </b></a></p>
 </section>
-<nav class="footer-l c-footer-l" style="min-height:50px">
+<nav class="footer-l c-footer-l">
 <A id=btn_go_pc href="index.php?pid={$sid}">电脑版</a>
 
 <a id="J_imgViewType" href="javascript:void(0)" class="J_dps" data-dps="hdedition%23h%23" style="display:none;"></a>
