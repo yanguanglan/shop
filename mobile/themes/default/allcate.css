@@ -154,6 +154,7 @@ visibility:hidden;
 }
 .over-hidden{
 	overflow: hidden;
+	position: relative;
 }
 .arrow{
 	width: 0;

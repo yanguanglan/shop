@@ -78,17 +78,23 @@
 </div> 
 <script>
   $(function() {
+     var bodyHeight = $(window).height();
      var bodyClass = function () {
-       var $body = $('body');
+       var $body = $('#wrapper');
        var len = $('.top-menu-bd.hidden').length;
        if ($body.hasClass('over-hidden') && len == 3) {
          $body.removeClass('over-hidden');
+         $body.css('height', 'auto');
          $('#top-bg').hide();
        } else {
          $body.addClass('over-hidden');
-         $('#top-bg').css('height', $(document).height());
+         console.log( $(window).height() )
+         $body.css('height', bodyHeight + 'px');
+         $body.css('overflow-y','hidden');
+         // $('#top-bg').css('height', $(document).height());
          $('#top-bg').show();
        }
+       // var mm = $('body').css('height');
      }
      //判断手机与否
      var isMobile = !!navigator.userAgent.match(/mobile/i);

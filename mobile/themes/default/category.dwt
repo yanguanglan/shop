@@ -14,6 +14,7 @@
 <LINK rel=stylesheet type=text/css href="themes/default/css/searchbox.css">
 </head>
 <body>
+<div id="wrapper">
 <SCRIPT src="themes/default/js/jquery.js"></script>
 <SCRIPT src="themes/default/js/placeholder.js"></script>
 <SCRIPT src="themes/default/js/bootstrap.min.js"></script>
@@ -227,6 +228,6 @@ var is_cancel = "{$lang.is_cancel}";
 var select_spe = "{$lang.select_spe}";
 </script>
   <!-- #BeginLibraryItem "/library/footer_menu.lbi" --><!-- #EndLibraryItem -->
-
+</div>
 </body>
 </html>
