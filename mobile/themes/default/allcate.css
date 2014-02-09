@@ -69,6 +69,7 @@ visibility:hidden;
 	border-right: 1px solid #ccc;
 	position: relative;
 	background: #eee;
+	height: 40px;
 }
 .top-menu-hd li.last{
 	border-right: 0;
@@ -76,6 +77,15 @@ visibility:hidden;
 .top-menu-hd li a{
 	display: block;
 	text-decoration: none;
+}
+.top-menu-hd li a span{
+	display: inline-block;
+	width: 68px;
+	overflow: hidden;
+	height: 40px;
+	white-space: nowrap;
+	line-height: 40px;
+	text-overflow: ellipsis;
 }
 .top-menu-bd{
 	position: absolute;
@@ -164,12 +174,12 @@ visibility:hidden;
 	border-color: #999 transparent transparent transparent;
 	display: inline-block;
 	margin-left: 3px;
-	margin-bottom: -1px;
+	margin-bottom: 13px;
 }
 .toggle .arrow{
 	border-style: dashed dashed solid dashed;
 	border-color: transparent transparent #b10000 transparent;
-	margin-bottom: 3px;
+	margin-bottom: 17px;
 }
 .top-bgs{
   position: absolute;
