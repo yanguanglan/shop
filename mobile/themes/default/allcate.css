@@ -174,12 +174,12 @@ visibility:hidden;
 	border-color: #999 transparent transparent transparent;
 	display: inline-block;
 	margin-left: 3px;
-	margin-bottom: 13px;
+	margin-bottom: -2px;
 }
 .toggle .arrow{
 	border-style: dashed dashed solid dashed;
 	border-color: transparent transparent #b10000 transparent;
-	margin-bottom: 17px;
+	margin-bottom: 2px;
 }
 .top-bgs{
   position: absolute;
