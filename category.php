@@ -381,7 +381,6 @@ if (!$smarty->is_cached('category.dwt', $cache_id))
             $goodslist[] = array();
         }
     }
-    // print_r($goodslist);
     $smarty->assign('goods_list',       $goodslist);
     $smarty->assign('category',         $cat_id);
     $smarty->assign('script_name', 'category');
@@ -549,6 +548,10 @@ function get_goods_sales_count($goods_id)
         " AND o.pay_status " . db_create_in(array(PS_PAYED, PS_PAYING)) .
         " AND g.goods_id = '$goods_id'" . $ext;
     $sales_count = $GLOBALS['db']->getOne($sql);
+    
+    $sql='SELECT COUNT(*) FROM ' . $GLOBALS['ecs']->table('pre_order') . ' AS o,' . $GLOBALS['ecs']->table('goods') . ' AS g WHERE o.goods_id=g.goods_id AND g.goods_id="'.$goods_id.'"';
+    $sales_count += $GLOBALS['db']->getOne($sql);
+    
     return $sales_count;
 }
 /**

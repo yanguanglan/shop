@@ -491,6 +491,9 @@ function get_goods_sales_count($goods_id)
         " AND g.goods_id = '$goods_id'" . $ext;
     $sales_count = $GLOBALS['db']->getOne($sql);
     
+    $sql='SELECT COUNT(*) FROM ' . $GLOBALS['ecs']->table('pre_order') . ' AS o,' . $GLOBALS['ecs']->table('goods') . ' AS g WHERE o.goods_id=g.goods_id AND g.goods_id="'.$goods_id.'"';
+    $sales_count += $GLOBALS['db']->getOne($sql);
+    
     return $sales_count;
 }
 

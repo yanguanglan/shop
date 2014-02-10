@@ -153,7 +153,7 @@ return offset;
             
             
                  <p class="comm">
-			<span>月销量:<em>{$goods.count}</em> | </span>
+			<span>销量:<em>{$goods.sales_count}</em> | </span>
      <a href="{$goods.url}" style="color:#568396">累计评价:{$goods.review_count}</a>  
 		 </p>	
             

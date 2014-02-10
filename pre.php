@@ -110,7 +110,7 @@ if (!empty($_REQUEST['startdate']))
     $name    = (isset($_REQUEST['name'])) ? addslashes($_REQUEST['name']) : '-';
     $sex    = (isset($_REQUEST['sex'])) ? intval($_REQUEST['sex']) : 1;
     $message    = (isset($_REQUEST['message'])) ? addslashes($_REQUEST['message']) : '-';
-    
+
     if (!empty($goods_id))
     {
         $sql = "INSERT INTO ".$ecs->table('pre_order')." (created,user_id,goods_id,startdate,hour,minute,enddate,num,rooms,totalprice,onlineprice,shopprice,phone,name,sex,message) VALUES ('".date('Y-m-d H:i:s')."','".$user_id."','".$goods_id."','".$startdate."','".$hour."','".$minute."','".$enddate."','".$num."','".$rooms."','".$totalprice."','".$onlineprice."','".$shopprice."','".$phone."','".$name."','".$sex."','".$message."')";
@@ -119,7 +119,7 @@ if (!empty($_REQUEST['startdate']))
         if(!$goods['onlinepay']){
           $name.=$sex==1?"先生":"女士";
           $rooms = json_decode($rooms);
-          sendsms($phone,"$name,感谢您预订了xx，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
+          sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
         }
         header("location:paypre.php?id=$pre_id");
     }

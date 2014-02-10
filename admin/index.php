@@ -1082,6 +1082,10 @@ elseif ($_REQUEST['act'] == 'check_order')
     $sql = 'SELECT COUNT(*) FROM ' . $ecs->table('order_info').
     " WHERE add_time >= '$_SESSION[last_check]'";
     $arr['new_orders'] = $db->getOne($sql);
+    /* 新订单 */
+    $sql = 'SELECT COUNT(*) FROM ' . $ecs->table('pre_order').
+    " WHERE UNIX_TIMESTAMP(created) >= '$_SESSION[last_check]'";
+    $arr['new_orders'] += $db->getOne($sql);
 
     /* 新付款的订单 */
     $sql = 'SELECT COUNT(*) FROM '.$ecs->table('order_info').
