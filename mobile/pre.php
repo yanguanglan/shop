@@ -119,7 +119,7 @@ if (!empty($_REQUEST['startdate']))
         if(!$goods['onlinepay']){
           $name.=$sex==1?"先生":"女士";
           $rooms = json_decode($rooms);
-          sendsms($phone,"$name,您预订了$startdate的$rooms");
+          sendsms($phone,"$name,感谢您预订了xx，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
         }
         header("location:paypre.php?id=$pre_id");
     }
