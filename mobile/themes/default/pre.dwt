@@ -64,7 +64,7 @@
               <div class="pics">
                  <img src="{$goods.goods_img}" alt="">
               </div>
-              <div class="content">{$goods.goods_desc}</div>
+              <div class="content"></div>
           </div>
       </div>
       <!-- 表单开始 -->
