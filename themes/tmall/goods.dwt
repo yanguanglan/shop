@@ -420,7 +420,11 @@ function addnum(id){
         {/if}
 	<div style=" position:relative; padding-left:72px;">  
   {if $goods.rooms}
+  {if $goods.rooms=='flower' }
+  <a href="preflower.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
+  {else}
   <a href="pre.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
+  {/if}
   <style>
      .yuding-btn{
         display: block !important;

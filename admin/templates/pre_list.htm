@@ -51,7 +51,16 @@
     <td align="center" valign="top" nowrap="nowrap">{if $pre.user_id == 0}未注册{else}{$pre.user_id}{/if}</td>
     <td align="left" valign="top">{$pre.goods_name}</td>
     <td align="left" valign="top">{$pre.created}</td>
-    <td align="center" valign="top" nowrap="nowrap">{$pre.rooms}</td>
+    <td align="center" valign="top" nowrap="nowrap">
+    {if $pre.grooms=='flower'}
+    收货人:{$pre.rooms.phone}<br />
+    收货姓名:{$pre.rooms.name}<br />
+    收货性别:{$pre.rooms.sex}<br />
+    收货人:{$pre.rooms.phone}<br />
+    {else}
+    {$pre.rooms}
+    {/if}
+    </td>
     <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}</td>
     <td align="left" valign="top" nowrap="nowrap">{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}</td>
     <td align="center" valign="top" nowrap="nowrap">{$pre.num}</td>

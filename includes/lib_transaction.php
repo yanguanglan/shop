@@ -345,7 +345,7 @@ function get_user_pres($user_id, $num = 10, $start = 0)
     /* 取得订单列表 */
     $arr    = array();
 
-    $sql = "SELECT o.*,g.goods_name,g.onlinepay".
+    $sql = "SELECT o.*,g.goods_name,g.onlinepay,g.rooms as grooms".
            " FROM " .$GLOBALS['ecs']->table('pre_order') .
            "o LEFT JOIN " .$GLOBALS['ecs']->table('goods')." g ON o.goods_id=g.goods_id WHERE user_id = '$user_id' ORDER BY created DESC";
     $res = $GLOBALS['db']->SelectLimit($sql, $num, $start);

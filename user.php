@@ -815,7 +815,7 @@ elseif ($action == 'pre_list')
 
     $orders = get_user_pres($user_id, $pager['size'], $pager['start']);
     foreach($orders as &$order){
-      $order['rooms']=json_decode($order['rooms']);
+      $order['rooms']=json_decode($order['rooms'],true);
     }
     $smarty->assign('pager',  $pager);
     $smarty->assign('pres', $orders);

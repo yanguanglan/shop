@@ -343,7 +343,11 @@ background-size: 24px 21px;
             }
      </script>
      {if $goods.rooms}
+        {if $goods.rooms=='flower' }
+<a class="btn buy" href="preflower.php?id={$goods.goods_id}">立即预订</a>
+          {else}
         <a class="btn buy" href="pre.php?id={$goods.goods_id}">立即预订</a>
+      {/if}
      {else}
       <button type="button" class="btn buy" onClick="addToCart1({$goods.goods_id})">立即购买</button>
       <button type="button" class="btn cart" onclick="addToCart({$goods.goods_id});showDiv()">加入购物车</button>

@@ -40,7 +40,6 @@ if ($_REQUEST['act'] == 'list')
 
     $order_list = pre_list();
     
-    
     $smarty->assign('pre_list',   $order_list['pres']);
     $smarty->assign('filter',       $order_list['filter']);
     $smarty->assign('record_count', $order_list['record_count']);
@@ -579,7 +578,7 @@ function pre_list()
         $filter['page_count']     = $filter['record_count'] > 0 ? ceil($filter['record_count'] / $filter['page_size']) : 1;
 
         /* 查询 */
-        $sql = "SELECT o.*,u.user_name,g.goods_name,g.onlinepay" .
+        $sql = "SELECT o.*,u.user_name,g.goods_name,g.onlinepay,g.rooms as grooms" .
                 " FROM " . $GLOBALS['ecs']->table('pre_order') . " AS o " .
                 " LEFT JOIN " .$GLOBALS['ecs']->table('users'). " AS u ON u.user_id=o.user_id LEFT JOIN " .$GLOBALS['ecs']->table('goods'). " g ON o.goods_id=g.goods_id ". $where .
                 " ORDER BY pre_id $filter[sort_order] ".
@@ -602,7 +601,7 @@ function pre_list()
     /* 格式话数据 */
     foreach ($row AS $key => $value)
     {
-        $row[$key]['rooms']=json_decode($value['rooms']);
+        $row[$key]['rooms']=json_decode($value['rooms'],true);
         $row[$key]['formated_order_amount'] = price_format($value['order_amount']);
         $row[$key]['formated_money_paid'] = price_format($value['money_paid']);
         $row[$key]['formated_total_fee'] = price_format($value['total_fee']);
