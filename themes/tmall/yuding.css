@@ -302,7 +302,8 @@ color: #909090;
 	color: #E39E1D;
 	margin-left: 10px;
  }
- #txtNum{
+ #txtNum,
+ #txtNum2{
  	border:0 none;
  	width: 60px;
  }

@@ -273,7 +273,16 @@
             <td class="label">是否在线支付</td>
             <td><input type="checkbox" name="onlinepay" {if $goods.onlinepay==1}checked="true"{/if} value=1 /></td>
           </tr>
-          <tr>
+           <tr>
+            <td class="label">类目选择</td>
+            <td>
+               <select name="" id="J_catSelect">
+                  <option value="0">酒店类型价格设定</option>
+                  <option value="1">预订花卉类型</option>
+               </select>
+            </td>
+          </tr>         
+          <tr id="J_HotelPrice">
             <td class="label"> 酒店房间价格 </td>
             <td>
               <div id="roomX">
@@ -327,6 +336,7 @@
               * 酒店价格的添加
               * @return {[type]} [description]
               */
+             var selectNum = 0;
              (function() {
                  $(function() {
                      var $tbody = $('#roomX tbody');
@@ -337,6 +347,24 @@
                      });
                      $('.J_roomDel').live('click', function(e) {
                          $(this).parent().parent().remove();
+                     });
+                     //类目选择
+                     //花卉类型的值
+                     var flowerFn = function () {
+                        $('#J_realRoom').val('flower');
+                     }
+                     $('#J_catSelect').bind('change', function(e) {
+                        var val = $(this).val();
+                        selectNum = val;
+                        if (val == 1) {
+                           flowerFn();
+                        }
+                        if (val == 0) {
+                           $('#J_HotelPrice').show();
+                        } else {
+                           $('#J_HotelPrice').hide();
+                        }
+
                      });
                      if ($('#roomX').length) {
                         var initRoom = JSON.parse(_val);
@@ -355,8 +383,7 @@
                              $(htmls).appendTo($tbody);
                           }
                         }
-
-                     }
+                     } 
                  });
 
              }())
@@ -570,7 +597,7 @@
 
   function validate(goods_id)
   {
-      if ($('#roomX').length) {
+      if ($('#roomX').length && selectNum == 0) {
          var trs = $('#roomX tbody tr');
          var rooms = {};
          $(trs).each(function(index, item) {

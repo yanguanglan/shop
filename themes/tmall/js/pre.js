@@ -82,6 +82,12 @@
                 }
             };
       function initRoom() {
+         if (!room || !room.catroom) {
+           return;
+         }
+         // if (!room.catroom) {
+         //    return;
+         // }
          var data = room.catroom;
          var htmls = '';
          var index = 1;
@@ -149,6 +155,7 @@
          $('#endDate').focus();
       });
       $('#txtNum').spinner({min: 1});
+      $('#txtNum2').length && $('#txtNum2').spinner({min: 1});
       //房间选择
       $('#J_room').on('click', 'li', function(e) {
          var target = e.currentTarget;
@@ -183,6 +190,18 @@
              $(this).parent().next().show();
           }
       });
+      console.log($('#phone2').length)
+      $('#phone2').length && (function() {
+        $('#phone2').on('blur', function() {
+            var val = $(this).val();
+            var m = /^(1(([35][0-9])|(47)|[8][01256789]))\d{8}$/.test(val);
+            if (!!m) {
+               $(this).parent().next().hide();
+            } else{
+               $(this).parent().next().show();
+            }
+        });
+      }());
       $('#name').on('blur', function() {
           var val = $(this).val();
           if (val.length) {
@@ -191,6 +210,16 @@
              $(this).parent().next().show();
           }
       });
+      $('#name2').length && (function() {
+        $('#name2, #address2').on('blur', function() {
+            var val = $(this).val();
+            if (val.length) {
+               $(this).parent().next().hide();
+            }else{
+               $(this).parent().next().show();
+            }
+        });
+      }());
       $('#phone,#name').trigger('blur');
       var validateNum = $('.info-wrap').length;
       $('#J_yuyueForm').on('submit', function(e) {
