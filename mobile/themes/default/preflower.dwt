@@ -68,6 +68,118 @@
           </div>
       </div>
       <!-- 表单开始 -->
+      {if $goods.rooms=='cake'}
+      <!-- 这里是订蛋的表单 -->
+      <form id="J_yuyueForm" action="" method="post" autocomplete="off">
+        <div class="order-info">
+            <div class="order-hd">
+              <strong>预订蛋糕人信息</strong>
+            </div>
+            <div class="order-bd clearfix">
+              <div class="form-item clearfix">
+              <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
+              <div class="item-control">
+                  <input type="text" name="rooms[num]" value="1"/>
+              </div>
+              </div>
+              <div class="form-item clearfix">
+                <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
+              <div class="item-control">
+                  <input type="text" name="num" value="1"/>
+              </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>手机号</b></label>
+                  <div class="item-control">
+                      <input id="phone" type="text" name="phone" class="bootstrap" value="{$user111.mobile_phone}">
+                  </div>
+              <div class="info-wrap">
+                <div class="info-tips">
+                    <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
+                </div>                
+              </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>姓名</b></label>
+                  <div class="item-control">
+                      <input type="text" class="bootstrap" id="name" name="name" value="{$user111.user_name}">
+                  </div>
+                <div class="info-wrap">
+                  <div class="info-tips">
+                      <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                  </div>                
+                </div>
+
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
+                  <div class="item-control">
+                      <label><input type="radio" name="sex" checked value="1"> 先生</label>
+                      <label><input type="radio" name="sex" value="2"> 女士</label>
+                  </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>配送时间</b></label>
+                  <div class="item-control">
+                      <div class="item-time-wrap">
+                           <span id="endWeek" class="time-week"></span>
+                            <input id="startdate" name="startdate" type="text" class="bootstrap">                 
+                      </div>
+                  </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>配送地址</b></label>
+                  <div class="item-control">
+                      <div class="item-time-wrap">
+                           <span id="endWeek" class="time-week"></span>
+                            <input name="rooms[addr]" type="text" class="bootstrap">                 
+                      </div>
+                  </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>收货人手机</b></label>
+                  <div class="item-control">
+                      <div class="item-time-wrap">
+                           <span id="endWeek" class="time-week"></span>
+                            <input name="rooms[phone]" type="text" class="bootstrap">                 
+                      </div>
+                  </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>收货人姓名</b></label>
+                  <div class="item-control">
+                      <div class="item-time-wrap">
+                           <span id="endWeek" class="time-week"></span>
+                           <input name="rooms[name]" type="text" class="bootstrap">   <input name="rooms[sex]" type="radio" value="男">男   <input name="rooms[sex]" type="radio" value="女">女               
+                      </div>
+                  </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>祝福语</b></label>
+                  <div class="item-control">
+                      <div class="item-time-wrap">
+                           <span id="endWeek" class="time-week"></span>
+                            <input name="rooms[hoppy]" type="text" class="bootstrap">                 
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            </div>
+        </div>
+        <div class="order-info">
+            <div class="order-hd">
+              <strong>需求留言</strong>（您还有什么要求,请写在下面）
+            </div>
+            <div class="order-bd clearfix">
+                <textarea name="message" id="" class="liuyan"></textarea>
+            </div>
+        </div>
+        <div class="form-item" style="margin-left:20px;">
+            <button type="submit" class="btn btn-tmall">提交表单</button>
+        </div>
+      </form>
+     {else}
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
         <div class="order-info">
             <div class="order-hd">
@@ -177,6 +289,7 @@
             <button type="submit" class="btn btn-tmall">提交表单</button>
         </div>
       </form>
+      {/if}
   </div>
 </div>
 <script>

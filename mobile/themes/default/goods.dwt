@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html manifest="/manifest/tmallCateAppCache.manifest">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -343,7 +343,7 @@ background-size: 24px 21px;
             }
      </script>
      {if $goods.rooms}
-        {if $goods.rooms=='flower' }
+        {if $goods.rooms=='flower' || $goods.rooms=='cake'}
 <a class="btn buy" href="preflower.php?id={$goods.goods_id}">立即预订</a>
           {else}
         <a class="btn buy" href="pre.php?id={$goods.goods_id}">立即预订</a>

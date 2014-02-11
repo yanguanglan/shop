@@ -266,7 +266,7 @@ window.pageConfig={
               {else}
               <p>消费时间：{$item.startdate}</p>
               {/if}
-              {if $item.grooms=='flower'}
+              {if $item.grooms=='flower' || $item.grooms=='cake'}
               <p>收货人:{$item.rooms.name}</p>
               <p>收货性别:{$item.rooms.sex}</p>
               <p>收货手机:{$item.rooms.phone}</p>

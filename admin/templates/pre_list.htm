@@ -52,7 +52,7 @@
     <td align="left" valign="top">{$pre.goods_name}</td>
     <td align="left" valign="top">{$pre.created}</td>
     <td align="center" valign="top" nowrap="nowrap">
-    {if $pre.grooms=='flower'}
+    {if $pre.grooms=='flower'  || $item.grooms=='cake'}
     收货人:{$pre.rooms.phone}<br />
     收货姓名:{$pre.rooms.name}<br />
     收货性别:{$pre.rooms.sex}<br />
