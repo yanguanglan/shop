@@ -60,7 +60,7 @@ function getTop(e){
             </div>
             <!-- {/if} -->
             <div class="proService"><span></span></div>
-            <div class="proSales">月销:<em>{$goods.sales_count}</em></div>
+            <div class="proSales">销量:<em>{$goods.sales_count}</em></div>
             <div class="proIcons"> 
 			 <!-- {if $goods.watermark_img} --> 
 			<img src="themes/default/images/{$goods.watermark_img}.png" alt="{$goods.goods_name}" />
