@@ -4,7 +4,7 @@
 {if $goods.rooms}
   <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport1.js"></script>
 {else}
-  <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport.js"></script>
+  <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport1.js"></script>
 {/if}
 <script type="text/javascript">
 var process_request = "{$lang.process_request}";

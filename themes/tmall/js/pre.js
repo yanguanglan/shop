@@ -190,7 +190,6 @@
              $(this).parent().next().show();
           }
       });
-      console.log($('#phone2').length)
       $('#phone2').length && (function() {
         $('#phone2').on('blur', function() {
             var val = $(this).val();
@@ -242,4 +241,15 @@
           $('#J_online').val( $('#onlinePrice').text() );
           $('#J_shop').val( $('#shopPrice').text() );
       });
+
+      $('#txtNum2Pirce').length && (function() {
+          var price = parseInt( $('#flowerPrice').text(), 10);
+          var resultPrice = $('#txtNum2Pirce');
+          $('#txtNum2').bind('blur', function() {
+              var num = parseInt( $(this).val(), 10);
+              var last = (num * price).toFixed(2);
+              resultPrice.text(last);
+              $('#J_flowerLastPirce').val(last);
+          });
+      }());
   });

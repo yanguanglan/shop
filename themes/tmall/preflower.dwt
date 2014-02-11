@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<head><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<head>
 <meta name="Keywords" content="{$keywords}" />
 <meta name="Description" content="{$description}" />
 <!-- TemplateBeginEditable name="doctitle" -->
@@ -110,7 +110,7 @@ window.pageConfig={
                 <div class="pics">
                    <img src="{$goods.goods_img}" alt="">
                 </div>
-                <div class="content">{$goods.goods_desc}{$goods.market_price}{$goods.shop_price}</div>
+                <div class="content">{$goods.goods_desc}</div>
               </div>
               <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
@@ -121,7 +121,8 @@ window.pageConfig={
               <div class="form-item clearfix">
                 <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
               <div class="item-control">
-                  <input type="text" id="txtNum2" name="num" value="1"/> 束 × 468元/束 = <span id="txtNum2Pirce">468</span> 元
+                  <input type="text" id="txtNum2" name="num" value="1"/> 束 × <span id="flowerPrice" style="color:#821111;">{$goods.shop_price}</span>元/束 = <span id="txtNum2Pirce" style="color:#821111;font-weight: bolder;font-size: 18px;">{$goods.shop_price}</span> 元
+                  <input id="J_flowerLastPirce" type="hidden" name="room[flowerprice]" value="{$goods.shop_price}"/>
               </div>
               </div>
               <div class="form-item clearfix">
