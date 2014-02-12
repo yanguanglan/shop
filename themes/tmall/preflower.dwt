@@ -416,6 +416,7 @@ window.pageConfig={
 <script>
   // var room = JSON.parse( $('#therooms').val() ) || "";
   var room = null;
+  window.noroom = true;
 </script>
 <script src="themes/tmall/js/pre.js"></script>
  <div class="blank"></div>
