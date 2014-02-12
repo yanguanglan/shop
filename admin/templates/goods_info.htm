@@ -277,12 +277,14 @@
             <td class="label">类目选择</td>
             <td>
                <select name="" id="J_catSelect">
-                  <option value="0">酒店类型价格设定</option>
-                  <option value="1">预订花卉类型</option>
+                  <option value="0">非预订</option>
+                  <option value="1">预订酒店类型</option>
+                  <option value="2">预订花卉类型</option>
+                  <option value="3">预订蛋糕类型</option>
                </select>
             </td>
           </tr>         
-          <tr id="J_HotelPrice">
+          <tr id="J_HotelPrice" style="display:none;">
             <td class="label"> 酒店房间价格 </td>
             <td>
               <div id="roomX">
@@ -306,7 +308,7 @@
                   </table>
                   <a id="J_roomAdd" class="cursor">增加一行</a>
               </div>
-              <textarea id="J_realRoom" name="rooms" style="display:none;">{$goods.rooms}</textarea><br />不属于酒店预定类，请为空
+              <textarea id="J_realRoom" name="rooms" style="display:none;">{$goods.rooms}</textarea>
             </td>
           </tr>
         </table>
@@ -349,22 +351,23 @@
                          $(this).parent().parent().remove();
                      });
                      //类目选择
-                     //花卉类型的值
-                     var flowerFn = function () {
-                        $('#J_realRoom').val('flower');
-                     }
                      $('#J_catSelect').bind('change', function(e) {
                         var val = $(this).val();
                         selectNum = val;
                         if (val == 1) {
-                           flowerFn();
-                        }
-                        if (val == 0) {
                            $('#J_HotelPrice').show();
                         } else {
                            $('#J_HotelPrice').hide();
                         }
-
+                        if (val == 0) {
+                          $('#J_realRoom').val('');
+                          return;
+                        }
+                        if (val == 2) {
+                          $('#J_realRoom').val('flower');
+                        } else if (val == 3) {
+                          $('#J_realRoom').val('cake');
+                        }
                      });
                      if ($('#roomX').length) {
                         var initRoom = JSON.parse(_val);
@@ -597,7 +600,7 @@
 
   function validate(goods_id)
   {
-      if ($('#roomX').length && selectNum == 0) {
+      if ($('#roomX').length && selectNum == 1) {
          var trs = $('#roomX tbody tr');
          var rooms = {};
          $(trs).each(function(index, item) {

@@ -49,7 +49,11 @@ window.pageConfig={
 
 <div class="block yuding-wrap">
   <div class="yuding-main">
-      <h1 class="order-title">{$goods.goods_name}</h1>
+      {if $goods.rooms=='cake'}
+        <h1 class="order-title">填写并核对订单信息</h1>
+      {else}
+        <h1 class="order-title">{$goods.goods_name}</h1>
+      {/if}
       <div class="order-time">
           <i class="iconfont">&#x34f5;</i>
           营业时间:
@@ -65,6 +69,23 @@ window.pageConfig={
       {if $goods.rooms=='cake'}
       <!-- 这里是订蛋的表单 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
+        <div class="order-info">
+            <div class="order-hd red">
+              <strong>产品明细</strong>
+              <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填<b></i>
+            </div>
+           <div class="order-bd clearfix">
+              <div class="form-item clearfix">
+                <div class="item-control">
+                    <p><a style="margin-right: 50px;">{$goods.goods_name}</a><span style="color: #666;">1 × {$goods.market_price}/1磅 =</span> <span style="color:#821111;">{$goods.market_price}</span></p>
+                    <p style="margin-top: 40px;">
+                       总额: {$goods.market_price} | 折后价: {$goods.shop_price} 元
+                    </p>
+                    <input id="J_flowerLastPirce" type="hidden" name="room[flowerprice]" value="{$goods.shop_price}"/>
+                </div>
+              </div>
+           </div>
+        </div>
         <div class="order-info">
             <div class="order-hd red">
               <strong>预订蛋糕人信息</strong>
@@ -113,19 +134,6 @@ window.pageConfig={
                    <img src="{$goods.goods_img}" alt="">
                 </div>
                 <div class="content">{$goods.goods_desc}</div>
-              </div>
-              <div class="form-item clearfix">
-              <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
-              <div class="item-control">
-                  <input type="text" id="txtNum" name="rooms[num]" value="1"/>
-              </div>
-              </div>
-              <div class="form-item clearfix">
-                <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
-              <div class="item-control">
-                  <input type="text" id="txtNum2" name="num" value="1"/> 束 × <span id="flowerPrice" style="color:#821111;">{$goods.shop_price}</span>元/束 = <span id="txtNum2Pirce" style="color:#821111;font-weight: bolder;font-size: 18px;">{$goods.shop_price}</span> 元
-                  <input id="J_flowerLastPirce" type="hidden" name="room[flowerprice]" value="{$goods.shop_price}"/>
-              </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送时间</b></label>
@@ -205,9 +213,15 @@ window.pageConfig={
                       <label><input type="radio" name="rooms[sex]" checked value="1"> 先生</label>
                       <label><input type="radio" name="rooms[sex]" value="2"> 女士</label>
                   </div>
+              </div>
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>生日牌</b></label>
+                  <div class="item-control">
+                       <input name="rooms[brand]" type="text" class="bootstrap">                 
+                  </div>
               </div>   
               <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>祝福语</b></label>
+                  <label><i class="iconfont require">&#x35e2;</i><b>贺卡信息</b></label>
                   <div class="item-control">
                        <input name="rooms[hoppy]" type="text" class="bootstrap">                 
                   </div>

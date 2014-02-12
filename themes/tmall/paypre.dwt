@@ -43,7 +43,6 @@ window.pageConfig={
     </ul>
 </div>
 <!-- 步骤条END -->
-
 <div class="block yuding-wrap">
   <div class="yuding-main">
       {if $pre.onlinepay==1}
