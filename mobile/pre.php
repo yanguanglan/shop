@@ -103,9 +103,15 @@ if (!empty($_REQUEST['startdate']))
     $num    = (isset($_REQUEST['num'])) ? intval($_REQUEST['num']) : 1;
     $rooms    = (isset($_REQUEST['rooms'])) ? json_encode($_REQUEST['rooms']) : '{}';
     $rooms = addslashes($rooms);
-    $totalprice    = (isset($_REQUEST['totalprice'])) ? intval($_REQUEST['totalprice']) : 0;
-    $onlineprice    = (isset($_REQUEST['onlineprice'])) ? intval($_REQUEST['onlineprice']) : 0;
-    $shopprice    = (isset($_REQUEST['shopprice'])) ? intval($_REQUEST['shopprice']) : 0;
+    
+    $a=array('￥','元');
+    $totalprice=$_REQUEST['totalprice'];
+    $onlineprice=$_REQUEST['onlineprice'];
+    $shopprice=$_REQUEST['shopprice'];
+    $totalprice=intval(str_replace($a,'',$totalprice));
+    $onlineprice=intval(str_replace($a,'',$onlineprice));
+    $shopprice=intval(str_replace($a,'',$shopprice));
+    
     $phone    = (isset($_REQUEST['phone'])) ? addslashes($_REQUEST['phone']) : '-';
     $name    = (isset($_REQUEST['name'])) ? addslashes($_REQUEST['name']) : '-';
     $sex    = (isset($_REQUEST['sex'])) ? intval($_REQUEST['sex']) : 1;
