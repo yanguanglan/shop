@@ -222,7 +222,6 @@
       $('#phone,#name').trigger('blur');
       var validateNum = $('.info-wrap').length;
       $('#J_yuyueForm').on('submit', function(e) {
-
           var noTips = $('.info-wrap:hidden').length;
           if (noTips != validateNum) {
              alert('请正确填写预订信息~!');
@@ -232,14 +231,17 @@
              alert('验证码不能为空!');
              return false;
           }
-          var rooms = [];
-          for(var key in roomTotal) {
-             rooms.push(roomTotal[key][2]);
+          if (!window.noroom) {
+            alert(1)
+            var rooms = [];
+            for(var key in roomTotal) {
+               rooms.push(roomTotal[key][2]);
+            }
+            $('#J_rooms').val(rooms.join(','));
+            $('#J_total').val( $('#totalPrice').text() );
+            $('#J_online').val( $('#onlinePrice').text() );
+            $('#J_shop').val( $('#shopPrice').text() );           
           }
-          $('#J_rooms').val(rooms.join(','));
-          $('#J_total').val( $('#totalPrice').text() );
-          $('#J_online').val( $('#onlinePrice').text() );
-          $('#J_shop').val( $('#shopPrice').text() );
       });
 
       $('#txtNum2Pirce').length && (function() {
@@ -249,7 +251,7 @@
               var num = parseInt( $(this).val(), 10);
               var last = (num * price).toFixed(2);
               resultPrice.text(last);
-              $('#J_flowerLastPirce').val(last);
+              $('#J_flowerLastPirce, #J_total').val(last);
           });
       }());
   });

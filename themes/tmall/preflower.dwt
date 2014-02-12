@@ -81,7 +81,8 @@ window.pageConfig={
                     <p style="margin-top: 40px;">
                        总额: {$goods.market_price} | 折后价: {$goods.shop_price} 元
                     </p>
-                    <input id="J_flowerLastPirce" type="hidden" name="room[flowerprice]" value="{$goods.shop_price}"/>
+                    <input id="J_flowerLastPirce" type="hidden" name="shopprice" value="{$goods.shop_price}"/>
+                    <input id="J_total" type="hidden" name="totalprice" value="{$goods.market_price}" />
                 </div>
               </div>
            </div>
@@ -304,7 +305,8 @@ window.pageConfig={
                 <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
               <div class="item-control">
                   <input type="text" id="txtNum2" name="num" value="1"/> 束 × <span id="flowerPrice" style="color:#821111;">{$goods.shop_price}</span>元/束 = <span id="txtNum2Pirce" style="color:#821111;font-weight: bolder;font-size: 18px;">{$goods.shop_price}</span> 元
-                  <input id="J_flowerLastPirce" type="hidden" name="room[flowerprice]" value="{$goods.shop_price}"/>
+                    <input id="J_flowerLastPirce" type="hidden" name="shopprice" value="{$goods.shop_price}"/>
+                    <input id="J_total" type="hidden" name="totalprice" value="{$goods.market_price}" />
               </div>
               </div>
               <div class="form-item clearfix">
@@ -414,6 +416,7 @@ window.pageConfig={
 <script>
   // var room = JSON.parse( $('#therooms').val() ) || "";
   var room = null;
+  window.noroom = true;
 </script>
 <script src="themes/tmall/js/pre.js"></script>
  <div class="blank"></div>
