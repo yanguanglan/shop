@@ -131,7 +131,7 @@
                 <div class="pics">
                    <img src="{$goods.goods_img}" alt="">
                 </div>
-                <div class="content">{$goods.goods_desc}</div>
+                <div class="content"></div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送时间</b></label>
