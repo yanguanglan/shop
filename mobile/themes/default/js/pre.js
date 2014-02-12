@@ -82,6 +82,12 @@
                 }
             };
       function initRoom() {
+         if (!room || !room.catroom) {
+           return;
+         }
+         // if (!room.catroom) {
+         //    return;
+         // }
          var data = room.catroom;
          var htmls = '';
          var index = 1;
@@ -149,6 +155,7 @@
          $('#endDate').focus();
       });
       $('#txtNum').spinner({min: 1});
+      $('#txtNum2').length && $('#txtNum2').spinner({min: 1});
       //房间选择
       $('#J_room').on('click', 'li', function(e) {
          var target = e.currentTarget;
@@ -183,6 +190,17 @@
              $(this).parent().next().show();
           }
       });
+      $('#phone2').length && (function() {
+        $('#phone2').on('blur', function() {
+            var val = $(this).val();
+            var m = /^(1(([35][0-9])|(47)|[8][01256789]))\d{8}$/.test(val);
+            if (!!m) {
+               $(this).parent().next().hide();
+            } else{
+               $(this).parent().next().show();
+            }
+        });
+      }());
       $('#name').on('blur', function() {
           var val = $(this).val();
           if (val.length) {
@@ -191,10 +209,19 @@
              $(this).parent().next().show();
           }
       });
+      $('#name2').length && (function() {
+        $('#name2, #address2').on('blur', function() {
+            var val = $(this).val();
+            if (val.length) {
+               $(this).parent().next().hide();
+            }else{
+               $(this).parent().next().show();
+            }
+        });
+      }());
       $('#phone,#name').trigger('blur');
       var validateNum = $('.info-wrap').length;
       $('#J_yuyueForm').on('submit', function(e) {
-
           var noTips = $('.info-wrap:hidden').length;
           if (noTips != validateNum) {
              alert('请正确填写预订信息~!');
@@ -204,13 +231,27 @@
              alert('验证码不能为空!');
              return false;
           }
-          var rooms = [];
-          for(var key in roomTotal) {
-             rooms.push(roomTotal[key][2]);
+          if (!window.noroom) {
+            alert(1)
+            var rooms = [];
+            for(var key in roomTotal) {
+               rooms.push(roomTotal[key][2]);
+            }
+            $('#J_rooms').val(rooms.join(','));
+            $('#J_total').val( $('#totalPrice').text() );
+            $('#J_online').val( $('#onlinePrice').text() );
+            $('#J_shop').val( $('#shopPrice').text() );           
           }
-          $('#J_rooms').val(rooms.join(','));
-          $('#J_total').val( $('#totalPrice').text() );
-          $('#J_online').val( $('#onlinePrice').text() );
-          $('#J_shop').val( $('#shopPrice').text() );
       });
+
+      $('#txtNum2Pirce').length && (function() {
+          var price = parseInt( $('#flowerPrice').text(), 10);
+          var resultPrice = $('#txtNum2Pirce');
+          $('#txtNum2').bind('blur', function() {
+              var num = parseInt( $(this).val(), 10);
+              var last = (num * price).toFixed(2);
+              resultPrice.text(last);
+              $('#J_flowerLastPirce, #J_total').val(last);
+          });
+      }());
   });

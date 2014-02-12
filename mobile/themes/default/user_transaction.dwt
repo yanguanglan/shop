@@ -302,13 +302,33 @@
             <td align="center" bgcolor="#ffffff">{$item.created}</td>
             <td align="left" bgcolor="#ffffff">
               <p>{$item.goods_name}</p>
-              {if $item.onlinepay==1}
-              <p>入住时间：<br />{$item.startdate}</p>
-              <p>离店时间：<br />{$item.enddate}</p>
+              {if $item.grooms =='flower' || $item.grooms=='cake'}
+                 <p>配送时间：{$item.startdate}&nbsp;{$item.hour}时{$item.minute}分</p>
               {else}
-              <p>消费时间：{$item.startdate}</p>
+                {if $item.onlinepay==1}
+                  <p>入住时间：{$item.startdate}</p>
+                  <p>离店时间：{$item.enddate}</p>
+                {else}
+                 <p>消费时间：{$item.startdate}</p>
+                {/if}
               {/if}
+              {if $item.grooms=='flower' || $item.grooms=='cake'}
+                  <p>收货人:{$item.rooms.name}</p>
+                  <p>收货手机:{$item.rooms.phone}</p>
+                  <p>配送地址:{$item.rooms.addr}</p>
+                  {if $item.rooms.brand}
+                   <p>生日牌:{$item.rooms.brand}</p>
+                  {/if}
+                  {if $item.rooms.hoppy}
+                    {if $item.grooms == 'flower'}
+                      <p>祝福语:{$item.rooms.hoppy}</p>
+                    {else}
+                      <p>贺卡信息:{$item.rooms.hoppy}</p>
+                    {/if}
+                  {/if}
+              {else}
               <p>房间:{$item.rooms}</p>
+              {/if}
             </td>
             <td align="center" bgcolor="#ffffff">
               {if $item.totalprice != 0}

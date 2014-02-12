@@ -116,7 +116,7 @@ if (!empty($_REQUEST['startdate']))
     $name    = (isset($_REQUEST['name'])) ? addslashes($_REQUEST['name']) : '-';
     $sex    = (isset($_REQUEST['sex'])) ? intval($_REQUEST['sex']) : 1;
     $message    = (isset($_REQUEST['message'])) ? addslashes($_REQUEST['message']) : '-';
-    
+
     if (!empty($goods_id))
     {
         $sql = "INSERT INTO ".$ecs->table('pre_order')." (created,user_id,goods_id,startdate,hour,minute,enddate,num,rooms,totalprice,onlineprice,shopprice,phone,name,sex,message) VALUES ('".date('Y-m-d H:i:s')."','".$user_id."','".$goods_id."','".$startdate."','".$hour."','".$minute."','".$enddate."','".$num."','".$rooms."','".$totalprice."','".$onlineprice."','".$shopprice."','".$phone."','".$name."','".$sex."','".$message."')";
@@ -125,7 +125,7 @@ if (!empty($_REQUEST['startdate']))
         if(!$goods['onlinepay']){
           $name.=$sex==1?"先生":"女士";
           $rooms = json_decode($rooms);
-          sendsms($phone,"$name,感谢您预订了xx，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
+          sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
         }
         header("location:paypre.php?id=$pre_id");
     }
@@ -170,7 +170,7 @@ if (!$smarty->is_cached('preflower.dwt', $cache_id))
     $smarty->assign('promotion_info', get_promotion_info());
 
     $goods = get_goods_info($goods_id);
-    
+
     if ($goods === false)
     {
         /* 如果没有找到任何记录则跳回到首页 */
@@ -329,7 +329,7 @@ function get_linked_goods($goods_id)
         $arr[$row['goods_id']]['goods_id']     = $row['goods_id'];
         $arr[$row['goods_id']]['goods_name']   = $row['goods_name'];
         $arr[$row['goods_id']]['short_name']   = $GLOBALS['_CFG']['goods_name_length'] > 0 ?
-            sub_str($row['goods_name'], $GLOBALS['_CFG']['goods_name_length']) : $row['goods_name'];
+        sub_str($row['goods_name'], $GLOBALS['_CFG']['goods_name_length']) : $row['goods_name'];
         $arr[$row['goods_id']]['goods_thumb']  = get_image_path($row['goods_id'], $row['goods_thumb'], true);
         $arr[$row['goods_id']]['goods_img']    = get_image_path($row['goods_id'], $row['goods_img']);
         $arr[$row['goods_id']]['market_price'] = price_format($row['market_price']);

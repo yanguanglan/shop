@@ -2,7 +2,7 @@
 
 <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.js"></script>
 {if $goods.rooms}
-  <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport1.js"></script>
+  <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport.js"></script>
 {else}
   <script src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport1.js"></script>
 {/if}
@@ -34,7 +34,7 @@ var process_request = "{$lang.process_request}";
 </div>
 	<div class="block" style=" height:93px; position:relative; z-index:9999;">
 	
- <a onmouseover="cate_over()" onmouseout="cate_out()" style="cursor:pointer; float:right;" id="cate_all" >所有商品分类 </a>
+ <a onmouseover="cate_over()" onmouseout="cate_out()" style="cursor:pointer; float:right;" id="cate_all" >所有商品分类</a>
 
 
  

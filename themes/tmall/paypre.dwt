@@ -112,6 +112,7 @@ window.pageConfig={
                 {if $pre.grooms=='flower' || $pre.grooms=='cake'}
                   <p>收货人:{$pre.rooms.name}</p>
                   <p>收货手机:{$pre.rooms.phone}</p>
+                  <p>配送地址:{$pre.rooms.addr}</p>
                   {if $pre.rooms.brand}
                    <p>生日牌:{$pre.rooms.brand}</p>
                   {/if}

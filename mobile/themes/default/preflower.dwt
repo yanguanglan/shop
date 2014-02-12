@@ -14,7 +14,11 @@
 <LINK rel=stylesheet type=text/css href="themes/default/goods.css">
 </head>
 <body>
-  
+ 
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ 
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ 
 <link rel="stylesheet" href="themes/default/yuding.css">
 <link rel="stylesheet" href="themes/default/ui.css">
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -29,7 +33,6 @@
     </li>
   </ul>
   </header>
-
  <!-- 步骤条 -->
 <div class="block order_step">
     <ul class="clearfix">
@@ -43,7 +46,11 @@
 
 <div class="block yuding-wrap">
   <div class="yuding-main">
-      <h1 class="order-title">{$goods.goods_name}</h1>
+      {if $goods.rooms=='cake'}
+        <h1 class="order-title">填写并核对订单信息</h1>
+      {else}
+        <h1 class="order-title">{$goods.goods_name}</h1>
+      {/if}
       <div class="order-time">
           <i class="iconfont">&#x34f5;</i>
           营业时间:
@@ -55,116 +62,168 @@
           </div>
           <div class="order-bd red-border">{$goods.goods_brief}</div>
       </div>
-      <div class="order-info">
-          <div class="order-hd red">
-            <strong>商品信息</strong>
-            <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填</b></i>
-          </div>
-          <div class="order-bd clearfix">
-              <div class="pics">
-                 <img src="{$goods.goods_img}" alt="">
-              </div>
-              <div class="content"></div>
-          </div>
-      </div>
       <!-- 表单开始 -->
       {if $goods.rooms=='cake'}
       <!-- 这里是订蛋的表单 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
         <div class="order-info">
-            <div class="order-hd">
+            <div class="order-hd red">
+              <strong>产品明细</strong>
+              <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填<b></i>
+            </div>
+           <div class="order-bd clearfix">
+              <div class="form-item clearfix">
+                <div class="item-control">
+                    <p><a style="margin-right: 20px;">{$goods.goods_name}</a><span style="color: #666;">1 × {$goods.market_price}/1磅 =</span> <span style="color:#821111;">{$goods.market_price}</span></p>
+                    <p style="margin-top: 20px;">
+                       总额: {$goods.market_price} | 折后价: {$goods.shop_price} 元
+                    </p>
+                    <input id="J_flowerLastPirce" type="hidden" name="shopprice" value="{$goods.shop_price}"/>
+                    <input id="J_total" type="hidden" name="totalprice" value="{$goods.market_price}" />
+                </div>
+              </div>
+           </div>
+        </div>
+        <div class="order-info">
+            <div class="order-hd red">
               <strong>预订蛋糕人信息</strong>
+              <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填</b></i>
             </div>
             <div class="order-bd clearfix">
-              <div class="form-item clearfix">
-              <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
-              <div class="item-control">
-                  <input type="text" name="rooms[num]" value="1"/>
-              </div>
-              </div>
-              <div class="form-item clearfix">
-                <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
-              <div class="item-control">
-                  <input type="text" name="num" value="1"/>
-              </div>
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>手机号</b></label>
-                  <div class="item-control">
-                      <input id="phone" type="text" name="phone" class="bootstrap" value="{$user111.mobile_phone}">
-                  </div>
-              <div class="info-wrap">
-                <div class="info-tips">
-                    <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
-                </div>                
-              </div>
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>姓名</b></label>
-                  <div class="item-control">
-                      <input type="text" class="bootstrap" id="name" name="name" value="{$user111.user_name}">
-                  </div>
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>手机号</b></label>
+                    <div class="item-control">
+                        <input id="phone" type="text" name="phone" class="bootstrap" value="{$user111.mobile_phone}">
+                    </div>
                 <div class="info-wrap">
                   <div class="info-tips">
-                      <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                      <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
                   </div>                
                 </div>
-
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
-                  <div class="item-control">
-                      <label><input type="radio" name="sex" checked value="1"> 先生</label>
-                      <label><input type="radio" name="sex" value="2"> 女士</label>
+                </div>
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>姓名</b></label>
+                    <div class="item-control">
+                        <input type="text" class="bootstrap" id="name" name="name" value="{$user111.user_name}">
+                    </div>
+                  <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                    </div>                
                   </div>
+
+                </div>
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
+                    <div class="item-control">
+                        <label><input type="radio" name="sex" checked value="1"> 先生</label>
+                        <label><input type="radio" name="sex" value="2"> 女士</label>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="order-info">
+            <div class="order-hd">
+              <strong>配送信息</strong>
+            </div>
+            <div class="order-bd clearfix">
+              <div class="clearfix">
+                <div class="pics">
+                   <img src="{$goods.goods_img}" alt="">
+                </div>
+                <div class="content">{$goods.goods_desc}</div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送时间</b></label>
                   <div class="item-control">
                       <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input id="startdate" name="startdate" type="text" class="bootstrap">                 
+                           <span id="startWeek" class="time-week"></span>
+                           <input id="startDate" name="startdate" type="text" class="bootstrap date-input">
                       </div>
+                      <select name="hour" id="J_hour">
+                          <option value="9">9点</option>
+                          <option value="10">10点</option>
+                          <option value="11">11点</option>
+                          <option value="12">12点</option>
+                          <option value="13">13点</option>
+                          <option value="14">14点</option>
+                          <option value="15">15点</option>
+                          <option value="16">16点</option>
+                          <option value="17">17点</option>
+                          <option value="18">18点</option>
+                          <option value="19">19点</option>
+                          <option value="20">20点</option>
+                          <option value="21">21点</option>
+                          <option value="22">22点</option>
+                          <option value="23">23点</option>
+                      </select>
+                      <select name="minute" id="J_minues">
+                          <option value="0">0分</option>
+                          <option value="10">10分</option>
+                          <option value="20">20分</option>
+                          <option value="30">30分</option>
+                          <option value="40">40分</option>
+                          <option value="50">50分</option>
+                      </select>
+                  </div>
+                  <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>请重新选择配送时间！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送地址</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[addr]" type="text" class="bootstrap">                 
-                      </div>
+                       <input id="address2" name="rooms[addr]" type="text" class="bootstrap">                 
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>配送地址不能为空！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>收货人手机</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[phone]" type="text" class="bootstrap">                 
-                      </div>
+                      <input id="phone2" name="rooms[phone]" type="text" class="bootstrap">                 
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>收货人姓名</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                           <input name="rooms[name]" type="text" class="bootstrap">   <input name="rooms[sex]" type="radio" value="男">男   <input name="rooms[sex]" type="radio" value="女">女               
-                      </div>
+                      <input id="name2" name="rooms[name]" type="text" class="bootstrap">   
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>祝福语</b></label>
+                  <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[hoppy]" type="text" class="bootstrap">                 
-                      </div>
+                      <label><input type="radio" name="rooms[sex]" checked value="1"> 先生</label>
+                      <label><input type="radio" name="rooms[sex]" value="2"> 女士</label>
                   </div>
               </div>
-            </div>
-
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>生日牌</b></label>
+                  <div class="item-control">
+                       <input name="rooms[brand]" type="text" class="bootstrap">                 
+                  </div>
+              </div>   
+              <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>贺卡信息</b></label>
+                  <div class="item-control">
+                       <input name="rooms[hoppy]" type="text" class="bootstrap">                 
+                  </div>
+              </div>
             </div>
         </div>
         <div class="order-info">
@@ -175,106 +234,160 @@
                 <textarea name="message" id="" class="liuyan"></textarea>
             </div>
         </div>
-        <div class="form-item" style="margin-left:20px;">
             <button type="submit" class="btn btn-tmall">提交表单</button>
         </div>
       </form>
-     {else}
+      {else}
+      <!-- 这里是尼玛订花的表单 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
         <div class="order-info">
-            <div class="order-hd">
+            <div class="order-hd red">
               <strong>预订人信息</strong>
+              <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填<b></i>
             </div>
             <div class="order-bd clearfix">
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>手机号</b></label>
+                    <div class="item-control">
+                        <input id="phone" type="text" name="phone" class="bootstrap" value="{$user111.mobile_phone}">
+                    </div>
+                <div class="info-wrap">
+                  <div class="info-tips">
+                      <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
+                  </div>                
+                </div>
+                </div>
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>姓名</b></label>
+                    <div class="item-control">
+                        <input type="text" class="bootstrap" id="name" name="name" value="{$user111.user_name}">
+                    </div>
+                  <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                    </div>                
+                  </div>
+
+                </div>
+                <div class="form-item clearfix">
+                    <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
+                    <div class="item-control">
+                        <label><input type="radio" name="sex" checked value="1"> 先生</label>
+                        <label><input type="radio" name="sex" value="2"> 女士</label>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <div class="order-info">
+            <div class="order-hd">
+              <strong>配送信息</strong>
+            </div>
+            <div class="order-bd clearfix">
+              <div class="clearfix">
+                <div class="pics">
+                   <img src="{$goods.goods_img}" alt="">
+                </div>
+                <div class="content">{$goods.goods_desc}</div>
+              </div>
               <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
               <div class="item-control">
-                  <input type="text" name="rooms[num]" value="1"/>
+                  <input type="text" id="txtNum" name="rooms[num]" value="1"/>
               </div>
               </div>
               <div class="form-item clearfix">
                 <label><i class="iconfont require">&#x35e2;</i><b>数&nbsp;&nbsp;量</b></label>
               <div class="item-control">
-                  <input type="text" name="num" value="1"/>
+                  <input type="text" id="txtNum2" name="num" value="1"/> 束 × <span id="flowerPrice" style="color:#821111;">{$goods.shop_price}</span>元/束 = <span id="txtNum2Pirce" style="color:#821111;font-weight: bolder;font-size: 18px;">{$goods.shop_price}</span> 元
+                    <input id="J_flowerLastPirce" type="hidden" name="shopprice" value="{$goods.shop_price}"/>
+                    <input id="J_total" type="hidden" name="totalprice" value="{$goods.market_price}" />
               </div>
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>手机号</b></label>
-                  <div class="item-control">
-                      <input id="phone" type="text" name="phone" class="bootstrap" value="{$user111.mobile_phone}">
-                  </div>
-              <div class="info-wrap">
-                <div class="info-tips">
-                    <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
-                </div>                
-              </div>
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>姓名</b></label>
-                  <div class="item-control">
-                      <input type="text" class="bootstrap" id="name" name="name" value="{$user111.user_name}">
-                  </div>
-                <div class="info-wrap">
-                  <div class="info-tips">
-                      <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
-                  </div>                
-                </div>
-
-              </div>
-              <div class="form-item clearfix">
-                  <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
-                  <div class="item-control">
-                      <label><input type="radio" name="sex" checked value="1"> 先生</label>
-                      <label><input type="radio" name="sex" value="2"> 女士</label>
-                  </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送时间</b></label>
                   <div class="item-control">
                       <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input id="startdate" name="startdate" type="text" class="bootstrap">                 
+                           <span id="startWeek" class="time-week"></span>
+                           <input id="startDate" name="startdate" type="text" class="bootstrap date-input">
                       </div>
+                      <select name="hour" id="J_hour">
+                          <option value="9">9点</option>
+                          <option value="10">10点</option>
+                          <option value="11">11点</option>
+                          <option value="12">12点</option>
+                          <option value="13">13点</option>
+                          <option value="14">14点</option>
+                          <option value="15">15点</option>
+                          <option value="16">16点</option>
+                          <option value="17">17点</option>
+                          <option value="18">18点</option>
+                          <option value="19">19点</option>
+                          <option value="20">20点</option>
+                          <option value="21">21点</option>
+                          <option value="22">22点</option>
+                          <option value="23">23点</option>
+                      </select>
+                      <select name="minute" id="J_minues">
+                          <option value="0">0分</option>
+                          <option value="10">10分</option>
+                          <option value="20">20分</option>
+                          <option value="30">30分</option>
+                          <option value="40">40分</option>
+                          <option value="50">50分</option>
+                      </select>
+                  </div>
+                  <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>请重新选择配送时间！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>配送地址</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[addr]" type="text" class="bootstrap">                 
-                      </div>
+                       <input id="address2" name="rooms[addr]" type="text" class="bootstrap">                 
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>配送地址不能为空！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>收货人手机</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[phone]" type="text" class="bootstrap">                 
-                      </div>
+                      <input id="phone2" name="rooms[phone]" type="text" class="bootstrap">                 
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>手机号码为空或格式错误，请重新输入！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>收货人姓名</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                           <input name="rooms[name]" type="text" class="bootstrap">   <input name="rooms[sex]" type="radio" value="男">男   <input name="rooms[sex]" type="radio" value="女">女               
-                      </div>
+                      <input id="name2" name="rooms[name]" type="text" class="bootstrap">   
+                  </div>
+                 <div class="info-wrap">
+                    <div class="info-tips">
+                        <span><i class="iconfont">&#x34e8;</i>姓名不能为空，请重新输入！</span>
+                    </div>                
                   </div>
               </div>
               <div class="form-item clearfix">
+                  <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
+                  <div class="item-control">
+                      <label><input type="radio" name="rooms[sex]" checked value="1"> 先生</label>
+                      <label><input type="radio" name="rooms[sex]" value="2"> 女士</label>
+                  </div>
+              </div>   
+              <div class="form-item clearfix">
                   <label><i class="iconfont require">&#x35e2;</i><b>祝福语</b></label>
                   <div class="item-control">
-                      <div class="item-time-wrap">
-                           <span id="endWeek" class="time-week"></span>
-                            <input name="rooms[hoppy]" type="text" class="bootstrap">                 
-                      </div>
+                       <input name="rooms[hoppy]" type="text" class="bootstrap">                 
                   </div>
               </div>
-            </div>
-
             </div>
         </div>
         <div class="order-info">
@@ -293,9 +406,14 @@
   </div>
 </div>
 <script>
-  var room = JSON.parse( $('#therooms').val() );
+  var room = null;
+  window.noroom = true;
 </script>
 <script src="themes/default/js/pre.js"></script>
+ <div class="blank"></div>
+ <div class="blank"></div> 
+ <div class="blank"></div>
+
 <!-- #BeginLibraryItem "/library/page_footer_goods.lbi" --><!-- #EndLibraryItem --> 
 <!--end 主体-->
 </body>
