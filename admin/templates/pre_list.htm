@@ -52,7 +52,7 @@
     <td align="left" valign="top">{$pre.goods_name}</td>
     <td align="left" valign="top">{$pre.created}</td>
     <td align="center" valign="top" nowrap="nowrap">
-    {if $pre.grooms=='flower'  || $item.grooms=='cake'}
+    {if $pre.grooms=='flower' || $pre.grooms=='cake'}
     收货人:{$pre.rooms.phone}<br />
     收货姓名:{$pre.rooms.name}<br />
     收货性别:{$pre.rooms.sex}<br />
@@ -60,8 +60,8 @@
     {$pre.rooms}
     {/if}
     </td>
-    <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}</td>
-    <td align="left" valign="top" nowrap="nowrap">{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}</td>
+    <td align="left" valign="top" nowrap="nowrap">{if $pre.grooms=='flower' || $pre.grooms=='cake'}-{else}{$pre.startdate}{/if}</td>
+    <td align="left" valign="top" nowrap="nowrap">{if $pre.grooms=='flower' || $pre.grooms=='cake'}-{else}{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}{/if}</td>
     <td align="center" valign="top" nowrap="nowrap">{$pre.num}</td>
     <td align="left" valign="top">{$pre.name}({if $pre.sex==1}男{else}女{/if})<br />{$pre.phone}</td>
     <td align="right" valign="top" nowrap="nowrap">￥{$pre.totalprice}</td>
