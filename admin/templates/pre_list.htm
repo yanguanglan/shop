@@ -60,7 +60,7 @@
     {$pre.rooms}
     {/if}
     </td>
-    <td align="left" valign="top" nowrap="nowrap">{if $pre.grooms=='flower' || $pre.grooms=='cake'}-{else}{$pre.startdate}{/if}</td>
+    <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}</td>
     <td align="left" valign="top" nowrap="nowrap">{if $pre.grooms=='flower' || $pre.grooms=='cake'}-{else}{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}{/if}</td>
     <td align="center" valign="top" nowrap="nowrap">{$pre.num}</td>
     <td align="left" valign="top">{$pre.name}({if $pre.sex==1}男{else}女{/if})<br />{$pre.phone}</td>
