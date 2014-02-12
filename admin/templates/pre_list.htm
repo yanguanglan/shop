@@ -52,13 +52,22 @@
     <td align="left" valign="top">{$pre.goods_name}</td>
     <td align="left" valign="top">{$pre.created}</td>
     <td align="center" valign="top" nowrap="nowrap">
-    {if $pre.grooms=='flower' || $pre.grooms=='cake'}
-    收货人:{$pre.rooms.phone}<br />
-    收货姓名:{$pre.rooms.name}<br />
-    收货性别:{$pre.rooms.sex}<br />
-    {else}
-    {$pre.rooms}
-    {/if}
+        {if $pre.grooms=='flower' || $pre.grooms=='cake'}
+          <p>收货人:{$pre.rooms.name}</p>
+          <p>收货手机:{$pre.rooms.phone}</p>
+          {if $pre.rooms.brand}
+           <p>生日牌:{$pre.rooms.brand}</p>
+          {/if}
+          {if $pre.rooms.hoppy}
+            {if $pre.grooms == 'flower'}
+              <p>祝福语:{$pre.rooms.hoppy}</p>
+            {else}
+              <p>贺卡信息:{$pre.rooms.hoppy}</p>
+            {/if}
+          {/if}
+        {else}
+        {$pre.rooms}
+        {/if}
     </td>
     <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}</td>
     <td align="left" valign="top" nowrap="nowrap">{if $pre.grooms=='flower' || $pre.grooms=='cake'}-{else}{if $pre.onlinepay==1}{$pre.enddate}{else}-{/if}{/if}</td>

@@ -249,7 +249,7 @@
               var num = parseInt( $(this).val(), 10);
               var last = (num * price).toFixed(2);
               resultPrice.text(last);
-              $('#J_flowerLastPirce').val(last);
+              $('#J_flowerLastPirce, #J_total').val(last);
           });
       }());
   });
