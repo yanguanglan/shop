@@ -57,7 +57,11 @@ window.pageConfig={
       <!-- 表单开始 -->
       <form id="J_yuyueForm" action="" method="post">
           <div class="form-item clearfix">
-              <label><i class="iconfont require">&#x35e2;</i><b>商户</b></label>
+              <label><i class="iconfont require">&#x35e2;</i><b>{if $pre.grooms =='flower' || $pre.grooms=='cake'}
+              商品名称
+              {else}
+              商户
+              {/if}</b></label>
               <div class="item-control">
                   {$pre.goods_name}
               </div>
@@ -69,41 +73,73 @@ window.pageConfig={
               </div>
           </div>
           <div class="form-item clearfix">
-              <label><i class="iconfont require">&#x35e2;</i><b>入住时间</b></label>
+              <label><i class="iconfont require">&#x35e2;</i><b>
+              {if $pre.grooms =='flower' || $pre.grooms=='cake'}
+              配送时间
+              {else}
+              入住时间
+              {/if}
+              </b></label>
               <div class="item-control">
                   {$pre.startdate} {$pre.hour}时 {$pre.minute}分
               </div>
           </div>
+          {if $pre.grooms !='flower' && $pre.grooms!='cake'}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>离店时间</b></label>
               <div class="item-control">
                   {$pre.enddate}
               </div>
           </div>
+          {/if}
+          {if $pre.grooms!='cake'}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
               <div class="item-control">
                   {$pre.num}
               </div>
           </div>
+          {/if}
           <div class="form-item clearfix">
-              <label><i class="iconfont require">&#x35e2;</i><b>房&emsp;&emsp;间</b></label>
+              <label><i class="iconfont require">&#x35e2;</i><b>
+                {if $pre.grooms =='flower' || $pre.grooms=='cake'}
+                 订单信息
+                {else}
+                房&emsp;&emsp;间
+                {/if}
+              </b></label>
               <div class="item-control">
                   {if $pre.grooms=='flower' || $pre.grooms=='cake'}
                     <p>收货人:{$pre.rooms.name}</p>
-                    <p>收货性别:{$pre.rooms.sex}</p>
                     <p>收货手机:{$pre.rooms.phone}</p>
+                    {if $pre.rooms.brand}
+                     <p>生日牌:{$pre.rooms.brand}</p>
+                    {/if}
+                    {if $pre.grooms == 'flower'}
+                      <p>祝福语:{$pre.rooms.hoppy}</p>
+                    {else}
+                      <p>贺卡信息:{$pre.rooms.hoppy}</p>
+                    {/if}
                   {else}
                   {$pre.rooms}
                   {/if}
               </div>
           </div>
+           {if $pre.grooms == 'flower' || $pre.grooms == 'cake'}
+            <div class="form-item clearfix">
+              <label><i class="iconfont require">&#x35e2;</i><b>总价</b></label>
+              <div class="item-control">
+                    {$pre.rooms.flowerprice}
+              </div>
+            </div>
+           {else}
             <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>订金</b></label>
               <div class="item-control">
-                  总金额：￥{$pre.totalprice}，线上支付：￥{$pre.onlineprice}，实体店支付：￥{$pre.shopprice}
+                     总金额：￥{$pre.totalprice}，线上支付：￥{$pre.onlineprice}，实体店支付：￥{$pre.shopprice}
               </div>
-          </div>
+            </div>
+           {/if}
         <div class="order-info">
             <div class="order-hd">
               <strong>预订人信息</strong>
