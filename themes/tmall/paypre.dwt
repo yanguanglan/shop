@@ -59,7 +59,7 @@ window.pageConfig={
 <input type="hidden" name="WIDout_trade_no" value="{$pre.pre_id}" />
 <input type="hidden" name="WIDsubject" value="{$pre.goods_name}" />
 <input type="hidden" name="WIDprice" value="{$pre.onlineprice}" />
-<input type="hidden" name="WIDbody" value="{$pre.roomstr}" />
+<input type="hidden" name="WIDbody" value='{$pre.roomstr}' />
 <input type="hidden" name="WIDshow_url" value="http://{$smarty.server.SERVER_NAME}{$smarty.server.REQUEST_URI}" />
 <input type="hidden" name="WIDreceive_name" value="{$pre.name}" />
 <input type="hidden" name="WIDreceive_address" value="{if $pre.grooms=='flower' || $pre.grooms=='cake'}{$pre.rooms.addr}{else}-{/if}" />
