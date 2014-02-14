@@ -45,13 +45,12 @@ if (!empty($_REQUEST['alipay']))
     $user_id = $_SESSION['user_id'];
     $pre_id   = isset($_REQUEST['pre_id']) ? intval($_REQUEST['pre_id']) : 0;
     
-    
-
     die($json->encode($res));
 }
 
 $sql = "SELECT o.*,g.goods_name,g.onlinepay,g.rooms as grooms FROM ".$ecs->table('pre_order')." o LEFT JOIN ".$ecs->table('goods')." g USING (goods_id) WHERE o.pre_id = '".$pre_id."'";
 $row = $GLOBALS['db']->getRow($sql);
+$row['roomstr']=$row['rooms'];
 $row['rooms']=json_decode($row['rooms'],true);
 $smarty->assign('pre',$row);
 

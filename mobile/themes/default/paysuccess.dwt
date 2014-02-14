@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html manifest="/manifest/tmallCateAppCache.manifest">
+<head>
+<meta charset="utf-8">     
+<title>{$page_title}触屏版</title>          
+<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" name="viewport">     
+<meta content="yes" name="apple-mobile-web-app-capable">     
+<meta content="black" name="apple-mobile-web-app-status-bar-style">     
+<meta content="telephone=no" name="format-detection">    
+<LINK rel=apple-touch-icon-precomposed href="themes/default/images/touch-icon.png">
+<LINK rel="shortcut icon" type=image/x-icon href="themes/default/images/favicon2.ico"> 
+<LINK rel=stylesheet type=text/css href="themes/default/cart.css">
+<LINK rel=stylesheet type=text/css href="themes/default/style.css">
+<LINK rel=stylesheet type=text/css href="themes/default/goods.css">
+</head>
+<body>
+  
+<link rel="stylesheet" href="themes/default/yuding.css">
+<link rel="stylesheet" href="themes/default/ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <header class="navbar">
+  <ul>
+    <li>在线预订</li>
+    <li>
+      <a class="c-btn c-btn-aw" href="javascript:history.go(-1)"><span>返回</span></a>
+    </li>
+    <li>
+    </li>
+  </ul>
+  </header>
+
+ <!-- 步骤条 -->
+<div class="block order_step">
+    <ul class="clearfix">
+        <li class="step_ok"><em class="order_ico"></em><strong>1.选择商户</strong></li>
+        <li class="step_default"><em class="order_ico"></em><strong>2.填写订单</strong></li>
+        <li class="step_default"><em class="order_ico"></em><strong>3.在线支付</strong></li>
+        <li class="step_cur last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
+    </ul>
+</div>
+<!-- 步骤条END -->
+
+<div class="block yuding-wrap">
+  <div class="yuding-main">
+      <h1 class="order-title">支付成功</h1>
+  </div>
+</div>
+<script>
+  var room = JSON.parse( $('#therooms').val() );
+</script>
+<script src="themes/default/js/pre.js"></script>
+<!-- #BeginLibraryItem "/library/page_footer_goods.lbi" --><!-- #EndLibraryItem --> 
+<!--end 主体-->
+</body>
+</html>
+

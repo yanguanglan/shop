@@ -54,6 +54,7 @@ $sql = "SELECT o.*,g.goods_name,g.onlinepay,g.rooms as grooms FROM ".$ecs->table
 $row = $GLOBALS['db']->getRow($sql);
 $row['rooms']=json_decode($row['rooms'],true);
 $smarty->assign('pre',$row);
+$smarty->assign('pre',$row);
 
 $smarty->display('paypre.dwt');
 

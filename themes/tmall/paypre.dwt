@@ -55,7 +55,17 @@ window.pageConfig={
           </div>
       </div>
       <!-- 表单开始 -->
-      <form id="J_yuyueForm" action="" method="post" target="_blank" autocomplete="off">
+      <form id="J_yuyueForm" action="alipayapi.php" method="post" target="_blank" autocomplete="off">
+<input type="hidden" name="WIDout_trade_no" value="{$pre.pre_id}" />
+<input type="hidden" name="WIDsubject" value="{$pre.goods_name}" />
+<input type="hidden" name="WIDprice" value="{$pre.onlineprice}" />
+<input type="hidden" name="WIDbody" value="{$pre.roomstr}" />
+<input type="hidden" name="WIDshow_url" value="http://{$smarty.server.SERVER_NAME}{$smarty.server.REQUEST_URI}" />
+<input type="hidden" name="WIDreceive_name" value="{$pre.name}" />
+<input type="hidden" name="WIDreceive_address" value="{if $pre.grooms=='flower' || $pre.grooms=='cake'}{$pre.rooms.addr}{else}-{/if}" />
+<input type="hidden" name="WIDreceive_zip" value="000000" />
+<input type="hidden" name="WIDreceive_phone" value="{$pre.phone}" />
+<input type="hidden" name="WIDreceive_mobile" value="{if $pre.grooms=='flower' || $pre.grooms=='cake'}{$pre.rooms.phone}{else}{$pre.phone}{/if}" />
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>{if $pre.grooms =='flower' || $pre.grooms=='cake'}
               商品名称
@@ -132,7 +142,7 @@ window.pageConfig={
             <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>总价</b></label>
               <div class="item-control">
-                 总金额：￥{$pre.totalprice}<br />需支付：￥{$pre.shopprice}
+                 总金额：￥{$pre.totalprice}<br />需支付：￥{$pre.onlineprice}
               </div>
             </div>
            {else}
@@ -181,30 +191,6 @@ window.pageConfig={
                          <span class="bank-icon bank-alipay"></span>
                        </label>
                      </li>
-                                  <li>
-                           <label>
-                             <input type="radio" name="gateway" value="ICBCB2C">
-                             <span title="中国工商银行" class="bank-icon bank-ICBCB2C"></span>
-                           </label>
-                         </li>
-                                      <li>
-                           <label>
-                             <input type="radio" name="gateway" value="CMB">
-                             <span title="招商银行" class="bank-icon bank-CMB"></span>
-                           </label>
-                         </li>
-                                      <li>
-                           <label>
-                             <input type="radio" name="gateway" value="CCB">
-                             <span title="中国建设银行" class="bank-icon bank-CCB"></span>
-                           </label>
-                         </li>
-                                      <li>
-                           <label>
-                             <input type="radio" name="gateway" value="BOCB2C">
-                             <span title="中国银行" class="bank-icon bank-BOCB2C"></span>
-                           </label>
-                         </li>
                 </ul>
             </div>
         </div>

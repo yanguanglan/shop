@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+ 
+{* 包含脚本文件 *}
+
+{insert_scripts files='common.js'}
+
+<script type=text/javascript>
+window.pageConfig={
+	compatible:true,
+	navId:"home"
+};
+</script>
+<?php $pre = true;?>
+</head>
+
+<body>
+ 
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+ 
+<!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ 
+<link rel="stylesheet" href="themes/tmall/yuding.css">
+<link rel="stylesheet" href="themes/tmall/ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<div class="blank"></div>
+ <!-- 步骤条 -->
+<div class="block order_step">
+    <ul class="clearfix">
+        <li class="step_ok"><em class="order_ico"></em><strong>1.选择商户</strong></li>
+        <li class="step_default"><em class="order_ico"></em><strong>2.填写订单</strong></li>
+        <li class="step_default"><em class="order_ico"></em><strong>3.在线支付</strong></li>
+        <li class="step_cur last"><em class="order_ico"></em><strong>4.完成订单</strong></li>
+    </ul>
+</div>
+<!-- 步骤条END -->
+
+<div class="block yuding-wrap">
+  <div class="yuding-main">
+      <h1 class="order-title">支付成功</h1>
+  </div>
+</div>
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!--end 主体-->
+</body>
+</html>
+

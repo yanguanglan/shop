@@ -51,7 +51,18 @@
           </div>
       </div>
       <!-- 表单开始 -->
-      <form id="J_yuyueForm" action="" method="post">
+      <form id="J_yuyueForm" action="alipayapi.php" method="post" target="_blank" autocomplete="off">
+<input type="hidden" name="WIDout_trade_no" value="{$pre.pre_id}" />
+<input type="hidden" name="WIDsubject" value="{$pre.goods_name}" />
+<input type="hidden" name="WIDprice" value="{$pre.onlineprice}" />
+<input type="hidden" name="WIDbody" value="{$pre.roomstr}" />
+<input type="hidden" name="WIDshow_url" value="http://{$smarty.server.SERVER_NAME}{$smarty.server.REQUEST_URI}" />
+<input type="hidden" name="WIDreceive_name" value="{$pre.name}" />
+<input type="hidden" name="WIDreceive_address" value="{if $pre.grooms=='flower' || $pre.grooms=='cake'}{$pre.rooms.addr}{else}-{/if}" />
+<input type="hidden" name="WIDreceive_zip" value="000000" />
+<input type="hidden" name="WIDreceive_phone" value="{$pre.phone}" />
+<input type="hidden" name="WIDreceive_mobile" value="{if $pre.grooms=='flower' || $pre.grooms=='cake'}{$pre.rooms.phone}{else}{$pre.phone}{/if}" />
+
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>{if $pre.grooms =='flower' || $pre.grooms=='cake'}
               商品名称
