@@ -139,7 +139,7 @@
             <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>总价</b></label>
               <div class="item-control">
-                 总金额：￥{$pre.totalprice}<br />需支付：￥{$pre.shopprice}
+                 总金额：￥{$pre.totalprice}<br />需支付：￥{$pre.onlineprice}
               </div>
             </div>
            {else}
