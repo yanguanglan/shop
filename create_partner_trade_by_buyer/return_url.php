@@ -16,7 +16,7 @@
 require_once("alipay.config.php");
 require_once("lib/alipay_notify.class.php");
 
-echo dirname(__FILE__) . '/includes/init.php';
+echo '/includes/init.php';
       exit();
       
 ?>
