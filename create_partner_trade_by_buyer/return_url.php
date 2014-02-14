@@ -15,7 +15,13 @@
 
 require_once("alipay.config.php");
 require_once("lib/alipay_notify.class.php");
-      
+      require('includes/init.php');
+      $sql = "SELECT * FROM ".$ecs->table('pre_order')." o WHERE o.pre_id = '".$out_trade_no."'";
+      $row = $GLOBALS['db']->getRow($sql);
+      if($row['status']=="1"){
+        $sql = "UPDATE ".$ecs->table('pre_order')." SET trade_no={$trade_no},status=2 WHERE pre_id = '".$out_trade_no."'";
+        $db->query($sql);
+      }
 ?>
 <!DOCTYPE HTML>
 <html>
