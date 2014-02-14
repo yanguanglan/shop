@@ -55,7 +55,7 @@ window.pageConfig={
           </div>
       </div>
       <!-- 表单开始 -->
-      <form id="J_yuyueForm" action="" method="post">
+      <form id="J_yuyueForm" action="" method="post" target="_blank" autocomplete="off">
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>{if $pre.grooms =='flower' || $pre.grooms=='cake'}
               商品名称
@@ -143,6 +143,8 @@ window.pageConfig={
               </div>
             </div>
            {/if}
+           <!-- 实际支付的参数 -->
+           <input type="hidden" name="payprice" value="{$pre.onlineprice}" />
         <div class="order-info">
             <div class="order-hd">
               <strong>预订人信息</strong>
@@ -172,7 +174,38 @@ window.pageConfig={
               <strong>请选择支付方式</strong>
             </div>
             <div class="order-bd clearfix">
-                选择银行，进行支付
+                <ul class="bank-list">
+                     <li>
+                       <label>
+                         <input type="radio" name="gateway" value="alipay" checked>
+                         <span class="bank-icon bank-alipay"></span>
+                       </label>
+                     </li>
+                                  <li>
+                           <label>
+                             <input type="radio" name="gateway" value="ICBCB2C">
+                             <span title="中国工商银行" class="bank-icon bank-ICBCB2C"></span>
+                           </label>
+                         </li>
+                                      <li>
+                           <label>
+                             <input type="radio" name="gateway" value="CMB">
+                             <span title="招商银行" class="bank-icon bank-CMB"></span>
+                           </label>
+                         </li>
+                                      <li>
+                           <label>
+                             <input type="radio" name="gateway" value="CCB">
+                             <span title="中国建设银行" class="bank-icon bank-CCB"></span>
+                           </label>
+                         </li>
+                                      <li>
+                           <label>
+                             <input type="radio" name="gateway" value="BOCB2C">
+                             <span title="中国银行" class="bank-icon bank-BOCB2C"></span>
+                           </label>
+                         </li>
+                </ul>
             </div>
         </div>
         <div class="form-item" style="margin-left:20px;">

@@ -379,3 +379,110 @@ color: #909090;
   	margin-bottom: 5px;
   	display: block;
   }
+/**
+ * 银行
+ */
+.bank-list li {
+  float: left;
+  margin: 8px 15px;
+  cursor: pointer;
+}
+.bank-list input {
+	margin-top: 12px;
+	vertical-align: top;
+}
+.bank-list label{
+	display: block;
+	cursor: pointer;
+}
+.bank-icon {
+    display: inline-block;
+    width: 154px;
+    height: 34px;
+    background: url(images/pay.png) 5px -1095px no-repeat;
+    overflow: hidden;
+    border: 1px solid #ccc
+}
+.bank-list li.cur .bank-icon {
+    border-color: #fa3
+}
+
+.bank-icon.bank-alipay {
+    background-position: 5px -1087px
+}
+
+.bank-icon.bank-ICBCB2C {
+    background-position: 5px -541px
+}
+
+.bank-icon.bank-CMB {
+    background-position: 5px -252px
+}
+
+.bank-icon.bank-CCB {
+    background-position: 5px -146px
+}
+
+.bank-icon.bank-BOCB2C {
+    background-position: 5px -72px
+}
+
+.bank-icon.bank-ABC {
+    background-position: 5px 0
+}
+
+.bank-icon.bank-COMM {
+    background-position: 5px -325px
+}
+
+.bank-icon.bank-PSBC-DEBIT {
+    background-position: 5px -755px
+}
+
+.bank-icon.bank-CEBBANK {
+    background-position: 5px -179px
+}
+
+.bank-icon.bank-SPDB {
+    background-position: 5px -901px
+}
+
+.bank-icon.bank-GDB {
+    background-position: 5px -431px
+}
+
+.bank-icon.bank-CITIC {
+    background-position: 5px -218px
+}
+
+.bank-icon.bank-CIB {
+    background-position: 5px -1047px
+}
+
+.bank-icon.bank-CMBC {
+    background-position: 5px -289px
+}
+
+.bank-icon.bank-BJBANK {
+    background-position: 5px -37px
+}
+
+.bank-icon.bank-HZCBB2C {
+    background-position: 5px -505px
+}
+
+.bank-icon.bank-SHBANK {
+    background-position: 5px -828px
+}
+
+.bank-icon.bank-SPABANK {
+    background-position: 5px -865px
+}
+
+.bank-icon.bank-WZCBB2C-DEBIT {
+    background-position: 5px -974px
+}
+
+.bank-icon.bank-NBBANK {
+    background-position: 5px -685px
+}
