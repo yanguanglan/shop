@@ -13,8 +13,8 @@
  * 该页面可以使用PHP开发工具调试，也可以使用写文本函数logResult，该函数已被默认关闭，见alipay_notify_class.php中的函数verifyReturn
  */
 
-require_once("alipay.config.php");
-require_once("lib/alipay_notify.class.php");
+require_once("create_partner_trade_by_buyer/alipay.config.php");
+require_once("create_partner_trade_by_buyer/lib/alipay_notify.class.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -24,7 +24,7 @@ require_once("lib/alipay_notify.class.php");
 //计算得出通知验证结果
 $alipayNotify = new AlipayNotify($alipay_config);
 $verify_result = $alipayNotify->verifyReturn();
-if(!$verify_result) {//验证成功
+if($verify_result) {//验证成功
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//请在这里加上商户的业务逻辑程序代码
 	
@@ -42,13 +42,12 @@ if(!$verify_result) {//验证成功
 	//交易状态
 	$trade_status = $_GET['trade_status'];
 
-
     if($_GET['trade_status'] == 'WAIT_SELLER_SEND_GOODS') {
 		//判断该笔订单是否在商户网站中已经做过处理
 			//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
 			//如果有做过处理，不执行商户的业务程序
       define('IN_ECS', true);
-      require('../includes/init.php');
+      require('includes/init.php');
       $sql = "SELECT * FROM ".$ecs->table('pre_order')." o WHERE o.pre_id = '".$out_trade_no."'";
       $row = $GLOBALS['db']->getRow($sql);
       if($row['status']=="1"){

@@ -15,8 +15,8 @@
  * 如果没有收到该页面返回的 success 信息，支付宝会在24小时内按一定的时间策略重发通知
  */
 
-require_once("alipay.config.php");
-require_once("lib/alipay_notify.class.php");
+require_once("../create_partner_trade_by_buyer/alipay.config.php");
+require_once("../create_partner_trade_by_buyer/lib/alipay_notify.class.php");
 
 //计算得出通知验证结果
 $alipayNotify = new AlipayNotify($alipay_config);
@@ -62,7 +62,7 @@ if($verify_result) {//验证成功
 			//如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
 			//如果有做过处理，不执行商户的业务程序
     define('IN_ECS', true);
-    require('../includes/init.php');
+    require('includes/init.php');
       $sql = "SELECT * FROM ".$ecs->table('pre_order')." o WHERE o.pre_id = '".$out_trade_no."'";
       $row = $GLOBALS['db']->getRow($sql);
       if($row['status']=="1"){
