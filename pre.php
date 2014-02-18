@@ -19,7 +19,7 @@ require(dirname(__FILE__) . '/includes/init.php');
 
 if ((DEBUG_MODE & 2) != 2)
 {
-    $smarty->caching = true;
+    $smarty->caching = false;
 }
 
 $affiliate = unserialize($GLOBALS['_CFG']['affiliate']);
@@ -91,6 +91,8 @@ if (!empty($_REQUEST['startdate']))
     $user_id = $_SESSION['user_id'];
     $goods_id   = isset($_REQUEST['id']) ? intval($_REQUEST['id']) : 0;
     
+    $coupons   = $_REQUEST['coupons'];
+    
     if($goods_id){
       $sql="SELECT * FROM ".$ecs->table('goods')." WHERE goods_id='".$goods_id."'";
       $goods=$GLOBALS['db']->getRow($sql);
@@ -125,7 +127,9 @@ if (!empty($_REQUEST['startdate']))
         if(!$goods['onlinepay']){
           $name.=$sex==1?"先生":"女士";
           $rooms = json_decode($rooms);
-          sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣。如有任何疑问请拨打热线服务电话05708759878");
+          $couponsday=date('Y-m-d H:i:s',time()+30*24*3600);
+          $coupons && $couponstr=",{$goods['coupons']}有效期截止{$couponsday}";
+          sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣{$couponstr}。如有任何疑问请拨打热线服务电话05708759878");
         }
         header("location:paypre.php?id=$pre_id");
     }

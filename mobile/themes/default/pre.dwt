@@ -49,6 +49,14 @@
           营业时间:
           <span class="time"></span>请选择在营业时间范围之内的消费时间。
       </div>
+      {if $smarty.get.coupons==true}
+      <div class="order-info">
+          <div class="order-hd red">
+            <strong>优惠信息</strong>
+          </div>
+          <div class="order-bd red-border">{$goods.coupons}</div>
+      </div>
+      {/if}
       <div class="order-info">
           <div class="order-hd red">
             <strong>注意事项</strong>

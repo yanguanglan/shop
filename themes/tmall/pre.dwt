@@ -56,12 +56,14 @@ window.pageConfig={
           <span class="time">08:00-24:00</span>，请选择在营业时间范围之内的消费时间。
       </div>
       <!-- 如果是优惠 -->
+      {if $smarty.get.coupons==true}
       <div class="order-info">
           <div class="order-hd red">
             <strong>优惠信息</strong>
           </div>
-          <div class="order-bd red-border">{$goods.goods_brief}</div>
+          <div class="order-bd red-border">{$goods.coupons}</div>
       </div>
+      {/if}
       <!-- 否则 -->
       <div class="order-info">
           <div class="order-hd red">
