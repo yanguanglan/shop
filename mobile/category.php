@@ -504,6 +504,7 @@ function category_get_goods($children,$area='', $brand, $min, $max, $ext, $size,
         $arr[$row['goods_id']]['goods_thumb']      = get_image_path($row['goods_id'], $row['goods_thumb'], true);
         $arr[$row['goods_id']]['goods_img']        = get_image_path($row['goods_id'], $row['goods_img']);
         $arr[$row['goods_id']]['url']              = build_uri('goods', array('gid'=>$row['goods_id']), $row['goods_name']);
+		$arr[$row['goods_id']]['rooms']            = $row['rooms'];
         
         $arr[$row['goods_id']]['sales_count']      = get_goods_sales_count($row['goods_id']);
     }
