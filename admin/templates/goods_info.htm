@@ -270,6 +270,12 @@
             <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeSellerNote">{$lang.notice_seller_note}</span></td>
           </tr>
           <tr>
+            <td class="label">优惠信息</td>
+            <td>
+              <textarea name="coupons" id="" cols="40" rows="4"></textarea>
+            </td>
+          </tr>
+          <tr>
             <td class="label">是否在线支付</td>
             <td><input type="checkbox" name="onlinepay" {if $goods.onlinepay==1}checked="true"{/if} value=1 /></td>
           </tr>

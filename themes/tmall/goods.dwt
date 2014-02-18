@@ -424,11 +424,11 @@ function addnum(id){
   <a href="preflower.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
   {else}
   <a href="pre.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
+  <a href="pre.php?id={$goods.goods_id}&coupons=true" class="yuding-btn">获取优惠</a>
   {/if}
   <style>
      .yuding-btn{
-        display: block !important;
-        display: block;
+        display: inline-block !important;
         text-align: center;
         overflow: hidden;
         font-family: "微软雅黑","黑体","宋体";
