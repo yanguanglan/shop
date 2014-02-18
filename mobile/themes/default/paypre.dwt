@@ -41,7 +41,7 @@
 <!-- 步骤条END -->
 <div class="block yuding-wrap">
   <div class="yuding-main">
-      {if $pre.onlinepay==1}
+      {if $pre.onlinepay==1 && $coupons!=true}
       <h1 class="order-title">请核实订单</h1>
       <div class="order-info">
           <div class="order-hd red">

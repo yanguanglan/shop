@@ -130,7 +130,7 @@ if (!empty($_REQUEST['startdate']))
           sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，我们的后台服务人员将会及时与您联系。到店消费时，请出示本短信，将享受本网站所标示的优惠折扣{$couponstr}。如有任何疑问请拨打热线服务电话05708759878");
         }
         if($coupons){
-          header("location:paysuccess.php");
+          header("location:paypre.php?coupons=true&id=$pre_id");
         }
         header("location:paypre.php?id=$pre_id");
     }
