@@ -133,6 +133,7 @@ if (!empty($_REQUEST['startdate']))
         }
         if($coupons){
           header("location:paypre.php?coupons=true&id=$pre_id");
+          exit();
         }
         header("location:paypre.php?id=$pre_id");
     }
