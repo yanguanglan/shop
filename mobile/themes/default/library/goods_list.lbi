@@ -33,9 +33,22 @@ function getTop(e){
 	return offset;
 }
 </script>
+<style>
+  .sm_btns{
+     display: inline-block;
+     background: #ced19d;
+     padding: 5px 10px;
+  }
+  .sm_btns:hover{
+     text-decoration: none;
+  }
+  .green{
+    background: #71ab83;
+  }
+</style>
 <div style="height: 39px; display: none;" class="filter-placeholder"></div>
 <!-- {if $category > 0} -->
-  <form name="compareForm" action="compare.php" method="post" onSubmit="return compareGoods(this);">
+  <form name="proIcons" action="compare.php" method="post" onSubmit="return compareGoods(this);">
     <!-- {/if} -->
     <div class="srp j_autoResponsive_container m-ks-autoResponsive-container m-animation list" id="J_ItemList" style="opacity: 1; "> 
       
@@ -43,7 +56,7 @@ function getTop(e){
       <!-- {if $goods.goods_id} -->
       <div class="product"  >
         <div class="pro-inner">
-          <div class="proImg-wrap"> <a href="{$goods.url}" > <img src="{$goods.goods_img}" alt="{$goods.goods_name}"> </a> </div>
+          <div class="proImg-wrap"> <a href="{$goods.url}" ><img src="{$goods.goods_img}" alt="{$goods.goods_name}"> </a> </div>
           <div class="proInfo-wrap">
             <div class="proTitle"> <a href="{$goods.url}" >{$goods.name}</a> </div>
             <div class="proSKU"></div>
@@ -60,6 +73,10 @@ function getTop(e){
             </div>
             <!-- {/if} -->
             <div class="proService"><span></span></div>
+            <div class="btns">
+               <a href="pre.php?id={$goods.goods_id}" class="sm_btns">立即预订</a>
+               <a href="pre.php?id={$goods.goods_id}&coupons=true" class="sm_btns green">获取优惠</a>
+            </div>
             <div class="proSales">销量:<em>{$goods.sales_count}</em></div>
             <div class="proIcons"> 
 			 <!-- {if $goods.watermark_img} --> 
