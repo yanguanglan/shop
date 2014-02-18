@@ -54,19 +54,30 @@
           <div class="order-hd red">
             <strong>优惠信息</strong>
           </div>
-          <div class="order-bd red-border">{$goods.coupons}</div>
-	  <div class="order-bd red-border">{$goods.couponsdesc}</div>
-	  {if $goods.couponsimg}
-          <div class="order-bd red-border"><img src="..\{$goods.couponsimg}" /></div>
-	  {/if}
+          <div class="order-bd red-border">
+              {$goods.coupons}
+              {if $goods.couponsimg}
+                    <p><img src="..\{$goods.couponsimg}" /></p>
+              {/if}
+           </div>
       </div>
+         {if $goods.couponsdesc}
+            <div class="order-info">
+                <div class="order-hd red">
+                  <strong>注意事项</strong>
+                </div>
+                <div class="order-bd red-border" style="font-size:14px;line-height:1.5;">{$goods.couponsdesc}</div>
+            </div>
+         {/if}
+
+      {else}
+        <div class="order-info">
+            <div class="order-hd red">
+              <strong>注意事项</strong>
+            </div>
+            <div class="order-bd red-border" style="font-size:14px;line-height:1.5;">{$goods.goods_brief}</div>
+        </div>
       {/if}
-      <div class="order-info">
-          <div class="order-hd red">
-            <strong>注意事项</strong>
-          </div>
-          <div class="order-bd red-border" style="font-size:14px;line-height:1.5;">{$goods.goods_brief}</div>
-      </div>
       <div class="order-info">
           <div class="order-hd red">
             <strong>商品信息</strong>
