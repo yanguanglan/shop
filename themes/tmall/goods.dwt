@@ -424,7 +424,9 @@ function addnum(id){
   <a href="preflower.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
   {else}
   <a href="pre.php?id={$goods.goods_id}" class="yuding-btn">立刻预订</a>
-  <a href="pre.php?id={$goods.goods_id}&coupons=true" class="yuding-btn">获取优惠</a>
+    {if $goods.coupons}
+    <a href="pre.php?id={$goods.goods_id}&coupons=true" class="yuding-btn">获取优惠</a>
+    {/if}
   {/if}
   <style>
      .yuding-btn{

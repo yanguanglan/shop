@@ -75,7 +75,9 @@ function getTop(e){
             <div class="proService"><span></span></div>
            {if $goods.rooms && $goods.rooms !='flower' && $goods.rooms !='cake'}
             <div class="btns">
+               {if $goods.coupons}
                <a href="pre.php?id={$goods.goods_id}&coupons=true" class="sm_btns green">获取优惠</a>
+               {/if}
                <a href="{$goods.url}" class="sm_btns">立即预订</a>
             </div>
            {/if}
