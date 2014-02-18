@@ -232,7 +232,6 @@
              return false;
           }
           if (!window.noroom) {
-            alert(1)
             var rooms = [];
             for(var key in roomTotal) {
                rooms.push(roomTotal[key][2]);
