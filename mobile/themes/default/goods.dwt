@@ -124,7 +124,7 @@ background-size: 24px 21px;
 <!-- 若想了解更详细使用方法，请访问 http://www.superslide2.com/touchSlide/ -->
 <section class="s-slider ui-slider">
 <div id="slideBox" class="slideBox">
-  <div class="scroller" style="transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.25, 1); transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); max-width:80%; overflow:hidden; margin: 0 auto;">
+  <div class="scroller" style="transition-property: transform; transition-timing-function: cubic-bezier(0, 0, 0.25, 1); transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); max-width:90%; overflow:hidden; margin: 0 auto;">
     <!--<div><a href="javascript:showPic()"><img src="{$goods.goods_thumb}"  alt="{$goods.goods_name}" /></a></div>-->
     <ul>
       <li><a href="javascript:showPic()"><img alt="" src="{$goods.original_img}"/></a></li>
@@ -174,7 +174,7 @@ background-size: 24px 21px;
 </section>
 <style type="text/css">
 	/* 本例子css -------------------------------------- */
-	.slideBox{ position:relative; overflow:hidden; margin:10px auto; max-width:640px;/* 设置焦点图最大宽度 */ }
+	.slideBox{ position:relative; overflow:hidden; margin:20px auto; max-width:640px;/* 设置焦点图最大宽度 */ }
 	.slideBox .icons{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; }
 	.slideBox .icons li{ display:inline-block; width:5px; height:5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;}
 	.slideBox .icons li.on{ background:#fff;  }
@@ -344,9 +344,9 @@ background-size: 24px 21px;
      </script>
      {if $goods.rooms}
         {if $goods.rooms=='flower' || $goods.rooms=='cake'}
-<a class="btn buy" href="preflower.php?id={$goods.goods_id}">立即预订</a>
+<a class="btn buy" href="preflower.php?id={$goods.goods_id}"><strong style="font-size:20px;">立即预订</strong></a>
           {else}
-        <a class="btn buy" href="pre.php?id={$goods.goods_id}">立即预订</a>
+        <a class="btn buy" href="pre.php?id={$goods.goods_id}"><strong style="font-size:20px;">立即预订</strong></a>
       {/if}
      {else}
       <button type="button" class="btn buy" onClick="addToCart1({$goods.goods_id})">立即购买</button>

@@ -47,25 +47,25 @@
       <div class="order-time">
           <i class="iconfont">&#x34f5;</i>
           营业时间:
-          <span class="time">08:00-24:00</span>，请选择在营业时间范围之内的消费时间。
+          <span class="time"></span>请选择在营业时间范围之内的消费时间。
       </div>
       <div class="order-info">
           <div class="order-hd red">
             <strong>注意事项</strong>
           </div>
-          <div class="order-bd red-border">{$goods.goods_brief}</div>
+          <div class="order-bd red-border" style="font-size:14px;line-height:1.5;">{$goods.goods_brief}</div>
       </div>
       <div class="order-info">
           <div class="order-hd red">
             <strong>商品信息</strong>
             <i class="iconfont require fl-r">&#x35e2;<b class="ml-5">此项必填</b></i>
           </div>
-          <div class="order-bd clearfix">
+          <!--<div class="order-bd clearfix">
               <div class="pics">
                  <img src="{$goods.goods_img}" alt="">
               </div>
               <div class="content"></div>
-          </div>
+          </div>-->
       </div>
       <!-- 表单开始 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
@@ -168,7 +168,7 @@
               </div>
           </div>
           <!-- {/if} -->
-        <div class="order-info">
+        <div class="order-info" style="margin-bottom:0px;">
             <div class="order-hd">
               <strong>预订人信息</strong>
             </div>
@@ -197,7 +197,7 @@
                 </div>
 
               </div>
-              <div class="form-item clearfix">
+              <div class="form-item clearfix" style="margin:10px 0">
                   <label><i class="iconfont require">&#x35e2;</i><b>性别</b></label>
                   <div class="item-control">
                       <label><input type="radio" name="sex" checked value="1"> 先生</label>
@@ -208,6 +208,9 @@
             </div>
         </div>
         <div class="order-info">
+	 <div class="form-item">
+            <button type="submit" class="btn btn-tmall"><strong style="font-size:20px;">提交表单</strong></button>
+         </div>
             <div class="order-hd">
               <strong>需求留言</strong>（您还有什么要求,请写在下面）
             </div>
@@ -215,10 +218,7 @@
                 <textarea name="message" id="" class="liuyan"></textarea>
             </div>
         </div>
-        <div class="form-item" style="margin-left:20px;">
-            <button type="submit" class="btn btn-tmall">提交表单</button>
-        </div>
-      </form>
+       </form>
   </div>
 </div>
 <script>
