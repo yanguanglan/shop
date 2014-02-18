@@ -43,7 +43,7 @@
 
 <div class="block yuding-wrap">
   <div class="yuding-main">
-      <h1 class="order-title">{$goods.goods_name}</h1>
+      <h1 class="order-title">{$goods.goods_name}{if $smarty.get.coupons==true} 优惠卷{else} 预订{/if}</h1>
       <div class="order-time">
           <i class="iconfont">&#x34f5;</i>
           营业时间:

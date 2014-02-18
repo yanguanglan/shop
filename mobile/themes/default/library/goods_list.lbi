@@ -73,11 +73,12 @@ function getTop(e){
             </div>
             <!-- {/if} -->
             <div class="proService"><span></span></div>
-           rooms: {$goods.rooms}
+           {if $goods.rooms && $goods.rooms !='flower' && $goods.rooms !='cake'}
             <div class="btns">
-               <a href="pre.php?id={$goods.goods_id}" class="sm_btns">立即预订</a>
                <a href="pre.php?id={$goods.goods_id}&coupons=true" class="sm_btns green">获取优惠</a>
+               <a href="{$goods.url}" class="sm_btns">立即预订</a>
             </div>
+           {/if}
             <div class="proSales">销量:<em>{$goods.sales_count}</em></div>
             <div class="proIcons"> 
 			 <!-- {if $goods.watermark_img} --> 
