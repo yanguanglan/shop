@@ -62,6 +62,10 @@ window.pageConfig={
             <strong>优惠信息</strong>
           </div>
           <div class="order-bd red-border">{$goods.coupons}</div>
+          <div class="order-bd red-border">{$goods.couponsdesc}</div>
+	  {if $goods.couponsimg}
+          <div class="order-bd red-border"><img src="{$goods.couponsimg}" /></div>
+	  {/if}
       </div>
       {/if}
       <!-- 否则 -->
