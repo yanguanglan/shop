@@ -162,6 +162,7 @@ window.pageConfig={
 
           </div>
           <!-- {/if} -->
+          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
               <div class="item-control">
@@ -199,6 +200,7 @@ window.pageConfig={
               </div>
           </div>
           <!-- {/if} -->
+          {/if}
         <div class="order-info">
             <div class="order-hd">
               <strong>预订人信息</strong>

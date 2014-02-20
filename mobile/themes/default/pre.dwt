@@ -154,6 +154,7 @@
 
           </div>
           <!-- {/if} -->
+          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(可选填)</b></label>
               <div class="item-control">
@@ -191,6 +192,7 @@
               </div>
           </div>
           <!-- {/if} -->
+        {/if}
         <div class="order-info" style="margin-bottom:0px;">
             <div class="order-hd">
               <strong>预订人信息</strong>

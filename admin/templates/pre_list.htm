@@ -67,7 +67,7 @@
             {/if}
           {/if}
         {else}
-        {$pre.rooms}
+          {if $pre.rooms}{$pre.rooms}{else}优惠卷{/if}
         {/if}
     </td>
     <td align="left" valign="top" nowrap="nowrap">{$pre.startdate}&nbsp;{$pre.hour}时{$pre.minute}分</td>

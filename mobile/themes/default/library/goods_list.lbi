@@ -73,9 +73,9 @@ function getTop(e){
             </div>
             <!-- {/if} -->
             <!--<div class="proService"><span></span></div>-->
-           {if $goods.rooms && $goods.rooms !='flower' && $goods.rooms !='cake'}
+           {if $goods.rooms}
             <div class="btns" style="margin-left:10px;">
-               {if $goods.coupons}
+               {if $goods.coupons && $goods.rooms !='flower' && $goods.rooms !='cake'}
                <a href="pre.php?id={$goods.goods_id}&coupons=true" class="sm_btns green" style="background-color:rgb(248, 92, 79);border:1px solid rgb(248, 92, 79);color:white;margin-right:20px;border-radius:5px;">获取优惠</a>
                {/if}
                <a href="{$goods.url}" class="sm_btns" style="background-color: #84d018;border: 1px solid #7DC516;color:white;border-radius:5px;">立即预订</a>
