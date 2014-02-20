@@ -26,7 +26,7 @@
 .srp.list .proImg-wrap{width:26.4%;margin-right:10px;-webkit-transition:all .6s linear}
 .srp.list .proImg-wrap img{width:100%}
 .srp.list .proInfo-wrap{float:none;padding:0;padding-left:90px}
-.srp.list .proTitle{line-height:17px;height:36px;margin-bottom:8px}
+.srp.list .proTitle{line-height:17px;height:36px;margin-bottom:0px}
 .srp.list .proTitle a{font-size:15px}
 .srp.list .proPrice{float:left;margin-right:10px}
 .srp.list .proPrice del{display:none}

@@ -112,7 +112,7 @@ html,body{height:100%;}
            <ul class="box">
              <li class="f"><a href="../category.php?id=19"><h2>农家乐</h2><figure class="f_icon"></figure></a></li>
 	     <li class="c"><a href="../category.php?id=106"><h2>民宿预定</h2><figure class="c_icon"></figure></a></li>
-             <li class="t"><a href="../category.php?id=18"><h2>五星商家</h2><figure class="t_icon"></figure></a></li>
+             <li class="t"><a href="../category.php?id=18"><h2>旅游预定</h2><figure class="t_icon"></figure></a></li>
              <li class="h"><a href="../category.php?id=22"><h2>美餐预订</h2><h3></h3><figure class="h_icon"></figure></a></li>
              <li class="m"><a href="../user.php"><h2>我的帐户</h2><figure class="m_icon"></figure></a></li>
 	     <li class="m1"><a href="../category.php?id=23"><h2>名品特卖</h2><figure class="m_icon1"></figure></a></li>

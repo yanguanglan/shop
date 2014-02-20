@@ -348,7 +348,7 @@ background-size: 24px 21px;
           {else}
         <a class="btn buy" href="pre.php?id={$goods.goods_id}"><strong style="font-size:20px;">立即预订</strong></a>
             {if $goods.coupons}
-        <a class="btn buy" href="pre.php?id={$goods.goods_id}&coupons=true" style="background:#b10000;"><strong style="font-size:20px;">获取优惠</strong></a>
+        <a class="btn buy" href="pre.php?id={$goods.goods_id}&coupons=true" style="background:#b10000;border:1px solid #A00000"><strong style="font-size:20px;">获取优惠</strong></a>
         {/if}
       {/if}
      {else}
