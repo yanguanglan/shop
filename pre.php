@@ -76,7 +76,7 @@ if (!empty($_REQUEST['act']) && $_REQUEST['act'] == 'price')
 //-- 商品购买记录ajax处理
 /*------------------------------------------------------ */
 
-if (!empty($_REQUEST['startdate']))
+if (!empty($_REQUEST['phone']))
 {
     include('includes/cls_json.php');
 
@@ -150,7 +150,7 @@ function sendsms($phone,$content){
   $data['zh']='yxqz';
   $data['mm']='qw123456';
   $data['hm']=$phone;
-  $data['nr']=$content."【易享衢州】";
+  $data['nr']=$content."【易享衢州 0570-8759878】";
   $data['sms_type']=41;
   $ch = curl_init(); 
   curl_setopt($ch, CURLOPT_URL, $url); 

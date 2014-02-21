@@ -201,7 +201,7 @@ window.pageConfig={
       </form>
       {else}
        <div class="order-yuding-success">
-         <h2>您已成功预订了该项服务</h2>
+         <h2>{if $smarty.get.coupons==true}您已成功获取了优惠卷！{else}您已成功预订了该项服务！{/if}</h2>
          <div class="boxm center"><i class="iconfont">&#x34e7;</i>稍后请查收手机短信，客服也会将会联系你进行确认.</div>
          <div class="box-tip boxm box-grey">
            <strong>温馨提示您</strong> 

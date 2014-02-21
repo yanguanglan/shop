@@ -92,6 +92,7 @@
       </div>
       <!-- 表单开始 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
+          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <!-- {if $goods.onlinepay > 0} -->
                  <label><i class="iconfont require">&#x35e2;</i><b>到店时间</b></label>
@@ -154,7 +155,6 @@
 
           </div>
           <!-- {/if} -->
-          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(可选填)</b></label>
               <div class="item-control">
@@ -195,7 +195,7 @@
         {/if}
         <div class="order-info" style="margin-bottom:0px;">
             <div class="order-hd">
-              <strong>预订人信息</strong>
+              <strong>{if $smarty.get.coupons==true}获取人信息{else}预订人信息{/if}</strong>
             </div>
             <div class="order-bd clearfix">
               <div class="form-item clearfix">
@@ -234,7 +234,7 @@
         </div>
         <div class="order-info">
 	 <div class="form-item">
-            <button type="submit" class="btn btn-tmall"><strong style="font-size:20px;">提交表单</strong></button>
+            <button type="submit" class="btn btn-tmall"><strong style="font-size:20px;">{if $smarty.get.coupons==true}获取优惠{else}提交表单{/if}</strong></button>
          </div>
             <div class="order-hd">
               <strong>需求留言</strong>（您还有什么要求,请写在下面）
@@ -247,7 +247,10 @@
   </div>
 </div>
 <script>
-  var room = JSON.parse( $('#therooms').val() );
+  var room = null;
+  if ( $('#therooms').length ) {
+     room = JSON.parse( $('#therooms').val() );
+  }
 </script>
 <script src="themes/default/js/pre.js"></script>
 <!-- #BeginLibraryItem "/library/page_footer_goods.lbi" --><!-- #EndLibraryItem --> 

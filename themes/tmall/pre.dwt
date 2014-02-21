@@ -100,6 +100,7 @@ window.pageConfig={
       </div>
       <!-- 表单开始 -->
       <form id="J_yuyueForm" action="" method="post" autocomplete="off">
+          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <!-- {if $goods.onlinepay > 0} -->
                  <label><i class="iconfont require">&#x35e2;</i><b>到店时间</b></label>
@@ -162,7 +163,6 @@ window.pageConfig={
 
           </div>
           <!-- {/if} -->
-          {if $smarty.get.coupons!=true}
           <div class="form-item clearfix">
               <label><i class="iconfont require">&#x35e2;</i><b>人&emsp;&emsp;数</b></label>
               <div class="item-control">
@@ -203,7 +203,7 @@ window.pageConfig={
           {/if}
         <div class="order-info">
             <div class="order-hd">
-              <strong>预订人信息</strong>
+              <strong>{if $smarty.get.coupons==true}获取人信息{else}预订人信息{/if}</strong>
             </div>
             <div class="order-bd clearfix">
               <div class="form-item clearfix">
@@ -251,13 +251,16 @@ window.pageConfig={
         验证码：<input id="order-code" style="width:70px;" type="text" size="8" name="captcha" class="inputBg">
         <img src="captcha.php" alt="captcha" style="vertical-align: middle;cursor: pointer;" onclick="this.src='captcha.php?'+Math.random()">
         <div class="form-item" style="margin-left:20px;">
-            <button type="submit" class="btn btn-tmall">提交表单</button>
+            <button type="submit" class="btn btn-tmall">{if $smarty.get.coupons==true}获取优惠{else}提交表单{/if}</button>
         </div>
       </form>
   </div>
 </div>
 <script>
-  var room = JSON.parse( $('#therooms').val() );
+  var room = null;
+  if ($('#therooms').length) {
+     room = JSON.parse( $('#therooms').val() );
+  }
 </script>
 <script src="themes/tmall/js/pre.js"></script>
  <div class="blank"></div>

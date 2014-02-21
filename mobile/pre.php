@@ -76,7 +76,7 @@ if (!empty($_REQUEST['act']) && $_REQUEST['act'] == 'price')
 //-- 商品购买记录ajax处理
 /*------------------------------------------------------ */
 
-if (!empty($_REQUEST['startdate']))
+if (!empty($_REQUEST['phone']))
 {
     include('includes/cls_json.php');
 
