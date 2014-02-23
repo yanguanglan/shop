@@ -128,7 +128,7 @@ if (!empty($_REQUEST['phone']))
           $couponsday=date('Y-m-d',time()+30*24*3600);
           $coupons && $couponstr=",{$goods['coupons']}一份，有效期截止：{$couponsday}";
           if($coupons) {
-                sendsms($phone,"$name,感谢您获取了{$goods['goods_name']}的优惠卷，到店消费时出示，将免费获得：{$couponstr}。");
+                sendsms($phone,"$name,感谢您获取了{$goods['goods_name']}的优惠卷，消费时出示免费获得：{$couponstr}。");
           } else {
                 sendsms($phone,"$name,感谢您预订了{$goods['goods_name']}，平台服务人员将会及时与您联系。到店消费时，请出示本短信，获取折扣优惠。");
           }
